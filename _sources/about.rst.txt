@@ -23,3 +23,4 @@ Check the following papers for further information
 10.1002/qua.24500
 10.1002/qua.25705
 
+A compiled pdf version of the manual can be found here :download:`../../openlowdin.pdf`
