@@ -1,8 +1,8 @@
 # openLOWDIN manual #
 
-This manual has been developed with Sphinx
+This manual has been developed with Sphinx, website: https://openlowdin.github.io/openLOWDIN_manual/
 
-© All rights reserved, 2023.
+© All rights reserved, 2025.
 
 Installation notes.
 =============
