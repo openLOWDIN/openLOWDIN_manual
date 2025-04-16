@@ -24,7 +24,7 @@ This manual is still in early construction stage! Thanks for your patience.
    :maxdepth: 2
    :caption: Code:
 
-        Code <code/code.rst>
+        List of methods/options <code/code.rst>
         Input <code/input.rst>
         CONTROL <code/control.rst>
         Scratch <code/scratch.rst>
@@ -47,7 +47,7 @@ This manual is still in early construction stage! Thanks for your patience.
    :maxdepth: 2
    :caption: Tutorials:
 
-        Tutorials <tutorials/tutorials.rst>
+        List of tutorials <tutorials/tutorials.rst>
         Positronic systems <tutorials/positrons.rst>
         Positron covalent bond <tutorials/positronCovalentBond.rst>
         Quantum nuclei <tutorials/nuclei.rst>
