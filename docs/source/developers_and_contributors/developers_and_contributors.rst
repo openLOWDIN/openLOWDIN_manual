@@ -1,19 +1,21 @@
-==========
-Developers
-==========
+.. _Developers:
+
+===========================
+Developers and contributors
+===========================
 
 Active developers (alphabetical order)
 ======================================
-* Andrés Reyes
-* Edwin Posada
+* `Andrés Reyes <https://scholar.google.com.co/citations?user=XjXpc0IAAAAJ>`_
+* `Edwin Posada <https://www.linkedin.com/in/efposadac/>`_
 * `Jorge Charry <https://github.com/jacharrym>`_
-* Félix Moncada
+* `Félix Moncada <https://scholar.google.com/citations?user=bEM_QB4AAAAJ>`_
 
 
 Contributors (alphabetic order)
 ===============================
 
-* Jhonathan Romero (APMO/Propagators)
+* Jhonathan Romero (APMO/Propagators) 
 * Sergio Gonzalez (APMO: Older versions)
 * Nestor Aguirre (APMO: Older versions)
 * Danilo González Forero (APMO/COSMO)
