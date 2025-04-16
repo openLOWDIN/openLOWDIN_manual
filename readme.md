@@ -1,6 +1,9 @@
 # openLOWDIN manual #
 
-This manual has been developed with Sphinx, website: https://openlowdin.github.io/openLOWDIN_manual/
+This onlinw manual has been developed with Sphinx.
+website: https://openlowdin.github.io/openLOWDIN_manual/
+[![Sphinx: Render docs](https://github.com/openLOWDIN/openLOWDIN_manual/actions/workflows/sphyinx.yml/badge.svg)](https://github.com/openLOWDIN/openLOWDIN_manual/actions/workflows/sphyinx.yml)
+[![pages-build-deployment](https://github.com/openLOWDIN/openLOWDIN_manual/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/openLOWDIN/openLOWDIN_manual/actions/workflows/pages/pages-build-deployment)
 
 © All rights reserved, 2025.
 
