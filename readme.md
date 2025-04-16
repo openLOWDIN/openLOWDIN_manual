@@ -33,6 +33,7 @@ Installation notes.
 
 ### Tips ###
 Check whitespace and empty lines.
+
 Links to sections in the same Document require the full title header declared in the file.
 
 
