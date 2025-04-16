@@ -2,14 +2,14 @@
 About
 =====
 
-openLOWDIN is a computational program that implements the Any Particle Molecular Orbital (APMO) method to study systems containing any type and number of quantum species, such as electrons, positrons, quantum nuclei, muons, or drude oscillators.
+openLOWDIN is FORTRAN quantum chemistry code that implements the Any Particle Molecular Orbital (APMO) method to study systems containing any type and number of quantum species, such as electrons, positrons, quantum nuclei, muons, or drude oscillators. It's parallelized with OMP paradigm. 
 
 At present, openLOWDIN code is publicly available at https://github.com/efposadac/openLOWDIN
 
 Capabilities
 ============
 
-What can we do in Lowdin? The current version of the code encompasses the following quantum chemistry methods:
+What can we do in Lowdin? The current version of the code encompasses the following quantum chemistry methods extended for any quantum species:
 
 * HF
 * DFT
@@ -23,7 +23,7 @@ Check more details in the :ref:`Code` and :ref:`Tutorials`
 Documentation
 =============
 
-The online manual of openLOWDIN is available at https://github.com/openLOWDIN/openLOWDIN_manual
+The online manual of openLOWDIN is available at https://github.com/openLOWDIN/openLOWDIN_manual.
 A compiled pdf version of the manual can be found here :download:`openlowdin.pdf<../../../openlowdin.pdf>`
 
 How to cite:

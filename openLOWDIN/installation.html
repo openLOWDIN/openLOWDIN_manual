@@ -48,12 +48,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="about.html">     About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developers_and_contributors.html">     Developers and contributors</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">     Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-the-code">Getting the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-installation">Basic installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-by-step-installation">Step-by-step installation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">     Getting started</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Code:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../code/code.html">     Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/code.html">     List of methods/options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/input.html">     Input</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/control.html">     CONTROL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/scratch.html">     Scratch</a></li>
@@ -71,7 +77,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">     Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">     List of tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/positrons.html">     Positronic systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/positronCovalentBond.html">     Positron covalent bond</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/nuclei.html">     Quantum nuclei</a></li>
@@ -106,101 +112,152 @@
              
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
-<p>### Compile: (see below for a step-by-step example) ###</p>
-<ul class="simple">
-<li><p>run <cite>./configure</cite> in LOWDIN root directory. Be sure that you have permissions to write in the installation directory and have properly exported the <cite>$PATH</cite> environment.</p></li>
-<li><p>run <cite>make</cite></p></li>
-</ul>
-<p>### Install: ###</p>
-<ul class="simple">
-<li><p>run <cite>make install</cite></p></li>
-</ul>
-<p>### Uninstall ###</p>
-<ul class="simple">
-<li><p>run <cite>make uninstall</cite></p></li>
-</ul>
-<p>### Documentation ###</p>
-<ul class="simple">
-<li><p>run <cite>make doc</cite></p></li>
-</ul>
-<p>The <cite>make doc</cite> command produces both latex and html documentation using doxygen program. Be sure you have installed doxygen, for instance in a debian-based distribution run:</p>
-<p><cite># apt-get install doxygen graphviz</cite></p>
-<p>To use latex documentation in doc/latex folder, run command:</p>
-<p><cite>pdflatex refman.tex</cite></p>
-<p>To visualize the html documentation use:</p>
-<p><cite>&lt;web browser&gt; doc/html/index.html</cite></p>
-<p>### Clean the project ###</p>
-<ul class="simple">
-<li><p>run <cite>make clean</cite> and then <cite>make distclean</cite></p></li>
-</ul>
-<p>—</p>
-<p>### Step-by-step  installation example: (replace apt-get with your preferred package manager) ###</p>
-<blockquote>
-<div><p>sudo apt-get update
-sudo apt-get -y install wget git build-essential liblapack-dev libblas-dev libgsl0-dev autotools-dev automake libtool gfortran python3 gawk libeigen3-dev libgmp-dev libboost-all-dev
-# Define ENV Variables
-export WORKDIR=$PWD/dependencies
-export PATH=$PATH:$WORKDIR/bin
-export C_INCLUDE_PATH=$C_INCLUDE_PATH:$WORKDIR/include:$WORKDIR/include/libint2:/usr/include/eigen3
-export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:$WORKDIR/include:$WORKDIR/include/libint2:/usr/include/eigen3
-export LIBRARY_PATH=$LIBRARY_PATH:$WORKDIR/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORKDIR/lib
-# Create work directories
-mkdir $WORKDIR
-mkdir $WORKDIR/bin
-mkdir $WORKDIR/lib
-cd $WORKDIR</p>
-<p># Libint2
-# If you have Ubuntu, you can get this precompiled Libint2 library
-wget <a class="reference external" href="https://www.dropbox.com/s/d3d44j238lkfwcr/libint-master-SEP052019.tgz">https://www.dropbox.com/s/d3d44j238lkfwcr/libint-master-SEP052019.tgz</a>
-tar xzvf libint-master-SEP052019.tgz</p>
-<p># Otherwise, download and compile with minimal (default am), G12, fPIC options (libint2 commit 668b10c4bdca5876984058742d4212675eb93f3f)
-# git clone <a class="reference external" href="https://github.com/evaleev/libint.git">https://github.com/evaleev/libint.git</a>
-# cd libint
-# git checkout 668b10c4bdca5876984058742d4212675eb93f3f
-# ./autogen.sh
-# mkdir ../build
-# cd ../build
-# ../libint/configure –prefix=$WORKDIR –with-max-am=6 –enable-g12=4 –with-g12-max-am=4 –with-cxxgen-optflags
-# make -j 4
-# make install
-# ../libint/configure –prefix=$WORKDIR</p>
-<p>cd -</p>
-<p># Libint1
-git clone <a class="reference external" href="https://github.com/evaleev/libint.git">https://github.com/evaleev/libint.git</a>
-cd libint
-git checkout v1
-aclocal -I lib/autoconf
-autoconf
-./configure –prefix=$WORKDIR
-make -j 4
-make install
-make clean
-make distclean
-cd -</p>
-<p># Libxc
-cd $WORKDIR
-# If you have Ubuntu, you can get this precompiled Libxc library
-wget <a class="reference external" href="https://www.dropbox.com/s/6cja3zzhl1cq46i/libxc-master-MAY242023.tgz">https://www.dropbox.com/s/6cja3zzhl1cq46i/libxc-master-MAY242023.tgz</a>
-tar xzvf libxc-master-MAY242023.tgz
-# Otherwise, download and compile with default options (libxc commit 4bd0e1e36347c6d0a4e378a2c8d891ae43f8c951)
-# git clone <a class="reference external" href="https://gitlab.com/libxc/libxc.git">https://gitlab.com/libxc/libxc.git</a>
-# cd libxc
-# git checkout 4bd0e1e36347c6d0a4e378a2c8d891ae43f8c951
-# autoreconf -i
-# ./configure –enable-shared –prefix=$WORKDIR
-# make -j 4
-# make install</p>
-<p>cd ..</p>
-<p># Configure Lowdin
-./configure -p $WORKDIR/bin -s /tmp -l “-lblas -llapack”
-# Build Lowdin
-make -j 4
-# Install Lowdin
-make install
-# Run Tests
-make test</p>
-</div></blockquote>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading"></a></h2>
+<p>openLOWDIN requires the following standard packages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">git</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">liblapack</span><span class="o">-</span><span class="n">dev</span> <span class="n">libblas</span><span class="o">-</span><span class="n">dev</span> <span class="n">libgsl0</span><span class="o">-</span><span class="n">dev</span> <span class="n">autotools</span><span class="o">-</span><span class="n">dev</span> <span class="n">automake</span> <span class="n">libtool</span> <span class="n">gfortran</span> <span class="n">python3</span> <span class="n">gawk</span> <span class="n">libeigen3</span><span class="o">-</span><span class="n">dev</span> <span class="n">libgmp</span><span class="o">-</span><span class="n">dev</span> <span class="n">libboost</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+<p>Additionally, it requires some quantum chemistry libraries:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">libinit</span> <span class="o">-</span> <span class="n">Molecular</span> <span class="n">integrals</span> <span class="ow">in</span> <span class="n">gaussian</span> <span class="nb">type</span> <span class="n">orbital</span> <span class="n">basis</span>
+<span class="n">libxc</span> <span class="o">-</span> <span class="n">DFT</span> <span class="n">functionals</span>
+</pre></div>
+</div>
+<p>The following opensource libraries are distributed within the openLOWDIN code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aduw</span> <span class="o">-</span> <span class="n">Four</span><span class="o">-</span><span class="n">index</span> <span class="n">integrals</span> <span class="n">transformation</span>
+<span class="n">erkale</span> <span class="o">-</span> <span class="n">Orbital</span> <span class="n">localization</span>
+<span class="n">gepol</span> <span class="o">-</span> <span class="n">COSMO</span>
+<span class="n">jadamilu</span> <span class="o">-</span> <span class="n">large</span> <span class="n">sparse</span> <span class="n">matrix</span> <span class="n">diagonalization</span>
+<span class="n">molden2aim</span> <span class="o">-</span> <span class="n">molden</span> <span class="n">to</span> <span class="n">AIM</span> <span class="n">wave</span> <span class="n">function</span> <span class="n">converter</span>
+</pre></div>
+</div>
+</section>
+<section id="getting-the-code">
+<h2>Getting the code<a class="headerlink" href="#getting-the-code" title="Permalink to this heading"></a></h2>
+<p>The source code is available at <a class="reference external" href="https://github.com/efposadac/openLOWDIN">https://github.com/efposadac/openLOWDIN</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/efposadac/openLOWDIN
+</pre></div>
+</div>
+</section>
+<section id="basic-installation">
+<h2>Basic installation<a class="headerlink" href="#basic-installation" title="Permalink to this heading"></a></h2>
+<p>Once all the dependencies are installed, the code is compile with the following steps.
+First, run the interactive configuration script in openLOWDIN root directory.
+Be sure that you have permissions to write in the installation directory and have properly exported the <cite>$PATH</cite> environment.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure
+</pre></div>
+</div>
+<p>This script will ask a set of questions, please provide the option that satisfies your needs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>INFO: Interactive configuration options
+Fortran Compiler command? gfortran(default) or ifort/ifx [gfortran]
+
+Compiler Options: (1) regular,  (2) backtrace and debug,  (3) static (for intel fortran compiler only), (4) Full debug, (5) Highest optimization level [1]
+
+Speed up on GPUs? (you need to have already installed CUDA and Magma libraries): yes/no [no]
+
+Executable name? default=openlowdin [openlowdin]
+
+Installation directory? default=/usr/local [/usr/local]
+</pre></div>
+</div>
+<p>Compile the code with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
+</pre></div>
+</div>
+<p>you can add the parallel flag to compile in paralle, e.g. with 4 threads as <cite>-j 4</cite>.</p>
+<p>Finally, install as</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>install
+</pre></div>
+</div>
+<p>To uninstall the binaries from the selected installation folder</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>uninstall
+</pre></div>
+</div>
+<p>To clean the project</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>clean
+make<span class="w"> </span>distclean
+</pre></div>
+</div>
+</section>
+<section id="step-by-step-installation">
+<h2>Step-by-step installation<a class="headerlink" href="#step-by-step-installation" title="Permalink to this heading"></a></h2>
+<p>Here you can find a step-by-step workflow to install on ubuntu-latest linux distribution.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">### Step-by-step  installation example: (replace apt-get with your preferred package manager) ###</span>
+
+<span class="w">        </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+<span class="w">        </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>wget<span class="w"> </span>git<span class="w"> </span>build-essential<span class="w"> </span>liblapack-dev<span class="w"> </span>libblas-dev<span class="w"> </span>libgsl0-dev<span class="w"> </span>autotools-dev<span class="w"> </span>automake<span class="w"> </span>libtool<span class="w"> </span>gfortran<span class="w"> </span>python3<span class="w"> </span>gawk<span class="w"> </span>libeigen3-dev<span class="w"> </span>libgmp-dev<span class="w"> </span>libboost-all-dev
+<span class="w">        </span><span class="c1"># Define ENV Variables</span>
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">WORKDIR</span><span class="o">=</span><span class="nv">$PWD</span>/dependencies
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$WORKDIR</span>/bin
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">C_INCLUDE_PATH</span><span class="o">=</span><span class="nv">$C_INCLUDE_PATH</span>:<span class="nv">$WORKDIR</span>/include:<span class="nv">$WORKDIR</span>/include/libint2:/usr/include/eigen3
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">CPLUS_INCLUDE_PATH</span><span class="o">=</span><span class="nv">$CPLUS_INCLUDE_PATH</span>:<span class="nv">$WORKDIR</span>/include:<span class="nv">$WORKDIR</span>/include/libint2:/usr/include/eigen3
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LIBRARY_PATH</span>:<span class="nv">$WORKDIR</span>/lib
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:<span class="nv">$WORKDIR</span>/lib
+<span class="w">        </span><span class="c1"># Create work directories</span>
+<span class="w">        </span>mkdir<span class="w"> </span><span class="nv">$WORKDIR</span>
+<span class="w">        </span>mkdir<span class="w"> </span><span class="nv">$WORKDIR</span>/bin
+<span class="w">        </span>mkdir<span class="w"> </span><span class="nv">$WORKDIR</span>/lib
+<span class="w">        </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$WORKDIR</span>
+
+<span class="w">      </span><span class="c1"># Libint2</span>
+<span class="w">        </span><span class="c1"># If you have Ubuntu, you can get this precompiled Libint2 library</span>
+<span class="w">        </span>wget<span class="w"> </span>https://www.dropbox.com/s/d3d44j238lkfwcr/libint-master-SEP052019.tgz
+<span class="w">        </span>tar<span class="w"> </span>xzvf<span class="w"> </span>libint-master-SEP052019.tgz
+
+<span class="w">      </span><span class="c1"># Otherwise, download and compile with minimal (default am), G12, fPIC options (libint2 commit 668b10c4bdca5876984058742d4212675eb93f3f)</span>
+<span class="w">      </span><span class="c1"># git clone https://github.com/evaleev/libint.git</span>
+<span class="w">      </span><span class="c1"># cd libint</span>
+<span class="w">      </span><span class="c1"># git checkout 668b10c4bdca5876984058742d4212675eb93f3f</span>
+<span class="w">      </span><span class="c1"># ./autogen.sh</span>
+<span class="w">      </span><span class="c1"># mkdir ../build</span>
+<span class="w">        </span><span class="c1"># cd ../build</span>
+<span class="w">        </span><span class="c1"># ../libint/configure --prefix=$WORKDIR --with-max-am=6 --enable-g12=4 --with-g12-max-am=4 --with-cxxgen-optflags</span>
+<span class="w">        </span><span class="c1"># make -j 4</span>
+<span class="w">        </span><span class="c1"># make install</span>
+<span class="w">      </span><span class="c1"># ../libint/configure --prefix=$WORKDIR</span>
+
+<span class="w">        </span><span class="nb">cd</span><span class="w"> </span>-
+
+<span class="w">        </span><span class="c1"># Libint1</span>
+<span class="w">        </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/evaleev/libint.git
+<span class="w">        </span><span class="nb">cd</span><span class="w"> </span>libint
+<span class="w">        </span>git<span class="w"> </span>checkout<span class="w"> </span>v1
+<span class="w">        </span>aclocal<span class="w"> </span>-I<span class="w"> </span>lib/autoconf
+<span class="w">        </span>autoconf
+<span class="w">        </span>./configure<span class="w"> </span>--prefix<span class="o">=</span><span class="nv">$WORKDIR</span>
+<span class="w">        </span>make<span class="w"> </span>-j<span class="w"> </span><span class="m">4</span>
+<span class="w">        </span>make<span class="w"> </span>install
+<span class="w">        </span>make<span class="w"> </span>clean
+<span class="w">        </span>make<span class="w"> </span>distclean
+<span class="w">        </span><span class="nb">cd</span><span class="w"> </span>-
+
+<span class="w">      </span><span class="c1"># Libxc</span>
+<span class="w">        </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$WORKDIR</span>
+<span class="w">        </span><span class="c1"># If you have Ubuntu, you can get this precompiled Libxc library</span>
+<span class="w">        </span>wget<span class="w"> </span>https://www.dropbox.com/s/6cja3zzhl1cq46i/libxc-master-MAY242023.tgz
+<span class="w">        </span>tar<span class="w"> </span>xzvf<span class="w"> </span>libxc-master-MAY242023.tgz
+<span class="w">      </span><span class="c1"># Otherwise, download and compile with default options (libxc commit 4bd0e1e36347c6d0a4e378a2c8d891ae43f8c951)</span>
+<span class="w">      </span><span class="c1"># git clone https://gitlab.com/libxc/libxc.git</span>
+<span class="w">      </span><span class="c1"># cd libxc</span>
+<span class="w">      </span><span class="c1"># git checkout 4bd0e1e36347c6d0a4e378a2c8d891ae43f8c951</span>
+<span class="w">      </span><span class="c1"># autoreconf -i</span>
+<span class="w">      </span><span class="c1"># ./configure --enable-shared --prefix=$WORKDIR</span>
+<span class="w">      </span><span class="c1"># make -j 4</span>
+<span class="w">      </span><span class="c1"># make install</span>
+
+<span class="w">        </span><span class="nb">cd</span><span class="w"> </span>..
+
+<span class="w">        </span><span class="c1"># Configure Lowdin</span>
+<span class="w">        </span>./configure<span class="w"> </span>-p<span class="w"> </span><span class="nv">$WORKDIR</span>/bin<span class="w"> </span>-s<span class="w"> </span>/tmp<span class="w"> </span>-l<span class="w"> </span><span class="s2">&quot;-lblas -llapack&quot;</span>
+<span class="w">        </span><span class="c1"># Build Lowdin</span>
+<span class="w">        </span>make<span class="w"> </span>-j<span class="w"> </span><span class="m">4</span>
+<span class="w">        </span><span class="c1"># Install Lowdin</span>
+<span class="w">        </span>make<span class="w"> </span>install
+<span class="w">        </span><span class="c1"># Run Tests</span>
+<span class="w">        </span>make<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
