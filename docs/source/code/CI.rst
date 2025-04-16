@@ -1,6 +1,8 @@
-=========================
-Configuration Interaction
-=========================
+.. _CI:
+
+=============================
+Configuration Interaction, CI
+=============================
 
 The APMO/CI wave function is written as a linear combination of CI configurations between all quantum species
 

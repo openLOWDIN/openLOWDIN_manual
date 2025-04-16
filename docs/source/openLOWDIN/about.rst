@@ -18,13 +18,13 @@ What can we do in Lowdin? The current version of the code encompasses the follow
 * PT (PT2, PT3, PP3, RENPP3, OVGF)
 * NOCI
 
-Check more details in the :ref:`Theory` and :ref:`Tutorials`
+Check more details in the :ref:`Code` and :ref:`Tutorials`
 
 Documentation
 =============
 
 The online manual of openLOWDIN is available at https://github.com/openLOWDIN/openLOWDIN_manual
-A compiled pdf version of the manual can be found here :download:`openlowdin.pdf<../../openlowdin.pdf>`
+A compiled pdf version of the manual can be found here :download:`openlowdin.pdf<../../../openlowdin.pdf>`
 
 How to cite:
 ============

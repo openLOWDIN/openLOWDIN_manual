@@ -1,18 +1,18 @@
-.. _Getting started:
+.. Getting started:
 
 ===============
 Getting started
 ===============
 
 Let's get ready to run openLOWDIN. Here you can find the basic information about the input and how to run the code.
-A more exhaustive description of all code keywords and file can be found in section 
+A more exhaustive description of all code keywords and files can be found in section 
 
 Input file
 ===========
 
 The code requires an text ``input`` file with extension ``.lowdin``. Here is an example of a minimum ``input`` file
 
-.. literalinclude:: getting_started/mu-H2O.APMO.P2.lowdin
+.. literalinclude:: mu-H2O.APMO.P2.lowdin
 
 
 The minimum required blocks to run a calculation are ``GEOMETRY}``,  ``TASKS``, and ``CONTROL``.
@@ -35,7 +35,8 @@ How to run
 
 To run LOWDIN 
 
-.. code:: bash
+.. code-block:: bash
+
         lowdin2 -i inputname.lowdin 
 
 This will generate a plain text output file called ``inputname.out``

@@ -8,22 +8,40 @@ Welcome to openLOWDIN's documentation!
 
 openLOWDIN is a computational program that implements the Any Particle Molecular Orbital (APMO) method to study systems containing any type and number of quantum species, such as electrons, positrons, quantum nuclei, muons, or drude oscillators.
 
+This manual is still in early construction stage! Thanks for your patience. 
+
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-        About <about.rst>
-        Developers and contributors <developers_and_contributors/developers_and_contributors.rst>
-        Installation <installation/installation.rst>
-        Getting started <getting_started/getting_started.rst>
+        About <openLOWDIN/about.rst>
+        Developers and contributors <openLOWDIN/developers_and_contributors.rst>
+        Installation <openLOWDIN/installation.rst>
+        Getting started <openLOWDIN/getting_started.rst>
 
 .. toctree::
    :maxdepth: 2
-   :caption: Theory:
+   :caption: Code:
 
-        Theory <theory/theory.rst>
-        FCI <theory/FCI.rst>
+        Code <code/code.rst>
+        Input <code/input.rst>
+        CONTROL <code/control.rst>
+        Scratch <code/scratch.rst>
+        Outputs <code/outputs.rst>
+        Lib <code/lib.rst>
+        Integrals <code/integrals.rst>
+        HF <code/HF.rst>
+        SCF <code/scf.rst>
+        Properties <code/properties.rst>
+        DFT <code/DFT.rst>
+        MBPT <code/MBPT.rst>
+        PT <code/PT.rst>
+        CI <code/CI.rst>
+        NOCI <code/NOCI.rst>
+..      COSMO <code/COSMO.rst>
+..      MM <code/MM.rst>
+..      optimization <code/opt.rst>
 
 .. toctree::
    :maxdepth: 2
@@ -32,6 +50,10 @@ openLOWDIN is a computational program that implements the Any Particle Molecular
         Tutorials <tutorials/tutorials.rst>
         Positronic systems <tutorials/positrons.rst>
         Positron covalent bond <tutorials/positronCovalentBond.rst>
+        Quantum nuclei <tutorials/nuclei.rst>
+        Negative muons <tutorials/muons.rst>
+        Quantum Drude Oscillators <tutorials/qdo.rst>
+        External potentials <tutorials/extPotentials.rst>
 
 
 
