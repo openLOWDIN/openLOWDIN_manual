@@ -28,6 +28,7 @@ Welcome to openLOWDIN's documentation!
 
         Tutorials <tutorials/tutorials.rst>
         Positronic systems <tutorials/positrons.rst>
+        Positron covalent bond <tutorials/positronCovalentBond.rst>
 
 
 
