@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Positronic systems &mdash; openLOWDIN 0.1 documentation</title>
+  <title>Quantum Nuclei &mdash; openLOWDIN 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Positron covalent bond" href="positronCovalentBond.html" />
-    <link rel="prev" title="Tutorials" href="tutorials.html" /> 
+    <link rel="next" title="Negative Muons" href="muons.html" />
+    <link rel="prev" title="Positron covalent bond" href="positronCovalentBond.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -72,9 +72,9 @@
 <p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">     Tutorials</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">     Positronic systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="positrons.html">     Positronic systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="positronCovalentBond.html">     Positron covalent bond</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nuclei.html">     Quantum nuclei</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     Quantum nuclei</a></li>
 <li class="toctree-l1"><a class="reference internal" href="muons.html">     Negative muons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qdo.html">     Quantum Drude Oscillators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extPotentials.html">     External potentials</a></li>
@@ -94,9 +94,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Positronic systems</li>
+      <li class="breadcrumb-item active">Quantum Nuclei</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/tutorials/positrons.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/tutorials/nuclei.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -104,50 +104,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="positronic-systems">
-<h1>Positronic systems<a class="headerlink" href="#positronic-systems" title="Permalink to this heading"></a></h1>
-<p>This is an example on how to run a <a class="reference internal" href="../code/CI.html#ci"><span class="std std-ref">Configuration Interaction, CI</span></a> calculations for PsH</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GEOMETRY
-	e-(H)   SHARON-E-6S2P 	0.00	0.00 	0.00 addParticles=1 
-	H	dirac			0.00	0.00 	0.00
-	e+	SHARON-E+6S2P	0.00	0.00	0.00
-END GEOMETRY
-
-TASKS
-	method = &quot;UHF&quot;
-	configurationInteractionLevel =&quot;FCI&quot;
-	!configurationInteractionLevel =&quot;CISD&quot;
-END TASKS
-
-CONTROL
-readCoefficients=F
-numberOfCIstates=3
-CINaturalOrbitals=T
-	CIStatesToPrint = 1
-	!CIdiagonalizationMethod = &quot;DSYEVX&quot;
-	CIdiagonalizationMethod = &quot;JADAMILU&quot;
-	!CIPrintEigenVectorsFormat = &quot;NONE&quot;
-	CIPrintEigenVectorsFormat = &quot;OCCUPIED&quot;
-	!CIPrintEigenVectorsFormat = &quot;ORBITALS&quot;
-	CIPrintThreshold = 5e-2
-	buildTwoParticlesMatrixForOneParticle=T
-END CONTROL
-
-INPUT_CI
-	species=&quot;E-ALPHA&quot; core=0 active=0 
-	species=&quot;E-BETA&quot; core=0 active=0 
-	species=&quot;E+&quot; core=0 active=0 
-END INPUT_CI
-</pre></div>
-</div>
+  <section id="quantum-nuclei">
+<h1>Quantum Nuclei<a class="headerlink" href="#quantum-nuclei" title="Permalink to this heading"></a></h1>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="tutorials.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="positronCovalentBond.html" class="btn btn-neutral float-right" title="Positron covalent bond" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="positronCovalentBond.html" class="btn btn-neutral float-left" title="Positron covalent bond" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="muons.html" class="btn btn-neutral float-right" title="Negative Muons" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

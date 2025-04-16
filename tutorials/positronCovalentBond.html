@@ -19,9 +19,9 @@
       <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
       <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
-    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quantum Nuclei" href="nuclei.html" />
     <link rel="prev" title="Positronic systems" href="positrons.html" /> 
 </head>
 
@@ -47,21 +47,38 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../about.html">     About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developers_and_contributors/developers_and_contributors.html">     Developers and contributors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">     Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">     Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/about.html">     About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/developers_and_contributors.html">     Developers and contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/installation.html">     Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/getting_started.html">     Getting started</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Theory:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Code:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../theory/theory.html">     Theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../theory/FCI.html">     FCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/code.html">     Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/input.html">     Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/control.html">     CONTROL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/scratch.html">     Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/outputs.html">     Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/lib.html">     Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/integrals.html">     Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/HF.html">     HF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/scf.html">     SCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/properties.html">     Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/DFT.html">     DFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/MBPT.html">     MBPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/PT.html">     PT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/CI.html">     CI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/NOCI.html">     NOCI</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">     Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="positrons.html">     Positronic systems</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">     Positron covalent bond</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nuclei.html">     Quantum nuclei</a></li>
+<li class="toctree-l1"><a class="reference internal" href="muons.html">     Negative muons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qdo.html">     Quantum Drude Oscillators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extPotentials.html">     External potentials</a></li>
 </ul>
 
         </div>
@@ -90,7 +107,7 @@
              
   <section id="positron-covalent-bond">
 <h1>Positron covalent bond<a class="headerlink" href="#positron-covalent-bond" title="Permalink to this heading"></a></h1>
-<p>This is an example on how to compute the binding energy of a dihydride positron-bound system, using <a class="reference internal" href="../theory/FCI.html#configuration-interaction"><span class="std std-ref">Configuration Interaction</span></a> calculations, as was done in <a class="reference external" href="https://doi.org/10.1002/anie.201800914">https://doi.org/10.1002/anie.201800914</a></p>
+<p>This is an example on how to compute the binding energy of a dihydride positron-bound system, using <a class="reference internal" href="../code/CI.html#ci"><span class="std std-ref">Configuration Interaction, CI</span></a> calculations, as was done in <a class="reference external" href="https://doi.org/10.1002/anie.201800914">https://doi.org/10.1002/anie.201800914</a></p>
 <div class="math notranslate nohighlight">
 \[H^-e^+H^- --&gt; PsH + H^-\]</div>
 <p>This input computes the energy of the dihydride system</p>
@@ -286,6 +303,7 @@ END OUTPUTS
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="positrons.html" class="btn btn-neutral float-left" title="Positronic systems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nuclei.html" class="btn btn-neutral float-right" title="Quantum Nuclei" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
