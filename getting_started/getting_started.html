@@ -17,6 +17,7 @@
       <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
       <script src="../_static/doctools.js?v=888ff710"></script>
       <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -50,7 +51,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../about.html">     About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developers_and_contributors/developers_and_contributors.html">     Developers and contributors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">     Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">     Getting started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#input-file">Input file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-run">How to run</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Theory:</span></p>
 <ul>
@@ -89,7 +94,28 @@
            <div itemprop="articleBody">
              
   <section id="getting-started">
-<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h1>
+<p>Let’s get ready to run openLOWDIN. Here you can find the basic information about the input and how to run the code.
+A more exhaustive description of all code keywords and file can be found in section</p>
+<section id="input-file">
+<h2>Input file<a class="headerlink" href="#input-file" title="Permalink to this heading"></a></h2>
+<p>The code requires an text <code class="docutils literal notranslate"><span class="pre">input</span></code> file with extension <code class="docutils literal notranslate"><span class="pre">.lowdin</span></code>. Here is an example of a minimum <code class="docutils literal notranslate"><span class="pre">input</span></code> file</p>
+<p>The minimum required blocks to run a calculation are <code class="docutils literal notranslate"><span class="pre">GEOMETRY}</span></code>,  <code class="docutils literal notranslate"><span class="pre">TASKS</span></code>, and <code class="docutils literal notranslate"><span class="pre">CONTROL</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">GEOMETRY</span></code> block provides the information needed to build the molecular system.
+The first column declares the type of the quantum species.
+As shown in the above example, <code class="docutils literal notranslate"><span class="pre">e-[H]</span></code> and <code class="docutils literal notranslate"><span class="pre">e-[O]</span></code> define the electrons of a Hydrogen and a Oxygen atom respectively; <code class="docutils literal notranslate"><span class="pre">U-</span></code> defines a negative muon, <code class="docutils literal notranslate"><span class="pre">O\_{16}</span></code>, <code class="docutils literal notranslate"><span class="pre">H\_1</span></code> and <code class="docutils literal notranslate"><span class="pre">H\_2</span></code> define <span class="math notranslate nohighlight">\(^{16}O\)</span>, <span class="math notranslate nohighlight">\(^{1}H\)</span> and <span class="math notranslate nohighlight">\(^{2}H\)</span> nuclei respectively.</p>
+<p>The second column declares the basis sets. When the <code class="docutils literal notranslate"><span class="pre">dirac</span></code> basis is chosen, the particle is treated as a classical point charge.
+The third, fourth and fifth columns declare the $x,y,z$ coordinates of the particle basis set center.</p>
+<p>The sixth column provides additional information via keywords  <code class="docutils literal notranslate"><span class="pre">addParticles</span></code> and <code class="docutils literal notranslate"><span class="pre">multiplicity</span></code>.
+These keywords are used to change the default values. <code class="docutils literal notranslate"><span class="pre">addParticles</span></code> is used to modify the number of particles of a quantum species.
+As shown in the provided example, one electron is removed from the system. <code class="docutils literal notranslate"><span class="pre">multiplicity</span></code> defines the multiplicity for open shell calculations.
+In the example, an electronic multiplicity of 2 was chosen.</p>
+</section>
+<section id="how-to-run">
+<h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading"></a></h2>
+<p>To run LOWDIN</p>
+<p>This will generate a plain text output file called <code class="docutils literal notranslate"><span class="pre">inputname.out</span></code></p>
+</section>
 </section>
 
 
