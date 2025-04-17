@@ -17,6 +17,7 @@
       <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
       <script src="../_static/doctools.js?v=888ff710"></script>
       <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -106,6 +107,26 @@
              
   <section id="many-body-perturbation-theory-mbpt">
 <span id="mbpt"></span><h1>Many-Body Perturbation Theory, MBPT<a class="headerlink" href="#many-body-perturbation-theory-mbpt" title="Permalink to this heading"></a></h1>
+<p>OpenLowdin can perform second order many-body perturbation theory (MP2) corrections to the energy on systems including any kind of quantum particle. These corrections are probably the simplest way to recover the effects of correlation between particles of different species.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    E_{\text{MP2}}=&amp; \text{E}_{\text{HF}} + \sum_{\alpha}^{N_{typ}} \text{E}_{\alpha \alpha}^{(2)} + \sum_{\alpha\beta}^{N_{typ}} \text{E}_{\alpha \beta}^{(2)}, \\
+    E_{\alpha \alpha}^{(2)}=&amp; \frac{q_{\alpha}^2}{4}
+    \sum_{ij}^{oc_\alpha}
+    \sum_{ab}^{vir_\alpha}
+    \frac{\mid {\langle i_{\alpha} j_{\alpha} \mid \mid a_{\alpha} b_{\alpha} \rangle }  \mid ^2}
+    {\varepsilon_{\alpha i} + \varepsilon_{\alpha j} - \varepsilon_{\alpha a} - \varepsilon_{\alpha b}}, \notag \\
+    E_{\alpha \beta}^{(2)}=&amp; q_{\alpha}q_{\beta}
+    \sum_{i}^{oc_\alpha}
+    \sum_{j}^{oc_\beta}
+    \sum_{a}^{vir_\alpha}
+    \sum_{b}^{vir_\beta}
+    \frac{\mid {\langle i_{\alpha} j_{\beta}  \mid a_{\alpha} b_{\beta} \rangle } \mid ^2}
+    {\varepsilon_{\alpha i} + \varepsilon_{\beta j} - \varepsilon_{\alpha a}- \varepsilon_{\beta b}}. \notag
+\end{align}\end{split}\]</div>
+<p>For more information on APMO-MP2 calculations see S. A. Gonz'alez, A. Reyes, “Nuclear Quantum Effects on the He2H+ Complex With the Nuclear Molecular Orbital Approach”, Int. J. Quant. Chem. 110 689 (2010) <a class="reference external" href="https://doi.org/10.1002/qua.22118">https://doi.org/10.1002/qua.22118</a></p>
+<p>In addition, OpenLowdin can compute second order Epsein-Nesbet (EN2) corrections, which correspond to renormalized MP2 equations.</p>
+<p>See <span class="xref std std-ref">MP2 example</span> for an example of a MP2 calculation in openLowdin</p>
 </section>
 
 
