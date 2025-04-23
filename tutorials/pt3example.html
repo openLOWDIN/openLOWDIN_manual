@@ -1,0 +1,195 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT3 for a Ps-atom complex &mdash; openLOWDIN 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="shortcut icon" href="../_static/openLowdin_logo_black-alpha.svg"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Negative Muons" href="muons.html" />
+    <link rel="prev" title="TOEP2 with quantum nucleus" href="toep2example.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            openLOWDIN
+              <img src="../_static/openLowdin_logo_white-black.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/about.html">     About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/developers_and_contributors.html">     Developers and contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/installation.html">     Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/getting_started.html">     Getting started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code/code.html">     List of methods/options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/input.html">     Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/control.html">     CONTROL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/scratch.html">     Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/outputs.html">     Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/lib.html">     Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/integrals.html">     Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/HF.html">     HF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/scf.html">     SCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/properties.html">     Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/DFT.html">     DFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/MBPT.html">     MBPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/PT.html">     PT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/CI.html">     CI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/NOCI.html">     NOCI</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">     List of tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="positrons.html">     Positronic systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="positronCovalentBond.html">     Positron covalent bond</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nuclei.html">     Quantum nuclei</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp2example.html">     MP2 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pt2example.html">     PT2 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="toep2example.html">     TOEP2 example</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     PT3 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="muons.html">     Negative muons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qdo.html">     Quantum Drude Oscillators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extPotentials.html">     External potentials</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">openLOWDIN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">PT3 for a Ps-atom complex</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/pt3example.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pt3-for-a-ps-atom-complex">
+<span id="pt3-example"></span><h1>PT3 for a Ps-atom complex<a class="headerlink" href="#pt3-for-a-ps-atom-complex" title="Permalink to this heading"></a></h1>
+<p>A PT3 (third order <a class="reference internal" href="../code/PT.html#pt"><span class="std std-ref">Propagathor Theory, PT</span></a>) input on positronium chloride (PsCl), where the electrons and the positron are treated as quantum particles looks like this</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GEOMETRY</span> 
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">Cl</span><span class="p">)</span> <span class="n">def2</span><span class="o">-</span><span class="n">tzvppd</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="n">addParticles</span><span class="o">=</span><span class="mi">1</span> <span class="n">multiplicity</span><span class="o">=</span><span class="mi">1</span>                       
+<span class="n">Cl</span>     <span class="n">Dirac</span>       <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>                       
+<span class="n">E</span><span class="o">+</span>     <span class="n">PsX</span><span class="o">-</span><span class="n">TZ</span>      <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="n">END</span> <span class="n">GEOMETRY</span> 
+
+<span class="n">TASKS</span>
+	<span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;uhf&quot;</span>
+	<span class="n">propagatorTheoryCorrection</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">END</span> <span class="n">TASKS</span>
+
+<span class="n">CONTROL</span>
+	<span class="n">ionizeSpecies</span> <span class="o">=</span> <span class="s2">&quot;e+&quot;</span> 
+	<span class="n">ionizeMO</span><span class="o">=</span> <span class="mi">1</span>
+	<span class="n">ptJustOneOrbital</span><span class="o">=.</span><span class="n">T</span><span class="o">.</span>
+<span class="n">END</span> <span class="n">CONTROL</span>
+</pre></div>
+</div>
+<p>APMO-PT3 calculations are performed when the option “propagatorTheoryCorrection=3” is present in the “TASKS” block. PT3 calculations only work with UHF as reference.
+Here, to save computational time, only the self-energy corrections to the positron occupied orbital will be performed. This is indicated by the “ionizeSpecies”, “ionizeMO” and “ptJustOneOrbital” entries in the CONTROL block.</p>
+<p>The corresponing PT3 output will include the following summary</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">----------------------------------------------------------------</span>
+        <span class="n">SUMMARY</span> <span class="n">OF</span> <span class="n">PROPAGATOR</span> <span class="n">RESULTS</span> <span class="n">FOR</span> <span class="n">THE</span> <span class="n">SPIN</span><span class="o">-</span><span class="n">ORBITAL</span><span class="p">:</span> <span class="mi">1</span>  <span class="n">OF</span> <span class="n">SPECIES</span><span class="p">:</span><span class="n">E</span><span class="o">+</span>      
+     <span class="o">--------------------------------------------</span>
+              <span class="n">Method</span>      <span class="n">BE</span> <span class="p">(</span><span class="n">eV</span><span class="p">)</span>     <span class="n">Pole</span> <span class="n">S</span><span class="o">.</span>
+     <span class="o">--------------------------------------------</span>
+           <span class="n">KT</span>           <span class="o">-</span><span class="mf">3.921784</span>
+           <span class="n">EP2</span>          <span class="o">-</span><span class="mf">4.687989</span>    <span class="mf">0.970793</span>
+           <span class="n">P3</span>           <span class="o">-</span><span class="mf">5.089637</span>    <span class="mf">0.944634</span>
+           <span class="n">EP3</span>          <span class="o">-</span><span class="mf">5.029551</span>    <span class="mf">0.941481</span>
+           <span class="n">OVGF</span><span class="o">-</span><span class="n">A</span>       <span class="o">-</span><span class="mf">5.158601</span>    <span class="mf">0.930894</span>
+           <span class="n">OVGF</span><span class="o">-</span><span class="n">B</span>       <span class="o">-</span><span class="mf">5.184791</span>    <span class="mf">0.933609</span>
+           <span class="n">OVGF</span><span class="o">-</span><span class="n">C</span>       <span class="o">-</span><span class="mf">5.130513</span>    <span class="mf">0.933177</span>
+           <span class="n">REN</span><span class="o">-</span><span class="n">P3</span>       <span class="o">-</span><span class="mf">5.146522</span>    <span class="mf">0.941929</span>
+     <span class="o">--------------------------------------------</span>
+ <span class="n">END</span> <span class="n">OF</span> <span class="n">GENERALIZED</span> <span class="n">ANY</span><span class="o">-</span><span class="n">PARTICLE</span> <span class="n">PROPAGATOR</span> <span class="n">CALCULATIONS</span>
+</pre></div>
+</div>
+<p>In this summary, KT is the eigenvalue of the orbital, which is the reference approximation to the particle binding energy according to Koopmans’ theorem.
+The EP2 row corresponds to the second order propagator theory corrected binding energy.</p>
+<p>Currently, openLowdin computes the third order corrections with six different formulas, denoted as P3, EP3, OVGF-A, OVGF-B, OVGF-C and REN-P3.
+Check J. Chem. Phys. 141, 114103 (2014) <a class="reference external" href="https://doi.org/10.1063/1.4895043">https://doi.org/10.1063/1.4895043</a> for the full details.</p>
+<p>P3 and EP3 refer to the partial and full third order propagator, respectively.
+The OVGF-x are the multicomponent extensions of the outer valence Green function methods, which are renormalized EP3 results.
+REN-P3 is the renormalized third order partial propagator (P3).</p>
+<p>As in PT2 calculations, the Pole Strength serves as a quantity that validates the diagonal (pseudoparticle) approximation employed. A P.S value below 0.85 usually indicates that the diagonal approximation is not reliable.</p>
+<p>If not all the corrections are desired, you can select in the “CONTROL” block the type of correction to be used by adding “ptP3Method=” with “P3”,”EP3”,”OVGF-A”,”OVGF-B”,”OVGF-C” or “REN-P3” as options.</p>
+<p>As in MBPT calculations, the CONTROL option “mpFrozenCoreBoundary” allows the user to omits a number of occupied electronic molecular orbitals (core electrons). For other species, the number of core orbitals along with the number of active virtuals, can be controlled with the “INPUT_CI” block in the input.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="toep2example.html" class="btn btn-neutral float-left" title="TOEP2 with quantum nucleus" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="muons.html" class="btn btn-neutral float-right" title="Negative Muons" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, openLOWDIN.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

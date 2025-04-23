@@ -17,6 +17,7 @@
       <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
       <script src="../_static/doctools.js?v=888ff710"></script>
       <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,6 +77,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/positronCovalentBond.html">     Positron covalent bond</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/nuclei.html">     Quantum nuclei</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/mp2example.html">     MP2 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/pt2example.html">     PT2 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/toep2example.html">     TOEP2 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/pt3example.html">     PT3 example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/muons.html">     Negative muons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/qdo.html">     Quantum Drude Oscillators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/extPotentials.html">     External potentials</a></li>
@@ -107,6 +111,37 @@
              
   <section id="propagathor-theory-pt">
 <span id="pt"></span><h1>Propagathor Theory, PT<a class="headerlink" href="#propagathor-theory-pt" title="Permalink to this heading"></a></h1>
+<p>OpenLOWDIN can calculate ionization potentials for any species employing the propagator formalism, where ionization energy for an specific orbital is calculated
+as the Koopmans value plus self-energy corrections.
+The current implementation includes second order corrections (APMO/P2), second order plus transition operator corrections (APMO/TOEP2),
+third order corrections (APMO/P3) and renormalized third order corrections (APMO/REN-P3) as in the multicomponent extension of the outer valence Green function method (APMO/OVGF)</p>
+<p>At second order, there are intraspecies and interspecies contributions to the self energy corrections to the eigenvalue of reference orbital p:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\omega_{\alpha p}  = &amp;  \epsilon_{\alpha p}+\Sigma_{\alpha pp}(\omega_{\alpha p}) \notag \\
+\Sigma_{\alpha pp}^{(2)}(\omega_{\alpha p}) = &amp; \notag
+\sum_{i}^{oc_\alpha} \sum_{ab}^{vir_\alpha}
+\frac{| \langle p_\alpha i_\alpha||a_\alpha b_\alpha\rangle |^{2} }
+{\omega_{\alpha p}+\epsilon_{\alpha i}-\epsilon_{\alpha a}-\epsilon_{\alpha b}}
++\sum_{ij}^{oc_\alpha} \sum_{a}^{vir_\alpha}
+\frac{| \langle p_\alpha a_\alpha||i_\alpha j_\alpha\rangle |^{2} }
+{\omega_{\alpha p}+\epsilon_{\alpha a}-\epsilon_{\alpha i}-\epsilon_{\alpha j}} \\ &amp;
++\sum_{a}^{vir_\alpha} \sum_{i}^{oc_\beta} \sum_{b}^{vir_\beta}
+\frac{| \langle p_\alpha i_\beta|a_\alpha b_\beta\rangle |^{2} }
+{\omega_{\alpha p}+\epsilon_{\beta i}-\epsilon_{\alpha a}-\epsilon_{\beta b}}
++\sum_{i}^{oc_\alpha}\sum_{j}^{oc_\beta} \sum_{a}^{vir_\beta}
+\frac{| \langle p_\alpha a_\beta|i_\alpha j_\beta\rangle |^{2}}
+{\omega_{\alpha p}+\epsilon_{\beta a}-\epsilon_{\alpha i}-\epsilon_{\beta j}}
+\end{align}\end{split}\]</div>
+<p>More details on the multicomponent propagator methods can be found in (romero.JCP.137.074105.2012,romero.JCP.141.114103.2014)</p>
+<p>To perform a propagator calculations using LOWDIN, the order of PT (2 or 3) must be specified in the “TASKS” block using the keyword “propagatorTheoryCorrection”.
+Currently, the third order corrections is only available from a UHF reference.</p>
+<p>A default calculation obtains ionization energies for the HOMO and LUMO orbitals of all the species present in the input.
+Using the “IonizeMO” and “ionizeSpecies” in the “CONTROL” block, allows the user to select specific orbitals for the propagator calculation. In that case, set up the flag “ptJustOneOrbital=.T.” to save computational time.</p>
+<p>Transition operator corrections latter take advantage of fractional occupation to include additional relaxation in calculated ionization energies.
+To perform calculations with this method, select the UHF reference, add to the control block the “ptTransitionOperator=.T.” and select a fractional occupation using “MOfractionOccupation”. The recommended value is 0.5.</p>
+<p>For third order calculations, you can select in the “CONTROL” block the type of correction to be used by adding “ptP3Method=” with “P3”,”EP3”,”OVGF-A”,”OVGF-B”,”OVGF-C” and “REN-P3” as options. By default, the six correction types are computed.</p>
+<p>See <a class="reference internal" href="../tutorials/pt2example.html#pt2-example"><span class="std std-ref">PT2 with quantum nucleus</span></a>, <a class="reference internal" href="../tutorials/toep2example.html#toep2-example"><span class="std std-ref">TOEP2 with quantum nucleus</span></a> and <a class="reference internal" href="../tutorials/pt3example.html#pt3-example"><span class="std std-ref">PT3 for a Ps-atom complex</span></a> for an examples of a propagator calculations in openLowdin</p>
 </section>
 
 
