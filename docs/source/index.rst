@@ -52,6 +52,10 @@ This manual is still in early construction stage! Thanks for your patience.
         Positronic systems <tutorials/positrons.rst>
         Positron covalent bond <tutorials/positronCovalentBond.rst>
         Quantum nuclei <tutorials/nuclei.rst>
+        MP2 example <tutorials/mp2example.rst>
+        PT2 example <tutorials/pt2example.rst>
+        TOEP2 example <tutorials/toep2example.rst>
+        PT3 example <tutorials/pt3example.rst>
         Negative muons <tutorials/muons.rst>
         Quantum Drude Oscillators <tutorials/qdo.rst>
         External potentials <tutorials/extPotentials.rst>
