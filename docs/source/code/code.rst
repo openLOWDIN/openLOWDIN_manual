@@ -6,12 +6,13 @@ This sections summarizes the multicomponent version of the common quantum chemis
 
 * :ref:`Input`
 * :ref:`CONTROL`
+* :ref:`Lib`
 * :ref:`Scratch`
 * :ref:`Outputs`
-* :ref:`Lib`
 * :ref:`Integrals`
 * :ref:`HF`
 * :ref:`SCF`
+* :ref:`Potentials`
 * :ref:`Properties`
 * :ref:`DFT`
 * :ref:`MBPT`

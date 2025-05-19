@@ -36,6 +36,6 @@ To run openLOWDIN simply run
 
 .. code-block:: bash
 
-        lowdin2 -i inputname.lowdin 
+        openlowdin -i inputname.lowdin 
 
 This will generate a plain text output file called ``inputname.out``
