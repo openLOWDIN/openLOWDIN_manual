@@ -26,13 +26,14 @@ This manual is still in early construction stage! Thanks for your patience.
 
         List of methods/options <code/code.rst>
         Input <code/input.rst>
+        Lib <code/lib.rst>
         CONTROL <code/control.rst>
         Scratch <code/scratch.rst>
         Outputs <code/outputs.rst>
-        Lib <code/lib.rst>
         Integrals <code/integrals.rst>
         HF <code/HF.rst>
         SCF <code/scf.rst>
+        Potentials <code/potentials.rst>
         Properties <code/properties.rst>
         DFT <code/DFT.rst>
         MBPT <code/MBPT.rst>

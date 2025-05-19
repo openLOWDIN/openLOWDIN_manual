@@ -1,4 +1,4 @@
-.. _Quantum Drude Oscillators:
+.. _QDO:
 
 ===============================
 Quantum Drude Oscillators, QDOs
