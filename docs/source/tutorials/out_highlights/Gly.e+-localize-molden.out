@@ -1,0 +1,27 @@
+ --------------------------------------------------------
+            FCHKFILE    1
+   for all species  
+          FileName: Gly.e+-localize-molden.E-.fchk                                                                      
+          FileName: Gly.e+-localize-molden.E+.fchk                                                                      
+ --------------------------------------------------------
+ 
+  ERKALE ORBITAL LOCALIZATION
+ ==============================
+ 
+ERKALE - Localization from Hel, serial version.
+(c) Susi Lehtola, 2010-2016.
+
+[...]
+
+Localizing orbitals: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+Initializing generalized Pipek-Mezey calculation with Mulliken charges... done.
+Initialization of Pipek-Mezey took 0.00 s
+  iter              J        delta J         <G,G>  
+     1   1.154017e+01   1.517727e+00  1.174829e+00   0.00 s
+     2   1.274872e+01   1.208552e+00  1.673368e+00   0.00 s
+[...]
+    89   1.576852e+01   7.696281e-09  5.667527e-09   0.00 s
+Converged.
+Localization done in 0.06 s.
+
+ 

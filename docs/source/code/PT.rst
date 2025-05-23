@@ -42,4 +42,4 @@ To perform calculations with this method, select the UHF reference, add to the c
 
 For third order calculations, you can select in the "CONTROL" block the type of correction to be used by adding "ptP3Method=" with "P3","EP3","OVGF-A","OVGF-B","OVGF-C" and "REN-P3" as options. By default, the six correction types are computed. 
 
-See :ref:`PT2 example`, :ref:`TOEP2 example` and :ref:`PT3 example` for an examples of a propagator calculations in openLowdin
+See :ref:`PT2 example`, :ref:`TOEP2 example` and :ref:`PT3 example` for examples of propagator calculations in openLowdin

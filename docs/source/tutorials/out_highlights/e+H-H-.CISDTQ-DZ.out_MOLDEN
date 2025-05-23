@@ -1,0 +1,18 @@
+   We are printing molden files for the CI states!
+ --------------------------------------------------------
+          MOLDENFILE    1
+   for all species
+          FileName: e+H-H-.CISDTQ-DZ.E-ALPHA.molden
+          FileName: e+H-H-.CISDTQ-DZ.E-BETA.molden
+          FileName: e+H-H-.CISDTQ-DZ.E+.molden
+ --------------------------------------------------------
+
+   We are printing molden files for the CI states!
+ --------------------------------------------------------
+          MOLDENFILE    2
+   for all species
+ for excited state:     2
+          FileName: e+H-H-.CISDTQ-DZ.E-ALPHA-s2.molden
+          FileName: e+H-H-.CISDTQ-DZ.E-BETA-s2.molden
+          FileName: e+H-H-.CISDTQ-DZ.E+-s2.molden
+ --------------------------------------------------------

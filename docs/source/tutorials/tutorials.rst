@@ -9,8 +9,9 @@ In this section you can find multiples examples for openLOWDIN calculations
 * :ref:`Quantum nuclei`
 * :ref:`MP2 example`
 * :ref:`Negative muons`
-* :ref:`Quantum Drude Oscillators`
+* :ref:`QDO`
 * :ref:`External potentials`
+* :ref:`molden example`
 
 
 

@@ -21,16 +21,26 @@ To generate molden or AIM files simply add in the OUTPUTS block:
 - wfxFile
 - NBO47File
 
-openLowdin will generate an .molden, .wfn, .wfx, or .47 file for each quantum species in the input. For molden, there are three format types that can be selected with the CONTROL option 
+openLowdin will generate an .molden, .wfn, .wfx, or .47 file for each quantum species in the input.
+
+For molden, there are three format types that can be selected with the CONTROL option 
 
 .. list-table:: moldenFileFormat =
+   :widths: 25 75
+   :header-rows: 0
    * - QUANTUM
      - Define the coordinates, GTO and MO for each quantum species individually.
    * - STANDARD
-     - Same that QUANTUM but including the coordinates of classical particles.
+     - Same that QUANTUM but including the coordinates of classical particles. (Default)
    * - MIXED
-     - Same that STANDARD but including 1s GTO for each classical particles with zero contribution in the MO. (Default)
+     - Same that STANDARD but including 1s GTO for each classical particles with zero contribution in the MO.
+
+All three formats work with the MOLDEN software. Other visualization codes may require the MIXED or QUANTUM formats.
+
+       If CI or NOCI calculations with "CIStatesToPrint" greater that zero were selected, the molden files will use the CI or NOCI natural orbitals. Also, adding "state=N" in the moldenFile line allow us to select the natural orbitals of the Nth excited state.
        
+See :ref:`molden example` for full input examples to generate molden files
+     
 --------------
 Gaussian Cubes 
 --------------
@@ -93,7 +103,7 @@ For example, to plot electron density in the YZ plane, from -2.5 to 2.5 in both 
 
 In the general approach, the order of the corners is important. point1 must be the central coorner. See the following figure for an example
 
-.. image:: _static/images/outputs_3Dcorners.
+.. image:: ../_static/images/outputs_3Dcorners.svg
    :alt: 3D density and orbitals plots scheme
    :width: 400px
 
@@ -110,5 +120,5 @@ Gaussian fchk files may be used to pass the results to other programs. Currenty,
 
 - fchkFile
 
-to generate a file for each quantum species in the input.
+to generate a file for each quantum species in the input. See :ref:`molden example` for an input example that employs orbital localization.
 
