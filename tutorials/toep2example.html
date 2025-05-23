@@ -83,6 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="muons.html">     Negative muons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qdo.html">     Quantum Drude Oscillators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extPotentials.html">     External potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moldenFilesExample.html">     Molden files</a></li>
 </ul>
 
         </div>
@@ -111,30 +112,49 @@
              
   <section id="toep2-with-quantum-nucleus">
 <span id="toep2-example"></span><h1>TOEP2 with quantum nucleus<a class="headerlink" href="#toep2-with-quantum-nucleus" title="Permalink to this heading"></a></h1>
-<p>This is input computes the second order propagator theory (<a class="reference internal" href="../code/PT.html#pt"><span class="std std-ref">Propagathor Theory, PT</span></a>) corrections to a partially ionized water molecule electronic orbital. In addition to the PT2 flag, “propagatorTheoryCorrection=2”, we add to the input the flag “ptTransitionOperator=T” along with “IonizeMO” and “ionizeSpecies” to select the orbital and the species, and “MOfractionOccupation” to select the occupation.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">GEOMETRY</span>
-   <span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>	<span class="mi">6</span><span class="o">-</span><span class="mi">31</span><span class="n">G</span>	    <span class="mf">0.0000</span>  <span class="mf">0.0000</span>  <span class="mf">0.1173</span> <span class="n">multiplicity</span><span class="o">=</span><span class="mi">1</span> 	
-   <span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>	<span class="mi">6</span><span class="o">-</span><span class="mi">31</span><span class="n">G</span>	    <span class="mf">0.0000</span>  <span class="mf">0.7572</span> <span class="o">-</span><span class="mf">0.4692</span>
-   <span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>	<span class="mi">6</span><span class="o">-</span><span class="mi">31</span><span class="n">G</span>       <span class="mf">0.0000</span> <span class="o">-</span><span class="mf">0.7572</span> <span class="o">-</span><span class="mf">0.4692</span>
-   <span class="n">O</span>		<span class="n">dirac</span>	    <span class="mf">0.0000</span>  <span class="mf">0.0000</span>  <span class="mf">0.1173</span> 
-   <span class="n">H</span><span class="o">-</span><span class="n">a_1</span>	<span class="n">Nakai</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">SPD</span> <span class="mf">0.0000</span>  <span class="mf">0.7572</span> <span class="o">-</span><span class="mf">0.4692</span>
-   <span class="n">H</span><span class="o">-</span><span class="n">b_1</span>	<span class="n">Nakai</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">SPD</span> <span class="mf">0.0000</span> <span class="o">-</span><span class="mf">0.7572</span> <span class="o">-</span><span class="mf">0.4692</span>
-   <span class="n">END</span> <span class="n">GEOMETRY</span>
+<p>Here, we compute the second order propagator theory (<a class="reference internal" href="../code/PT.html#pt"><span class="std std-ref">Propagathor Theory, PT</span></a>) corrections to a partially ionized water molecule electronic orbital (HOMO). The TOEP2 method requires a UHF reference.</p>
+<p>First, run a regular UHF calculation to generate the molecular orbitals, let’s name it “H2O.UHF.lowdin”. These molecular orbitals will be used as the guess for the partially ionized SCF.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GEOMETRY</span>
+	<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>	<span class="mi">6</span><span class="o">-</span><span class="mi">31</span><span class="n">G</span>	    <span class="mf">0.0000</span>  <span class="mf">0.0000</span>  <span class="mf">0.1173</span> <span class="n">multiplicity</span><span class="o">=</span><span class="mi">1</span> 	
+	<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>	<span class="mi">6</span><span class="o">-</span><span class="mi">31</span><span class="n">G</span>	    <span class="mf">0.0000</span>  <span class="mf">0.7572</span> <span class="o">-</span><span class="mf">0.4692</span>
+	<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>	<span class="mi">6</span><span class="o">-</span><span class="mi">31</span><span class="n">G</span>       <span class="mf">0.0000</span> <span class="o">-</span><span class="mf">0.7572</span> <span class="o">-</span><span class="mf">0.4692</span>
+	<span class="n">O</span>	<span class="n">dirac</span>	    <span class="mf">0.0000</span>  <span class="mf">0.0000</span>  <span class="mf">0.1173</span> 
+	<span class="n">H</span><span class="o">-</span><span class="n">a_1</span>	<span class="n">Nakai</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">SPD</span> <span class="mf">0.0000</span>  <span class="mf">0.7572</span> <span class="o">-</span><span class="mf">0.4692</span>
+	<span class="n">H</span><span class="o">-</span><span class="n">b_1</span>	<span class="n">Nakai</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">SPD</span> <span class="mf">0.0000</span> <span class="o">-</span><span class="mf">0.7572</span> <span class="o">-</span><span class="mf">0.4692</span>
+<span class="n">END</span> <span class="n">GEOMETRY</span>
 
-   <span class="n">TASKS</span>
-	   <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;UHF&quot;</span>
-	   <span class="n">propagatorTheoryCorrection</span><span class="o">=</span><span class="mi">2</span>
-   <span class="n">END</span> <span class="n">TASKS</span>
+<span class="n">TASKS</span>
+	<span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;UHF&quot;</span>
+<span class="n">END</span> <span class="n">TASKS</span>
 
-   <span class="n">CONTROL</span>
-	   <span class="n">ionizeSpecies</span><span class="o">=</span><span class="s2">&quot;E-ALPHA&quot;</span>
-	   <span class="n">IonizeMO</span><span class="o">=</span><span class="mi">5</span>
-	   <span class="n">MOfractionOccupation</span><span class="o">=</span><span class="mf">0.5</span>
-	   <span class="n">ptTransitionOperator</span><span class="o">=</span><span class="n">T</span>
-   <span class="n">END</span> <span class="n">CONTROL</span>
 </pre></div>
 </div>
-<p>The TOEP2 method requires a UHF reference. The output will include the summary of the P2 corrections to the partially ionized orbital</p>
+<p>Now, we generate the TOEP2 input, let’s name it “H2O.TOEP2.lowdin”. In addition to the PT2 flag, “propagatorTheoryCorrection=2”, we add to the input the flag “ptTransitionOperator=T” along with “IonizeMO” and “ionizeSpecies” to select the orbital and the species, and “MOfractionOccupation” to select the occupation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GEOMETRY
+	e-(O)	6-31G	    0.0000  0.0000  0.1173 multiplicity=1 	
+	e-(H)	6-31G	    0.0000  0.7572 -0.4692
+	e-(H)	6-31G       0.0000 -0.7572 -0.4692
+	O	dirac	    0.0000  0.0000  0.1173 
+	H-a_1	Nakai-7-SPD 0.0000  0.7572 -0.4692
+	H-b_1	Nakai-7-SPD 0.0000 -0.7572 -0.4692
+END GEOMETRY
+
+TASKS
+	method = &quot;UHF&quot;
+	propagatorTheoryCorrection=2
+END TASKS
+
+CONTROL
+	readCoefficients=T         !read molecular orbitals generated with H2O.UHF.lowdin
+	ionizeSpecies=&quot;E-ALPHA&quot;
+	ionizeMO=5
+	MOfractionOccupation=0.5
+	ptTransitionOperator=T
+END CONTROL
+</pre></div>
+</div>
+<p>Before running this calculation, rename the molecular orbitals file “H2O.UHF.vec” to “H2O.TOEP2.vec”</p>
+<p>The output will include the summary of the P2 corrections to the partially ionized orbital</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         <span class="n">PROPAGATOR</span> <span class="n">FORMALISM</span> <span class="n">FOR</span> <span class="n">SEVERAL</span> <span class="n">FERMIONS</span> <span class="n">SPECIES</span> 
           <span class="n">ORDER</span> <span class="n">OF</span> <span class="n">CORRECTION</span> <span class="o">=</span>     <span class="mi">2</span>  <span class="o">+</span> <span class="n">TRANSITION</span> <span class="n">OPERATOR</span>
             <span class="n">The</span> <span class="n">following</span> <span class="n">articles</span> <span class="n">must</span> <span class="n">be</span> <span class="n">cited</span><span class="p">:</span>
@@ -148,9 +168,8 @@
          <span class="o">------------------------------------------------------------------------------------------</span>
              <span class="n">Orbital</span>     <span class="n">KT</span> <span class="p">(</span><span class="n">eV</span><span class="p">)</span>    <span class="n">EP2</span> <span class="p">(</span><span class="n">eV</span><span class="p">)</span>        <span class="n">P</span><span class="o">.</span><span class="n">S</span>   <span class="n">SCS</span><span class="o">-</span><span class="n">EP2</span><span class="p">(</span><span class="n">eV</span><span class="p">)</span>       <span class="n">P</span><span class="o">.</span><span class="n">S</span>   <span class="n">SOS</span><span class="o">-</span><span class="n">EP2</span><span class="p">(</span><span class="n">eV</span><span class="p">)</span>       <span class="n">P</span><span class="o">.</span><span class="n">S</span>  
          <span class="o">------------------------------------------------------------------------------------------</span>
-                <span class="mi">5</span>       <span class="mf">21.115566</span>   <span class="mf">19.815072</span>    <span class="mf">0.086489</span>   <span class="mf">19.825271</span>    <span class="mf">0.114424</span>   <span class="mf">19.831247</span>    <span class="mf">0.127881</span>
+                <span class="mi">5</span>      <span class="o">-</span><span class="mf">10.364472</span>  <span class="o">-</span><span class="mf">10.768693</span>    <span class="mf">0.327967</span>  <span class="o">-</span><span class="mf">10.740363</span>    <span class="mf">0.357031</span>  <span class="o">-</span><span class="mf">10.725240</span>    <span class="mf">0.369623</span>
          <span class="o">------------------------------------------------------------------------------------------</span>
- 
 </pre></div>
 </div>
 <p>This summary includes the Koopmans’ (KT) and self-energy corrected (EP2) binding energy for the selected orbital. In addition, PT2 calculations with UHF reference include opposite-spin-scaled (SOS) and spin-component-scaled (SCS) results.</p>

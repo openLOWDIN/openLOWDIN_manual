@@ -83,6 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="muons.html">     Negative muons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qdo.html">     Quantum Drude Oscillators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extPotentials.html">     External potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moldenFilesExample.html">     Molden files</a></li>
 </ul>
 
         </div>
@@ -113,9 +114,9 @@
 <span id="pt3-example"></span><h1>PT3 for a Ps-atom complex<a class="headerlink" href="#pt3-for-a-ps-atom-complex" title="Permalink to this heading"></a></h1>
 <p>A PT3 (third order <a class="reference internal" href="../code/PT.html#pt"><span class="std std-ref">Propagathor Theory, PT</span></a>) input on positronium chloride (PsCl), where the electrons and the positron are treated as quantum particles looks like this</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GEOMETRY</span> 
-<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">Cl</span><span class="p">)</span> <span class="n">def2</span><span class="o">-</span><span class="n">tzvppd</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="n">addParticles</span><span class="o">=</span><span class="mi">1</span> <span class="n">multiplicity</span><span class="o">=</span><span class="mi">1</span>                       
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">Cl</span><span class="p">)</span> <span class="n">aug</span><span class="o">-</span><span class="n">cc</span><span class="o">-</span><span class="n">pvdz</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="n">addParticles</span><span class="o">=</span><span class="mi">1</span> <span class="n">multiplicity</span><span class="o">=</span><span class="mi">1</span>                       
 <span class="n">Cl</span>     <span class="n">Dirac</span>       <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>                       
-<span class="n">E</span><span class="o">+</span>     <span class="n">PsX</span><span class="o">-</span><span class="n">TZ</span>      <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="n">E</span><span class="o">+</span>     <span class="n">PsX</span><span class="o">-</span><span class="n">DZ</span>      <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
 <span class="n">END</span> <span class="n">GEOMETRY</span> 
 
 <span class="n">TASKS</span>
@@ -138,16 +139,15 @@ Here, to save computational time, only the self-energy corrections to the positr
      <span class="o">--------------------------------------------</span>
               <span class="n">Method</span>      <span class="n">BE</span> <span class="p">(</span><span class="n">eV</span><span class="p">)</span>     <span class="n">Pole</span> <span class="n">S</span><span class="o">.</span>
      <span class="o">--------------------------------------------</span>
-           <span class="n">KT</span>           <span class="o">-</span><span class="mf">3.921784</span>
-           <span class="n">EP2</span>          <span class="o">-</span><span class="mf">4.687989</span>    <span class="mf">0.970793</span>
-           <span class="n">P3</span>           <span class="o">-</span><span class="mf">5.089637</span>    <span class="mf">0.944634</span>
-           <span class="n">EP3</span>          <span class="o">-</span><span class="mf">5.029551</span>    <span class="mf">0.941481</span>
-           <span class="n">OVGF</span><span class="o">-</span><span class="n">A</span>       <span class="o">-</span><span class="mf">5.158601</span>    <span class="mf">0.930894</span>
-           <span class="n">OVGF</span><span class="o">-</span><span class="n">B</span>       <span class="o">-</span><span class="mf">5.184791</span>    <span class="mf">0.933609</span>
-           <span class="n">OVGF</span><span class="o">-</span><span class="n">C</span>       <span class="o">-</span><span class="mf">5.130513</span>    <span class="mf">0.933177</span>
-           <span class="n">REN</span><span class="o">-</span><span class="n">P3</span>       <span class="o">-</span><span class="mf">5.146522</span>    <span class="mf">0.941929</span>
+           <span class="n">KT</span>           <span class="o">-</span><span class="mf">3.918673</span>
+           <span class="n">EP2</span>          <span class="o">-</span><span class="mf">4.579523</span>    <span class="mf">0.975236</span>
+           <span class="n">P3</span>           <span class="o">-</span><span class="mf">4.904336</span>    <span class="mf">0.954164</span>
+           <span class="n">EP3</span>          <span class="o">-</span><span class="mf">4.830791</span>    <span class="mf">0.951763</span>
+           <span class="n">OVGF</span><span class="o">-</span><span class="n">A</span>       <span class="o">-</span><span class="mf">4.915085</span>    <span class="mf">0.944111</span>
+           <span class="n">OVGF</span><span class="o">-</span><span class="n">B</span>       <span class="o">-</span><span class="mf">4.945115</span>    <span class="mf">0.946181</span>
+           <span class="n">OVGF</span><span class="o">-</span><span class="n">C</span>       <span class="o">-</span><span class="mf">4.900723</span>    <span class="mf">0.945407</span>
+           <span class="n">REN</span><span class="o">-</span><span class="n">P3</span>       <span class="o">-</span><span class="mf">4.946967</span>    <span class="mf">0.952206</span>
      <span class="o">--------------------------------------------</span>
- <span class="n">END</span> <span class="n">OF</span> <span class="n">GENERALIZED</span> <span class="n">ANY</span><span class="o">-</span><span class="n">PARTICLE</span> <span class="n">PROPAGATOR</span> <span class="n">CALCULATIONS</span>
 </pre></div>
 </div>
 <p>In this summary, KT is the eigenvalue of the orbital, which is the reference approximation to the particle binding energy according to Koopmans’ theorem.

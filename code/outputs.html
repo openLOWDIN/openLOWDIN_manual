@@ -89,6 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/muons.html">     Negative muons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/qdo.html">     Quantum Drude Oscillators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/extPotentials.html">     External potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/moldenFilesExample.html">     Molden files</a></li>
 </ul>
 
         </div>
@@ -134,7 +135,13 @@
 <li><p>wfxFile</p></li>
 <li><p>NBO47File</p></li>
 </ul>
-<p>openLowdin will generate an .molden, .wfn, .wfx, or .47 file for each quantum species in the input. For molden, there are three format types that can be selected with the CONTROL option</p>
+<p>openLowdin will generate an .molden, .wfn, .wfx, or .47 file for each quantum species in the input.</p>
+<p>For molden, there are three format types that can be selected with the CONTROL option</p>
+<p>All three formats work with the MOLDEN software. Other visualization codes may require the MIXED or QUANTUM formats.</p>
+<blockquote>
+<div><p>If CI or NOCI calculations with “CIStatesToPrint” greater that zero were selected, the molden files will use the CI or NOCI natural orbitals. Also, adding “state=N” in the moldenFile line allow us to select the natural orbitals of the Nth excited state.</p>
+</div></blockquote>
+<p>See <a class="reference internal" href="../tutorials/moldenFilesExample.html#molden-example"><span class="std std-ref">Molden examples</span></a> for full input examples to generate molden files</p>
 </section>
 <section id="gaussian-cubes">
 <h2>Gaussian Cubes<a class="headerlink" href="#gaussian-cubes" title="Permalink to this heading"></a></h2>
@@ -190,7 +197,7 @@ species=ALL is supported. For orbital plots, choose an orbital with “orbital=N
 <li><p>densityPlot species=”e-” dimensions=3 point1=0.0 2.5 2.5 point2=0.0 -2.5 2.5 point3=0.0 2.5 -2.5</p></li>
 </ul>
 <p>In the general approach, the order of the corners is important. point1 must be the central coorner. See the following figure for an example</p>
-<a class="reference internal image-reference" href="code/_static/images/outputs_3Dcorners."><img alt="3D density and orbitals plots scheme" src="code/_static/images/outputs_3Dcorners." style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/outputs_3Dcorners.svg"><img alt="3D density and orbitals plots scheme" src="../_images/outputs_3Dcorners.svg" width="400px" /></a>
 <p>In both 2D and 3D plots, the number of points is controled either by defining the number of points per side with “pointsPerDim=N”, or the separation between points in one dimension, with “scanStep=N”</p>
 <p>openLowdin will generate three files for Gnuplot: A .dens or a .orb with the raw data of the plot; a .gnp with the gnuplot script to generate the plot; and a .eps with the plot itself.</p>
 </section>
@@ -200,7 +207,7 @@ species=ALL is supported. For orbital plots, choose an orbital with “orbital=N
 <ul class="simple">
 <li><p>fchkFile</p></li>
 </ul>
-<p>to generate a file for each quantum species in the input.</p>
+<p>to generate a file for each quantum species in the input. See <a class="reference internal" href="../tutorials/moldenFilesExample.html#molden-example"><span class="std std-ref">Molden examples</span></a> for an input example that employs orbital localization.</p>
 </section>
 </section>
 

@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Molden examples &mdash; openLOWDIN 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="shortcut icon" href="../_static/openLowdin_logo_black-alpha.svg"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="External Potentials" href="extPotentials.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            openLOWDIN
+              <img src="../_static/openLowdin_logo_white-black.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/about.html">     About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/developers_and_contributors.html">     Developers and contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/installation.html">     Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/getting_started.html">     Getting started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code/code.html">     List of methods/options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/input.html">     Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/lib.html">     Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/control.html">     CONTROL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/scratch.html">     Scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/outputs.html">     Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/integrals.html">     Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/HF.html">     HF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/scf.html">     SCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/potentials.html">     Potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/properties.html">     Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/DFT.html">     DFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/MBPT.html">     MBPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/PT.html">     PT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/CI.html">     CI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/NOCI.html">     NOCI</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">     List of tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="positrons.html">     Positronic systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="positronCovalentBond.html">     Positron covalent bond</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nuclei.html">     Quantum nuclei</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp2example.html">     MP2 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pt2example.html">     PT2 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="toep2example.html">     TOEP2 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pt3example.html">     PT3 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="muons.html">     Negative muons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qdo.html">     Quantum Drude Oscillators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extPotentials.html">     External potentials</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     Molden files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#localized-orbitals-and-fchk-files">Localized orbitals and fchk files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ci-excited-states">CI excited states</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">openLOWDIN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Molden examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/moldenFilesExample.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="molden-examples">
+<span id="molden-example"></span><h1>Molden examples<a class="headerlink" href="#molden-examples" title="Permalink to this heading"></a></h1>
+<p>Running the following input of positronic glycine</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SYSTEM_DESCRIPTION</span><span class="o">=</span><span class="s1">&#39;Gly.e+-molden&#39;</span>
+
+<span class="n">GEOMETRY</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.851078</span>    <span class="mf">0.379034</span>    <span class="mf">0.538699</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.011668</span>   <span class="o">-</span><span class="mf">0.714576</span>    <span class="mf">1.101899</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.016098</span>   <span class="o">-</span><span class="mf">0.668656</span>    <span class="mf">2.636109</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.714088</span>    <span class="mf">0.201754</span>    <span class="mf">3.154209</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>    <span class="o">-</span><span class="mf">0.685842</span>   <span class="o">-</span><span class="mf">1.520986</span>    <span class="mf">3.175689</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">1.816418</span>    <span class="mf">0.263714</span>    <span class="mf">0.801099</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.409998</span>   <span class="o">-</span><span class="mf">1.655016</span>    <span class="mf">0.751139</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>    <span class="o">-</span><span class="mf">0.992842</span>   <span class="o">-</span><span class="mf">0.593136</span>    <span class="mf">0.726189</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.527967</span>    <span class="mf">1.271782</span>    <span class="mf">0.883152</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.787819</span>    <span class="mf">0.376813</span>   <span class="o">-</span><span class="mf">0.469282</span>
+<span class="n">e</span><span class="o">+</span> <span class="n">PSX</span><span class="o">-</span><span class="n">TZ</span>        <span class="mf">0.714088</span>    <span class="mf">0.201754</span>    <span class="mf">3.154209</span>
+<span class="n">e</span><span class="o">+</span> <span class="n">PSX</span><span class="o">-</span><span class="n">TZ</span>       <span class="o">-</span><span class="mf">0.685842</span>   <span class="o">-</span><span class="mf">1.520986</span>    <span class="mf">3.175689</span> <span class="n">addParticles</span><span class="o">=-</span><span class="mi">1</span>
+<span class="n">N</span> <span class="n">dirac</span>          <span class="mf">0.851078</span>    <span class="mf">0.379034</span>    <span class="mf">0.538699</span>
+<span class="n">C</span> <span class="n">dirac</span>          <span class="mf">0.011668</span>   <span class="o">-</span><span class="mf">0.714576</span>    <span class="mf">1.101899</span>
+<span class="n">C</span> <span class="n">dirac</span>          <span class="mf">0.016098</span>   <span class="o">-</span><span class="mf">0.668656</span>    <span class="mf">2.636109</span>
+<span class="n">O</span> <span class="n">dirac</span>          <span class="mf">0.714088</span>    <span class="mf">0.201754</span>    <span class="mf">3.154209</span>
+<span class="n">O</span> <span class="n">dirac</span>         <span class="o">-</span><span class="mf">0.685842</span>   <span class="o">-</span><span class="mf">1.520986</span>    <span class="mf">3.175689</span>
+<span class="n">H</span> <span class="n">dirac</span>          <span class="mf">1.816418</span>    <span class="mf">0.263714</span>    <span class="mf">0.801099</span>
+<span class="n">H</span> <span class="n">dirac</span>          <span class="mf">0.409998</span>   <span class="o">-</span><span class="mf">1.655016</span>    <span class="mf">0.751139</span>
+<span class="n">H</span> <span class="n">dirac</span>         <span class="o">-</span><span class="mf">0.992842</span>   <span class="o">-</span><span class="mf">0.593136</span>    <span class="mf">0.726189</span>
+<span class="n">H</span> <span class="n">dirac</span>          <span class="mf">0.527967</span>    <span class="mf">1.271782</span>    <span class="mf">0.883152</span>
+<span class="n">H</span> <span class="n">dirac</span>          <span class="mf">0.787819</span>    <span class="mf">0.376813</span>   <span class="o">-</span><span class="mf">0.469282</span>
+<span class="n">END</span> <span class="n">GEOMETRY</span>
+
+<span class="n">TASKS</span>
+	<span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;RHF&quot;</span>
+<span class="n">END</span> <span class="n">TASKS</span>
+
+<span class="n">OUTPUTS</span>
+	<span class="n">moldenFile</span>
+<span class="n">END</span> <span class="n">OUTPUTS</span>
+
+
+
+
+</pre></div>
+</div>
+<p>Produces two molden files, one for the electrons and one for the positron, their filenames are provided in the output.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">--------------------------------------------------------</span>
+ <span class="n">MOLDENFILE</span>             <span class="mi">1</span>
+                   <span class="k">for</span> <span class="nb">all</span> <span class="n">species</span> 
+          <span class="n">FileName</span><span class="p">:</span> <span class="n">Gly</span><span class="o">.</span><span class="n">e</span><span class="o">+-</span><span class="n">molden</span><span class="o">.</span><span class="n">E</span><span class="o">-.</span><span class="n">molden</span>                                                                             
+          <span class="n">FileName</span><span class="p">:</span> <span class="n">Gly</span><span class="o">.</span><span class="n">e</span><span class="o">+-</span><span class="n">molden</span><span class="o">.</span><span class="n">E</span><span class="o">+.</span><span class="n">molden</span>                                                                             
+ <span class="o">--------------------------------------------------------</span>
+</pre></div>
+</div>
+<p>These files contain the the electronic and positronic orbitals. We can visualize these orbitals using the molden software (<a class="reference external" href="https://www.theochem.ru.nl/molden/">https://www.theochem.ru.nl/molden/</a> ), as observed in the following figure</p>
+<a class="reference internal image-reference" href="../_images/positronicGlycineOrbitals.jpg"><img alt="Molden files from Gly.e+-molden.out" src="../_images/positronicGlycineOrbitals.jpg" style="width: 600px;" /></a>
+<section id="localized-orbitals-and-fchk-files">
+<h2>Localized orbitals and fchk files<a class="headerlink" href="#localized-orbitals-and-fchk-files" title="Permalink to this heading"></a></h2>
+<p>Localized orbitals are generated with the Erkale software (<a class="reference external" href="https://github.com/susilehtola/erkale">https://github.com/susilehtola/erkale</a> ), adding the following lines in the CONTROL block</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SYSTEM_DESCRIPTION</span><span class="o">=</span><span class="s1">&#39;Gly.e+-localize-molden&#39;</span>
+
+<span class="n">GEOMETRY</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.851078</span>    <span class="mf">0.379034</span>    <span class="mf">0.538699</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.011668</span>   <span class="o">-</span><span class="mf">0.714576</span>    <span class="mf">1.101899</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.016098</span>   <span class="o">-</span><span class="mf">0.668656</span>    <span class="mf">2.636109</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.714088</span>    <span class="mf">0.201754</span>    <span class="mf">3.154209</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>    <span class="o">-</span><span class="mf">0.685842</span>   <span class="o">-</span><span class="mf">1.520986</span>    <span class="mf">3.175689</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">1.816418</span>    <span class="mf">0.263714</span>    <span class="mf">0.801099</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.409998</span>   <span class="o">-</span><span class="mf">1.655016</span>    <span class="mf">0.751139</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>    <span class="o">-</span><span class="mf">0.992842</span>   <span class="o">-</span><span class="mf">0.593136</span>    <span class="mf">0.726189</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.527967</span>    <span class="mf">1.271782</span>    <span class="mf">0.883152</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="mi">6</span><span class="o">-</span><span class="mi">311</span><span class="n">G</span>     <span class="mf">0.787819</span>    <span class="mf">0.376813</span>   <span class="o">-</span><span class="mf">0.469282</span>
+<span class="n">e</span><span class="o">+</span> <span class="n">PSX</span><span class="o">-</span><span class="n">TZ</span>        <span class="mf">0.714088</span>    <span class="mf">0.201754</span>    <span class="mf">3.154209</span>
+<span class="n">e</span><span class="o">+</span> <span class="n">PSX</span><span class="o">-</span><span class="n">TZ</span>       <span class="o">-</span><span class="mf">0.685842</span>   <span class="o">-</span><span class="mf">1.520986</span>    <span class="mf">3.175689</span> <span class="n">addParticles</span><span class="o">=-</span><span class="mi">1</span>
+<span class="n">N</span> <span class="n">dirac</span>          <span class="mf">0.851078</span>    <span class="mf">0.379034</span>    <span class="mf">0.538699</span>
+<span class="n">C</span> <span class="n">dirac</span>          <span class="mf">0.011668</span>   <span class="o">-</span><span class="mf">0.714576</span>    <span class="mf">1.101899</span>
+<span class="n">C</span> <span class="n">dirac</span>          <span class="mf">0.016098</span>   <span class="o">-</span><span class="mf">0.668656</span>    <span class="mf">2.636109</span>
+<span class="n">O</span> <span class="n">dirac</span>          <span class="mf">0.714088</span>    <span class="mf">0.201754</span>    <span class="mf">3.154209</span>
+<span class="n">O</span> <span class="n">dirac</span>         <span class="o">-</span><span class="mf">0.685842</span>   <span class="o">-</span><span class="mf">1.520986</span>    <span class="mf">3.175689</span>
+<span class="n">H</span> <span class="n">dirac</span>          <span class="mf">1.816418</span>    <span class="mf">0.263714</span>    <span class="mf">0.801099</span>
+<span class="n">H</span> <span class="n">dirac</span>          <span class="mf">0.409998</span>   <span class="o">-</span><span class="mf">1.655016</span>    <span class="mf">0.751139</span>
+<span class="n">H</span> <span class="n">dirac</span>         <span class="o">-</span><span class="mf">0.992842</span>   <span class="o">-</span><span class="mf">0.593136</span>    <span class="mf">0.726189</span>
+<span class="n">H</span> <span class="n">dirac</span>          <span class="mf">0.527967</span>    <span class="mf">1.271782</span>    <span class="mf">0.883152</span>
+<span class="n">H</span> <span class="n">dirac</span>          <span class="mf">0.787819</span>    <span class="mf">0.376813</span>   <span class="o">-</span><span class="mf">0.469282</span>
+<span class="n">END</span> <span class="n">GEOMETRY</span>
+
+<span class="n">TASKS</span>
+	<span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;RHF&quot;</span>
+<span class="n">END</span> <span class="n">TASKS</span>
+
+<span class="n">CONTROL</span>
+	<span class="n">localizeOrbitals</span><span class="o">=.</span><span class="n">T</span><span class="o">.</span>
+	<span class="n">erkaleLocalizationMethod</span><span class="o">=</span><span class="s2">&quot;MU&quot;</span>
+<span class="n">END</span> <span class="n">CONTROL</span>
+
+<span class="n">OUTPUTS</span>
+	<span class="n">moldenFile</span>
+<span class="n">END</span> <span class="n">OUTPUTS</span>
+</pre></div>
+</div>
+<p>Here with “MU” we selected the Pipek-Mozay localization scheme using Mulliken charges. Check Erkale manual for a full list of the localization procedures available.
+To transfer the orbitals to Erkale, openLowdin generates fchk files. In the output, you will find the Erkale localization log.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">--------------------------------------------------------</span>
+            <span class="n">FCHKFILE</span>    <span class="mi">1</span>
+   <span class="k">for</span> <span class="nb">all</span> <span class="n">species</span>  
+          <span class="n">FileName</span><span class="p">:</span> <span class="n">Gly</span><span class="o">.</span><span class="n">e</span><span class="o">+-</span><span class="n">localize</span><span class="o">-</span><span class="n">molden</span><span class="o">.</span><span class="n">E</span><span class="o">-.</span><span class="n">fchk</span>                                                                      
+          <span class="n">FileName</span><span class="p">:</span> <span class="n">Gly</span><span class="o">.</span><span class="n">e</span><span class="o">+-</span><span class="n">localize</span><span class="o">-</span><span class="n">molden</span><span class="o">.</span><span class="n">E</span><span class="o">+.</span><span class="n">fchk</span>                                                                      
+ <span class="o">--------------------------------------------------------</span>
+ 
+  <span class="n">ERKALE</span> <span class="n">ORBITAL</span> <span class="n">LOCALIZATION</span>
+ <span class="o">==============================</span>
+ 
+<span class="n">ERKALE</span> <span class="o">-</span> <span class="n">Localization</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Hel</span><span class="p">,</span> <span class="n">serial</span> <span class="n">version</span><span class="o">.</span>
+<span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">Susi</span> <span class="n">Lehtola</span><span class="p">,</span> <span class="mi">2010</span><span class="o">-</span><span class="mf">2016.</span>
+
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+<span class="n">Localizing</span> <span class="n">orbitals</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span> <span class="mi">15</span> <span class="mi">16</span> <span class="mi">17</span> <span class="mi">18</span> <span class="mi">19</span> <span class="mi">20</span>
+<span class="n">Initializing</span> <span class="n">generalized</span> <span class="n">Pipek</span><span class="o">-</span><span class="n">Mezey</span> <span class="n">calculation</span> <span class="k">with</span> <span class="n">Mulliken</span> <span class="n">charges</span><span class="o">...</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Initialization</span> <span class="n">of</span> <span class="n">Pipek</span><span class="o">-</span><span class="n">Mezey</span> <span class="n">took</span> <span class="mf">0.00</span> <span class="n">s</span>
+  <span class="nb">iter</span>              <span class="n">J</span>        <span class="n">delta</span> <span class="n">J</span>         <span class="o">&lt;</span><span class="n">G</span><span class="p">,</span><span class="n">G</span><span class="o">&gt;</span>  
+     <span class="mi">1</span>   <span class="mf">1.154017e+01</span>   <span class="mf">1.517727e+00</span>  <span class="mf">1.174829e+00</span>   <span class="mf">0.00</span> <span class="n">s</span>
+     <span class="mi">2</span>   <span class="mf">1.274872e+01</span>   <span class="mf">1.208552e+00</span>  <span class="mf">1.673368e+00</span>   <span class="mf">0.00</span> <span class="n">s</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="mi">89</span>   <span class="mf">1.576852e+01</span>   <span class="mf">7.696281e-09</span>  <span class="mf">5.667527e-09</span>   <span class="mf">0.00</span> <span class="n">s</span>
+<span class="n">Converged</span><span class="o">.</span>
+<span class="n">Localization</span> <span class="n">done</span> <span class="ow">in</span> <span class="mf">0.06</span> <span class="n">s</span><span class="o">.</span>
+
+ 
+</pre></div>
+</div>
+<p>For this example, the localization procedure only affects the electronic orbitals, because there is only a single positronic orbital.
+When localized orbitals are requested, openlowdin will generate the molden files with them. Check in the following figure a comparison between the non-localized (right) and localized (left) HOMO of positronic glycine</p>
+<a class="reference internal image-reference" href="../_images/positronicGlycineLocalizedOrbitals.jpg"><img alt="Molden files from Gly.e+-molden.out and Gly.e+-localize-molden.out" src="../_images/positronicGlycineLocalizedOrbitals.jpg" style="width: 600px;" /></a>
+</section>
+<section id="ci-excited-states">
+<h2>CI excited states<a class="headerlink" href="#ci-excited-states" title="Permalink to this heading"></a></h2>
+<p>When we run a configuration interaction calculation we can generate molden files for the excited states. For example, in the <a class="reference internal" href="positronCovalentBond.html#positronbond"><span class="std std-ref">Positron covalent bond</span></a> (e+H-H-.CISDTQ-DZ.lowdin) example we added “state=2” to get the natural orbitals of the first excited state. In the output of that calculation we find</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   We are printing molden files for the CI states!
+ --------------------------------------------------------
+          MOLDENFILE    1
+   for all species
+          FileName: e+H-H-.CISDTQ-DZ.E-ALPHA.molden
+          FileName: e+H-H-.CISDTQ-DZ.E-BETA.molden
+          FileName: e+H-H-.CISDTQ-DZ.E+.molden
+ --------------------------------------------------------
+
+   We are printing molden files for the CI states!
+ --------------------------------------------------------
+          MOLDENFILE    2
+   for all species
+ for excited state:     2
+          FileName: e+H-H-.CISDTQ-DZ.E-ALPHA-s2.molden
+          FileName: e+H-H-.CISDTQ-DZ.E-BETA-s2.molden
+          FileName: e+H-H-.CISDTQ-DZ.E+-s2.molden
+ --------------------------------------------------------
+</pre></div>
+</div>
+<p>In the following figure we plot the positronic natural orbitals with the highest contributions to the ground (right) and first excited (left) states</p>
+<a class="reference internal image-reference" href="../_images/positronBondNaturalOrbitals.jpg"><img alt="Molden files from e+H-H-.CISDTQ-DZ" src="../_images/positronBondNaturalOrbitals.jpg" style="width: 1000px;" /></a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="extPotentials.html" class="btn btn-neutral float-left" title="External Potentials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, openLOWDIN.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
