@@ -6,7 +6,7 @@ Positron covalent bond
 
 This is an example on how to compute the binding energy of a dihydride positron-bound system, using :ref:`CI` calculations, as was done in https://doi.org/10.1002/anie.201800914
 
-.. math:: [\matrhm{H}^-\mathrm{e}^+\mathrm{H}^-] \longrightarrow \mathrm{PsH} + \mathrm{H}^-	  
+.. math:: [\mathrm{H}^-\mathrm{e}^+\mathrm{H}^-] \longrightarrow \mathrm{PsH} + \mathrm{H}^-	  
 
 This input computes the energy of the dihydride system
 
