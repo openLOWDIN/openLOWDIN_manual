@@ -32,7 +32,8 @@ release = '0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-'sphinx.ext.autosectionlabel'
+'sphinx.ext.autosectionlabel',
+'sphinx.ext.imgconverter'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -58,9 +59,9 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_logo = 'logo/openLowdin_logo_white-black.svg'
-latex_logo = 'logo/openLowdin_logo_white-black.png'
-html_favicon = 'logo/openLowdin_logo_black-alpha.svg'
+html_logo = 'logo/openLowdin_logo_v2_white_black.svg'
+latex_logo = 'logo/openLowdin_logo_v2_white_black.png'
+html_favicon = 'logo/openLowdin_logo_v2_white_black.svg'
 
 epub_author = 'Jorge Charry, Félix Moncada'
 

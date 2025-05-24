@@ -7,18 +7,20 @@ Many-Body Perturbation Theory, MBPT
 OpenLowdin can perform second order many-body perturbation theory (MP2) corrections to the energy on systems including any kind of quantum particle. These corrections are probably the simplest way to recover the effects of correlation between particles of different species. 
 
 .. math::
+   :nowrap:
+
    \begin{align}
        E_{\text{MP2}}=& \text{E}_{\text{HF}} + \sum_{\alpha}^{N_{typ}} \text{E}_{\alpha \alpha}^{(2)} + \sum_{\alpha\beta}^{N_{typ}} \text{E}_{\alpha \beta}^{(2)}, \\
        E_{\alpha \alpha}^{(2)}=& \frac{q_{\alpha}^2}{4}
-       \sum_{ij}^{oc_\alpha}
-       \sum_{ab}^{vir_\alpha}
+       \sum_{ij}^{oc_{\alpha}}
+       \sum_{ab}^{vir_{\alpha}}
        \frac{\mid {\langle i_{\alpha} j_{\alpha} \mid \mid a_{\alpha} b_{\alpha} \rangle }  \mid ^2}
        {\varepsilon_{\alpha i} + \varepsilon_{\alpha j} - \varepsilon_{\alpha a} - \varepsilon_{\alpha b}}, \notag \\
        E_{\alpha \beta}^{(2)}=& q_{\alpha}q_{\beta}
-       \sum_{i}^{oc_\alpha}
-       \sum_{j}^{oc_\beta}
-       \sum_{a}^{vir_\alpha}
-       \sum_{b}^{vir_\beta}
+       \sum_{i}^{oc_{\alpha}}
+       \sum_{j}^{oc_{\beta}}
+       \sum_{a}^{vir_{\alpha}}
+       \sum_{b}^{vir_{\beta}}
        \frac{\mid {\langle i_{\alpha} j_{\beta}  \mid a_{\alpha} b_{\beta} \rangle } \mid ^2}
        {\varepsilon_{\alpha i} + \varepsilon_{\beta j} - \varepsilon_{\alpha a}- \varepsilon_{\beta b}}. \notag
    \end{align}

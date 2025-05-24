@@ -12,20 +12,22 @@ third order corrections (APMO/P3) and renormalized third order corrections (APMO
 At second order, there are intraspecies and interspecies contributions to the self energy corrections to the eigenvalue of reference orbital p:
 
 .. math::
+   :nowrap:
+
    \begin{align}
    \omega_{\alpha p}  = &  \epsilon_{\alpha p}+\Sigma_{\alpha pp}(\omega_{\alpha p}) \notag \\
    \Sigma_{\alpha pp}^{(2)}(\omega_{\alpha p}) = & \notag
    \sum_{i}^{oc_\alpha} \sum_{ab}^{vir_\alpha}
-   \frac{| \langle p_\alpha i_\alpha||a_\alpha b_\alpha\rangle |^{2} }
+   \frac{| \langle p_\alpha i_\alpha||a_\alpha b_\alpha\rangle|^{2} }
    {\omega_{\alpha p}+\epsilon_{\alpha i}-\epsilon_{\alpha a}-\epsilon_{\alpha b}}
    +\sum_{ij}^{oc_\alpha} \sum_{a}^{vir_\alpha}
-   \frac{| \langle p_\alpha a_\alpha||i_\alpha j_\alpha\rangle |^{2} }       
+   \frac{| \langle p_\alpha a_\alpha||i_\alpha j_\alpha\rangle|^{2} }       
    {\omega_{\alpha p}+\epsilon_{\alpha a}-\epsilon_{\alpha i}-\epsilon_{\alpha j}} \\ & 
    +\sum_{a}^{vir_\alpha} \sum_{i}^{oc_\beta} \sum_{b}^{vir_\beta}
-   \frac{| \langle p_\alpha i_\beta|a_\alpha b_\beta\rangle |^{2} }
+   \frac{| \langle p_\alpha i_\beta|a_\alpha b_\beta\rangle|^{2} }
    {\omega_{\alpha p}+\epsilon_{\beta i}-\epsilon_{\alpha a}-\epsilon_{\beta b}}
    +\sum_{i}^{oc_\alpha}\sum_{j}^{oc_\beta} \sum_{a}^{vir_\beta}
-   \frac{| \langle p_\alpha a_\beta|i_\alpha j_\beta\rangle |^{2}}
+   \frac{| \langle p_\alpha a_\beta|i_\alpha j_\beta\rangle|^{2}}
    {\omega_{\alpha p}+\epsilon_{\beta a}-\epsilon_{\alpha i}-\epsilon_{\beta j}}
    \end{align}
 
