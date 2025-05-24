@@ -137,6 +137,24 @@
 </ul>
 <p>openLowdin will generate an .molden, .wfn, .wfx, or .47 file for each quantum species in the input.</p>
 <p>For molden, there are three format types that can be selected with the CONTROL option</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">moldenFileFormat =</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>QUANTUM</p></td>
+<td><p>Define the coordinates, GTO and MO for each quantum species individually.</p></td>
+</tr>
+<tr class="row-even"><td><p>STANDARD</p></td>
+<td><p>Same that QUANTUM but including the coordinates of classical particles. (Default)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MIXED</p></td>
+<td><p>Same that STANDARD but including 1s GTO for each classical particles with zero contribution in the MO.</p></td>
+</tr>
+</tbody>
+</table>
 <p>All three formats work with the MOLDEN software. Other visualization codes may require the MIXED or QUANTUM formats.</p>
 <blockquote>
 <div><p>If CI or NOCI calculations with “CIStatesToPrint” greater that zero were selected, the molden files will use the CI or NOCI natural orbitals. Also, adding “state=N” in the moldenFile line allow us to select the natural orbitals of the Nth excited state.</p>
