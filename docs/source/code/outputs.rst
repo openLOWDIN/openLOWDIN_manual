@@ -28,6 +28,7 @@ For molden, there are three format types that can be selected with the CONTROL o
 .. list-table:: moldenFileFormat =
    :widths: 25 75
    :header-rows: 0
+
    * - QUANTUM
      - Define the coordinates, GTO and MO for each quantum species individually.
    * - STANDARD
