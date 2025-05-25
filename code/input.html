@@ -144,35 +144,109 @@ The input file consists of different blocks enclosed by the lines <code class="d
 </div>
 <p>each line define either a new particle (quantum or point charge), or a new basis center (quantum particles only).</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">SPECIES_SYMBOL</span></code> <strong>[character]</strong>: It’s the symbol quantum particle as defined in the <code class="docutils literal notranslate"><span class="pre">lib/dataBases/elementalParticles.lib</span></code> and <code class="docutils literal notranslate"><span class="pre">lib/dataBases/constantsOfCoupling.lib</span></code> files, or the symbol of point charges defined in <code class="docutils literal notranslate"><span class="pre">lib/dataBases/atomicElements.lib</span></code>. See <a class="reference internal" href="lib.html#databases"><span class="std std-ref">DataBases</span></a> to define or redefine particles.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">BASIS_NAME</span></code> <strong>[character]</strong>: For quantum particles, this corresponds to the name of the basis set, the code will look in the <code class="docutils literal notranslate"><span class="pre">BASIS</span></code> block or in the folder <code class="docutils literal notranslate"><span class="pre">lib/basis</span></code>. For point charge simply use <code class="docutils literal notranslate"><span class="pre">dirac`</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">X_COORD</span></code>, <code class="docutils literal notranslate"><span class="pre">Y_COORD</span></code>, <code class="docutils literal notranslate"><span class="pre">Z_COORD</span></code> <strong>[real]</strong>: Coordinates of the basis set center origin or position of the point charge.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPECIES_SYMBOL</span></code> <em>[character]</em>
+symbol of the quantum particle as defined in the <code class="docutils literal notranslate"><span class="pre">lib/dataBases/elementalParticles.lib</span></code> and <code class="docutils literal notranslate"><span class="pre">lib/dataBases/constantsOfCoupling.lib</span></code> files, or the symbol of point charges defined in <code class="docutils literal notranslate"><span class="pre">lib/dataBases/atomicElements.lib</span></code>. See <a class="reference internal" href="lib.html#databases"><span class="std std-ref">DataBases</span></a> to define or redefine particles.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BASIS_NAME</span></code> <em>[character]</em>
+for quantum particles, this corresponds to the name of the basis set, the code will look in the <code class="docutils literal notranslate"><span class="pre">BASIS</span></code> block or in the folder <code class="docutils literal notranslate"><span class="pre">lib/basis</span></code>. For point charge simply use <code class="docutils literal notranslate"><span class="pre">dirac`</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X_COORD</span></code>, <code class="docutils literal notranslate"><span class="pre">Y_COORD</span></code>, <code class="docutils literal notranslate"><span class="pre">Z_COORD</span></code> <em>[real]</em>
+coordinates of the basis set center origin or position of the point charge.</p></li>
 </ul>
 <p>Besides the above mandatory elements, the following flags can be added to modify the properties of the particles declared within the same line.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">addParticles=</span></code> <strong>[integer]</strong> is used to modify the number of particles of a quantum species. Positive values increase number of particles, negative values decrease the number of particles. To not be confused with total charge. Default <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">multiplicity=</span></code> <strong>[integer]</strong> declare the multiplicity of the quantum species as <span class="math notranslate nohighlight">\(2S+1\)</span>, where <span class="math notranslate nohighlight">\(S\)</span> is the total spin within the quantum species. Default <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">q=</span></code> <strong>[real]</strong> charge of the particle, quantum or point charge. Default defined in <code class="docutils literal notranslate"><span class="pre">lib/dataBases/elementalParticles.lib</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">m=</span></code> <strong>[real]</strong> mass of the particle, quantum only. Default defined in <code class="docutils literal notranslate"><span class="pre">lib/dataBases/elementalParticles.lib</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">omega=</span></code> <strong>[real]</strong> frequency of the harmonic potential of the particle, quantum only. Default <code class="docutils literal notranslate"><span class="pre">0.0</span></code> See <a class="reference internal" href="potentials.html#potentials"><span class="std std-ref">Potentials</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">qdoCenterOf=</span></code> <strong>[character]</strong> declare this particle as the point charge center of the quantum species in <strong>[character]</strong> within the QDO formalism. See <a class="reference internal" href="../tutorials/qdo.html#qdo"><span class="std std-ref">Quantum Drude Oscillators, QDOs</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addParticles=</span></code> <em>[integer]</em>
+modify the number of particles of a quantum species. Positive values increase number of particles, negative values decrease the number of particles.
+To not be confused with total charge. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">multiplicity=</span></code> <em>[integer]</em>
+declare the multiplicity of the quantum species as <span class="math notranslate nohighlight">\(2S+1\)</span>, where <span class="math notranslate nohighlight">\(S\)</span> is the total spin within the quantum species. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q=</span></code> <em>[real]</em>
+charge of the particle, quantum or point charge. <em>Default</em> defined in <code class="docutils literal notranslate"><span class="pre">lib/dataBases/elementalParticles.lib</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m=</span></code> <em>[real]</em>
+mass of the particle, quantum only. <em>Default</em> defined in <code class="docutils literal notranslate"><span class="pre">lib/dataBases/elementalParticles.lib</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">omega=</span></code> <em>[real]</em>
+frequency of the harmonic potential of the particle, quantum only. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0</span></code> See <a class="reference internal" href="potentials.html#potentials"><span class="std std-ref">Potentials</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qdoCenterOf=</span></code> <em>[character]</em>
+declare this particle as the point charge center of the quantum species in <em>[character]</em> within the QDO formalism. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code> See <a class="reference internal" href="../tutorials/qdo.html#qdo"><span class="std std-ref">Quantum Drude Oscillators, QDOs</span></a></p></li>
 </ul>
 <p>Note that a duplicate of one of the above keywords will overwrite the previous values for particles defined with the same name.</p>
 </section>
 <section id="tasks-block">
 <h2>TASKS block<a class="headerlink" href="#tasks-block" title="Permalink to this heading"></a></h2>
 <p>This block control the method to be computed</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">method=</span></code> <strong>[character]</strong> Type of Hartree-Fock method. Values: <code class="docutils literal notranslate"><span class="pre">RHF</span></code>, <code class="docutils literal notranslate"><span class="pre">UHF</span></code>.  Default <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code> See <a class="reference internal" href="HF.html#hf"><span class="std std-ref">Hartree-Fock, HF</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">optimizeGeometry=</span></code> <strong>[logical]</strong> Activates geometry optimization. Default <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mollerPlessetCorrection=</span></code> <strong>[integer]</strong> Order of Möller-Plesset Perturbation correction. Values: <code class="docutils literal notranslate"><span class="pre">2</span></code>. Default <code class="docutils literal notranslate"><span class="pre">0</span></code> See <a class="reference internal" href="MBPT.html#mbpt"><span class="std std-ref">Many-Body Perturbation Theory, MBPT</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">epsteinNesbetCorrection=</span></code> <strong>[integer]</strong> Order of Epstein-Nesbet correction. Values: <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>. Default <code class="docutils literal notranslate"><span class="pre">0</span></code> See <a class="reference internal" href="MBPT.html#mbpt"><span class="std std-ref">Many-Body Perturbation Theory, MBPT</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">propagatorTheoryCorrection=</span></code> <strong>[integer]</strong> Order of propagator theory correction. Values: <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>. Default <code class="docutils literal notranslate"><span class="pre">0</span></code> See <a class="reference internal" href="PT.html#pt"><span class="std std-ref">Propagathor Theory, PT</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">nonOrthogonalConfigurationInteraction=</span></code> <strong>[logical]</strong> Performs non-Orthogonal Configuration Interaction calculation See <a class="reference internal" href="NOCI.html#noci"><span class="std std-ref">Non-Orthogonal Configuration Interaction, NOCI</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">configurationInteractionLevel=</span></code> <strong>[character]</strong> Select Configuration Interaction level. Values: <code class="docutils literal notranslate"><span class="pre">CIS</span></code>, <code class="docutils literal notranslate"><span class="pre">CISD</span></code>, <code class="docutils literal notranslate"><span class="pre">CISD-</span></code>, <code class="docutils literal notranslate"><span class="pre">CISD+</span></code>, <code class="docutils literal notranslate"><span class="pre">CISDT</span></code>, <code class="docutils literal notranslate"><span class="pre">CISDTQ</span></code>, <code class="docutils literal notranslate"><span class="pre">SCI</span></code>, <code class="docutils literal notranslate"><span class="pre">FCI</span></code>. Default <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code> See <a class="reference internal" href="CI.html#ci"><span class="std std-ref">Configuration Interaction, CI</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">TDHF=</span></code> <strong>[logical]</strong> Default <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cosmo=</span></code> <strong>[logical]</strong> Performs an implicit solvent job using COSMO model. Default <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">subsystemEmbedding=</span></code> <strong>[logical]</strong> Default <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">method=</span></code> <em>[character]</em>
+Type of Hartree-Fock method See <a class="reference internal" href="HF.html#hf"><span class="std std-ref">Hartree-Fock, HF</span></a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 66.7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;RHF&quot;</span></code></p></td>
+<td><p>Restricted Hartree-Fock</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;UHF&quot;</span></code></p></td>
+<td><p>Unrestricted Hartree-Fock</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></td>
+<td><p>No Hartree-Fock. <em>Default</em></p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">optimizeGeometry=</span></code> <em>[logical]</em>
+Activates geometry optimization. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mollerPlessetCorrection=</span></code> <em>[integer]</em>
+Order of Möller-Plesset Perturbation correction. Values: <code class="docutils literal notranslate"><span class="pre">2</span></code>. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> See <a class="reference internal" href="MBPT.html#mbpt"><span class="std std-ref">Many-Body Perturbation Theory, MBPT</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">epsteinNesbetCorrection=</span></code> <em>[integer]</em>
+Order of Epstein-Nesbet correction. Values: <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> See <a class="reference internal" href="MBPT.html#mbpt"><span class="std std-ref">Many-Body Perturbation Theory, MBPT</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">propagatorTheoryCorrection=</span></code> <em>[integer]</em>
+Order of propagator theory correction. Values: <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> See <a class="reference internal" href="PT.html#pt"><span class="std std-ref">Propagathor Theory, PT</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nonOrthogonalConfigurationInteraction=</span></code> <em>[logical]</em>
+Performs non-Orthogonal Configuration Interaction calculation. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">False</span></code> See <a class="reference internal" href="NOCI.html#noci"><span class="std std-ref">Non-Orthogonal Configuration Interaction, NOCI</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configurationInteractionLevel=</span></code> <em>[character]</em>
+Select Configuration Interaction level. See <a class="reference internal" href="CI.html#ci"><span class="std std-ref">Configuration Interaction, CI</span></a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 66.7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;CIS&quot;</span></code></p></td>
+<td><p>Singles</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;CISD&quot;</span></code></p></td>
+<td><p>Singles and doubles</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;CISD-&quot;</span></code></p></td>
+<td><p>Singles, doubles interspecies only</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;CISD+&quot;</span></code></p></td>
+<td><p>Singles, doubles, triples interpecies only</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;CISDT&quot;</span></code></p></td>
+<td><p>Singles, doubles, triples</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;CISDTQ&quot;</span></code></p></td>
+<td><p>Singles, doubles, triples, quadruples</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;SCI&quot;</span></code></p></td>
+<td><p>Selected CI</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;FCI&quot;</span></code></p></td>
+<td><p>Full CI</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></td>
+<td><p><em>Default</em></p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TDHF=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cosmo=</span></code> <em>[logical]</em>
+Performs an implicit solvent job using COSMO model. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subsystemEmbedding=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 </ul>
 </section>
 </section>
