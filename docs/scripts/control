@@ -1,0 +1,340 @@
+    !!***************************************************************************
+    !! Dummy variables, just for debugging. 
+    !!
+    LowdinParameters_dummyReal(:) = 0.0_8
+    LowdinParameters_dummyInteger(:) = 0
+    LowdinParameters_dummyLogical(:) = .false.
+    LowdinParameters_dummyCharacter(:) = ""
+
+    !!***************************************************************************
+    !! Parameter to control Integrals library
+    !!  
+    LowdinParameters_tv = 1.0E-6
+    LowdinParameters_integralThreshold = 1.0E-10
+    LowdinParameters_integralStackSize = 30000
+    LowdinParameters_integralStorage = "DISK" !! "MEMORY" or "DISK" or "DIRECT"
+    LowdinParameters_integralScheme = "LIBINT" !! LIBINT or RYS
+    LowdinParameters_schwarzInequality = .false.
+    LowdinParameters_harmonicConstant = 0.0_8
+
+    !!***************************************************************************
+    !! Parameter to control SCF program
+    !!
+    LowdinParameters_nonElectronicEnergyTolerance = 1.0E-8
+    LowdinParameters_electronicEnergyTolerance =  1.0E-8
+    LowdinParameters_nonelectronicDensityMatrixTolerance =  1.0E-6
+    LowdinParameters_electronicDensityMatrixTolerance = 1.0E-6
+    LowdinParameters_totalEnergyTolerance = 1.0E-8
+    LowdinParameters_totalDensityMatrixTolerance = 1.0E-6
+    LowdinParameters_densityFactorThreshold = 1.0E-8
+    LowdinParameters_diisSwitchThreshold = 0.5
+    LowdinParameters_diisSwitchThreshold_bkp = 0.5 
+    LowdinParameters_electronicLevelShifting = 0.0
+    LowdinParameters_nonelectronicLevelShifting = 0.0
+    LowdinParameters_exchangeOrbitalThreshold = 0.8
+    LowdinParameters_waveFunctionScale = 1000.0
+    LowdinParameters_scfNonelectronicMaxIterations = 50
+    LowdinParameters_scfElectronicMaxIterations = 50
+    LowdinParameters_scfGlobalMaxIterations = 200
+    LowdinParameters_listSize = -20
+    LowdinParameters_convergenceMethod = 1 !!(0) NONE, (1) DAMPING, (2) DIIS, (3) LEVEL SHIFTING (4) DAMPING/DIIS
+    LowdinParameters_diisDimensionality = 10
+    LowdinParameters_iterationScheme = 3 !!(0) NONELECRONIC FULLY / e- (1) ELECTRONIC FULLY (2) CONVERGED INDIVIDIALLY (3) SCHEMESIMULTANEOUS
+    LowdinParameters_scfElectronicTypeGuess = "HCORE"
+    LowdinParameters_scfNonelectronicTypeGuess = "HCORE"
+    LowdinParameters_scfConvergenceCriterium = "ENERGY" !ENERGY, DENSITY, BOTH
+    LowdinParameters_diisErrorInDamping = .false.
+    LowdinParameters_activateLevelShifting = .false.
+    LowdinParameters_exchangeOrbitalsInSCF = .false.
+    LowdinParameters_forceClosedShell = .false.
+    LowdinParameters_debugScfs = .false.
+    LowdinParameters_scfGhostSpecies = "NONE"
+
+    !!*****************************************************
+    !! Hartree-Fock Options
+    !!
+    LowdinParameters_frozen = "NONE"
+    LowdinParameters_freezeNonElectronicOrbitals = .false.
+    LowdinParameters_freezeElectronicOrbitals = .false.
+    LowdinParameters_hartreeProductGuess = .false.
+    LowdinParameters_readCoefficients = .true.
+    LowdinParameters_readFchk = .false.
+    LowdinParameters_writeCoefficientsInBinary = .true.
+    LowdinParameters_readEigenvalues = .false.
+    LowdinParameters_readEigenvaluesInBinary = .true.
+    LowdinParameters_writeEigenvaluesInBinary = .true.
+    LowdinParameters_noSCF = .false.
+    LowdinParameters_finiteMassCorrection = .false.
+    LowdinParameters_removeTranslationalContamination = .false.
+    LowdinParameters_buildTwoParticlesMatrixForOneParticle = .false.
+    LowdinParameters_buildMixedDensityMatrix = .false.
+    LowdinParameters_onlyElectronicEffect = .false.
+    LowdinParameters_electronicWaveFunctionAnalysis = .false.
+    LowdinParameters_isOpenShell = .false.
+    LowdinParameters_getGradients = .false.
+    LowdinParameters_HFprintEigenvalues = .true.
+    LowdinParameters_HFprintEigenvectors = "OCCUPIED"
+    LowdinParameters_overlapEigenThreshold = 1.0E-8_8
+    LowdinParameters_electricField(:) = 0.0_8
+    LowdinParameters_multipoleOrder = 0
+
+    !!***************************************************************************
+    !! Parameter to control geometry optimization
+    !!
+    LowdinParameters_numericalDerivativeDelta = 1.0E-3
+    LowdinParameters_minimizationInitialStepSize = 0.5_8
+    LowdinParameters_minimizationLineTolerance = 0.001_8
+    LowdinParameters_minimizationToleranceGradient = 0.00001_8
+    LowdinParameters_minimizationMaxIteration = 200
+    LowdinParameters_minimizationMethod = 4
+    LowdinParameters_minimizationLibrary = "GENERIC"
+    LowdinParameters_coordinates = "CARTESIAN"
+    LowdinParameters_energyCalculator = "INTERNAL"
+    LowdinParameters_analyticGradient = .true.
+    LowdinParameters_minimizationWithSinglePoint = .true.
+    LowdinParameters_useSymmetryInMatrices = .false.
+    LowdinParameters_restartOptimization = .false.
+    LowdinParameters_firstStep = .true.
+    LowdinParameters_lastStep = .true.
+    LowdinParameters_optimizeWithCpCorrection = .false.
+    LowdinParameters_cpCorrection = .false.
+    LowdinParameters_TDHF = .false.
+    LowdinParameters_optimize = .false.
+    LowdinParameters_optimizeGeometryWithMP = .false.
+    LowdinParameters_projectHessiane = .true.
+
+    !!***************************************************************************
+    !! Parameter of atomic conectivity
+    !!
+    LowdinParameters_bondDistanceFactor = 1.3_8
+    LowdinParameters_bondAngleThreshold = 170.0_8
+    LowdinParameters_dihedralAngleThreshold = 170.0_8
+
+    !!***************************************************************************
+    !! Parameter to control MBPn theory
+    !!
+    LowdinParameters_mpCorrection = 1
+    LowdinParameters_mpFrozenCoreBoundary = 0
+    LowdinParameters_mpOnlyElectronicCorrection = .false.
+    LowdinParameters_epsteinNesbetCorrection = 1
+
+    !!***************************************************************************
+    !! Parameter to control cosmo theory
+    !!
+    LowdinParameters_cosmo = .false.
+    LowdinParameters_cosmo_solvent_dielectric = 78.3553d+00
+    LowdinParameters_cosmo_scaling =0.0d+00
+
+    !!***************************************************************************
+    !! Parameter to control the propagator theory module
+    !!
+    LowdinParameters_ptOnlyOneSpecieCorrection = .false.
+    LowdinParameters_selfEnergyScan = .false.
+    LowdinParameters_ptTransitionOperator = .false.
+    LowdinParameters_ptJustOneOrbital = .false.
+    LowdinParameters_selfEnergySpacing = 0.5_8
+    LowdinParameters_selfEnergyRange = 5.0_8
+    LowdinParameters_ptOrder = 1
+    LowdinParameters_ptMaxIterations = 50
+    LowdinParameters_ptIterationMethod2Limit = 1
+    LowdinParameters_ptIterationScheme = 1
+    LowdinParameters_ptMaxNumberOfPolesSearched = 10
+
+    LowdinParameters_ptFactorSS = 0 
+    LowdinParameters_ptFactorOS = 0
+    LowdinParameters_ptP3Method = "NONE"
+    LowdinParameters_ptP3Method(1) = "ALL"
+
+    !!***************************************************************************
+    !! Control print level and units
+    !!
+    LowdinParameters_formatNumberOfColumns = 5
+    LowdinParameters_unitForOutputFile = 6
+    LowdinParameters_unitForMolecularOrbitalsFile = 8 
+    LowdinParameters_unitForMP2IntegralsFile = 7
+    LowdinParameters_printLevel =  1 !! (0) no output (1) normal output, (5) method (6) metod and WF (7) method, WF and GLOBAL(8) method, WF, GLOBAL, SCF
+    LowdinParameters_units = "ANGS"
+    LowdinParameters_doubleZeroThreshold = 1.0E-12
+
+    !!***************************************************************************
+    !! CISD - FCI
+    !!
+    LowdinParameters_configurationInteractionLevel = "NONE"
+    LowdinParameters_numberOfCIStates = 1
+    LowdinParameters_CIdiagonalizationMethod = "DSYEVR"
+    LowdinParameters_CIdiagonalDressedShift = "NONE"
+    LowdinParameters_CIactiveSpace = 0 !! Full
+    LowdinParameters_CIstatesToPrint = 1
+    LowdinParameters_CImaxNCV = 30
+    LowdinParameters_CIsizeOfGuessMatrix = 300
+    LowdinParameters_CIstackSize = 5000
+    LowdinParameters_CIConvergence = 1E-4
+    LowdinParameters_CImatvecTolerance = 1E-10
+    LowdinParameters_CISaveEigenVector = .false.
+    LowdinParameters_CILoadEigenVector = .false.
+    LowdinParameters_CIJacobi = .false.
+    LowdinParameters_CIBuildFullMatrix = .false. 
+    LowdinParameters_CIMadSpace = 5
+    LowdinParameters_CINaturalOrbitals = .false.
+    LowdinParameters_CIPrintEigenVectorsFormat = "OCCUPIED"
+    LowdinParameters_CIPrintThreshold = 1E-1
+
+    !!***************************************************************************
+    !! Non-orthogonal CI
+    !!
+    LowdinParameters_nonOrthogonalConfigurationInteraction=.false.
+    LowdinParameters_translationScanGrid(:)=0
+    LowdinParameters_rotationalScanGrid=0
+    LowdinParameters_rotationAroundZMaxAngle=360
+    LowdinParameters_rotationAroundZStep=0
+    LowdinParameters_nestedRotationalGrids=1
+    LowdinParameters_translationStep=0.0
+    LowdinParameters_nestedGridsDisplacement=0.0
+    LowdinParameters_configurationEnergyThreshold=1.0
+    LowdinParameters_configurationOverlapThreshold=1.0E-8
+    LowdinParameters_configurationMaxDisplacement(:)=0.0
+    LowdinParameters_configurationMinDisplacement(:)=0.0
+    LowdinParameters_configurationMaxNPDistance=1.0E8
+    LowdinParameters_configurationMinPPDistance=0.0
+    LowdinParameters_configurationMaxPPDistance=1.0E8
+    LowdinParameters_configurationEquivalenceDistance=1.0E-8
+    LowdinParameters_empiricalOverlapParameterA=0.0604
+    LowdinParameters_empiricalOverlapParameterB=0.492
+    LowdinParameters_empiricalOverlapParameterE0=0.0
+    LowdinParameters_empiricalOverlapParameterSc=0.0
+    LowdinParameters_configurationUseSymmetry=.false.
+    LowdinParameters_readNOCIgeometries=.false.
+    LowdinParameters_empiricalOverlapCorrection=.false.
+    LowdinParameters_onlyFirstNOCIelements=.false.
+    LowdinParameters_computeROCIformula=.false.
+    !!***************************************************************************
+    !! CCSD
+    !!
+    LowdinParameters_coupledClusterLevel = "NONE"
+
+    !!*****************************************************
+    !! Parameter to general control
+    !!
+    LowdinParameters_method = "NONE"
+    LowdinParameters_transformToCenterOfMass = .false.
+    LowdinParameters_areThereDummyAtoms = .false.
+    LowdinParameters_areThereQDOPotentials = .false.
+    LowdinParameters_setQDOEnergyZero = .false.
+    LowdinParameters_isThereExternalPotential = .false.
+    LowdinParameters_isThereInterparticlePotential = .false.
+    LowdinParameters_isThereOutput = .false.
+    LowdinParameters_isThereFrozenParticle = .false. 
+    LowdinParameters_dimensionality = 3
+
+    !!*****************************************************
+    !! Density Functional Theory Options
+    !!
+    LowdinParameters_gridStorage="DISK"
+    LowdinParameters_electronCorrelationFunctional = "NONE"
+    LowdinParameters_electronExchangeFunctional = "NONE"
+    LowdinParameters_electronExchangeCorrelationFunctional = "NONE"
+    LowdinParameters_nuclearElectronCorrelationFunctional = "NONE"
+    LowdinParameters_positronElectronCorrelationFunctional = "NONE"
+    LowdinParameters_betaFunction = "NONE"
+    LowdinParameters_gridRadialPoints=35
+    LowdinParameters_gridAngularPoints=110
+    LowdinParameters_gridNumberOfShells=5
+    LowdinParameters_finalGridRadialPoints=50
+    LowdinParameters_finalGridAngularPoints=302
+    LowdinParameters_finalGridNumberOfShells=5
+    LowdinParameters_polarizationOrder = 1
+    LowdinParameters_numberOfBlocksInAuxiliaryFunctions = 3
+    LowdinParameters_fukuiFunctions = .false.
+    LowdinParameters_auxiliaryDensity = .false.
+    LowdinParameters_storeThreeCenterElectronIntegrals = .true.
+    LowdinParameters_callLibxc = .true.
+    LowdinParameters_nuclearElectronDensityThreshold = 1E-10
+    LowdinParameters_electronDensityThreshold = 1E-10
+    LowdinParameters_gridWeightThreshold = 1E-10
+    LowdinParameters_betaParameterA = 0.0
+    LowdinParameters_betaParameterB = 0.0
+    LowdinParameters_betaParameterC = 0.0
+
+    !!*****************************************************
+    !! Subsystem embedding Options
+    !!
+    LowdinParameters_subsystemEmbedding = .false.
+    LowdinParameters_localizeOrbitals = .false.
+    LowdinParameters_subsystemLevelShifting = 1.0E6
+    LowdinParameters_subsystemOrbitalThreshold = 0.1
+    LowdinParameters_subsystemBasisThreshold = 0.0001
+    LowdinParameters_erkaleLocalizationMethod = "MU"
+
+    !!*****************************************************
+    !! External Potential Options
+    !!
+    LowdinParameters_numericalIntegrationForExternalPotential = .false. 
+    LowdinParameters_numericalIntegrationForOverlap   = .false.
+    LowdinParameters_maxIntervalInNumericalIntegration = 10.0_8
+    LowdinParameters_relativeErrorInNumericalIntegration = 1E-10
+    LowdinParameters_initialNumberOfEvaluations = 5000
+    LowdinParameters_increaseNumberOfEvaluations = 5000
+    LowdinParameters_minimumNumberOfEvaluations = 10000
+    LowdinParameters_maximumNumberOfEvaluations = 20000
+    LowdinParameters_stepInNumericalIntegration = 0.1
+    LowdinParameters_coefficientForGaussianExternalPotential = 0.0_8
+    LowdinParameters_exponentForGaussianExternalPotential = 0.0_8
+    LowdinParameters_originOfGaussianExternalPotential = 0.0_8
+    LowdinParameters_numericalIntegrationMethod = "NONE"
+
+    !!*****************************************************
+    !! Graphs Options
+    !!
+    LowdinParameters_numberOfPointsPerDimension = 50
+    LowdinParameters_moldenFileFormat = "MIXED" 
+
+    !!*****************************************************
+    !! Cubes Options
+    !!
+    LowdinParameters_cubePointsDensity = 125
+    LowdinParameters_volumeDensityThreshold = 1E-3
+
+    !!***************************************************** 
+    !! Molecular Mechanics Options                                                        
+    LowdinParameters_forceField = "UFF"
+    LowdinParameters_electrostaticMM = .false.
+    LowdinParameters_chargesMM = .false.
+    LowdinParameters_printMM = .false.
+
+    !!*****************************************************                                                       
+    !! Output Options          
+    LowdinParameters_moldenFile = .false.
+    LowdinParameters_amberFile = .false.    
+
+    !!*****************************************************
+    !! Properties Options
+    LowdinParameters_calculateInterparticleDistances = .false.
+    LowdinParameters_calculateDensityVolume = .false.
+
+    !!*****************************************************
+    !! Miscelaneous Options
+    !!
+    LowdinParameters_MOFractionOccupation = 1.0_8
+    LowdinParameters_ionizeMO = 0
+    LowdinParameters_ionizeSpecies = "NONE"
+    LowdinParameters_exciteSpecies = "NONE"
+
+    !!*****************************************************
+    !! Integrals transformation options
+    !!
+    LowdinParameters_integralsTransformationMethod = "C"
+    LowdinParameters_ITBuffersize = 1024
+
+    !!***************************************************************************
+    !! Variables de ambiente al sistema de archivos del programa
+    !!
+    LowdinParameters_homeDirectory = CONTROL_getHomeDirectory()
+    LowdinParameters_dataDirectory = CONTROL_getDataDirectory()
+    LowdinParameters_externalCommand = CONTROL_getExternalCommand()
+    LowdinParameters_externalSoftwareName = CONTROL_getExternalSoftwareName()
+    LowdinParameters_uffParametersDataBase = "/dataBases/uffParameters.lib"
+    LowdinParameters_atomicElementsDataBase = "/dataBases/atomicElements.lib"
+    LowdinParameters_basisSetDataBase = "/basis/"
+    LowdinParameters_potentialsDataBase = "/potentials/"
+    LowdinParameters_elementalParticlesDataBase = "/dataBases/elementalParticles.lib"
+    LowdinParameters_inputFile = CONTROL_instance%INPUT_FILE
