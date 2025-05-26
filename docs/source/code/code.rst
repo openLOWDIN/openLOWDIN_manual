@@ -7,7 +7,6 @@ This sections summarizes the multicomponent version of the common quantum chemis
 * :ref:`Input`
 * :ref:`CONTROL`
 * :ref:`Lib`
-* :ref:`Scratch`
 * :ref:`Outputs`
 * :ref:`Integrals`
 * :ref:`HF`
