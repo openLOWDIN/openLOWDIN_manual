@@ -32,10 +32,40 @@ In the example, an electronic multiplicity of 2 was chosen.
 How to run
 ==========
 
-To run openLOWDIN simply run 
+To run openLOWDIN with 4 OMP threads simply run 
 
 .. code-block:: bash
 
-        openlowdin -i inputname.lowdin 
+        openlowdin -i inputname.lowdin -n 4
 
-This will generate a plain text output file called ``inputname.out``
+This will generate a plain text output file called ``inputname.out``. These are the full command line options:
+
+.. code:: 
+
+   $ openlowdin -i file.lowdin [-t [all] [list] [file]] [-n number] [-v number] [-p] [-s] [-h] 
+
+   -i file.lowdin
+      This is the input file name
+   -n number
+      This will set the number of OMP threads
+   -t all
+      This will run all the test files located on the test database.
+   -t list
+      This will list all the test files located on the test database.
+   -t file
+      This will run a specific test file which is located on test database.
+   -v number
+      This is the lowdin version that will be used
+   -p
+      This will print the output file to the standard output on the fly
+   -w
+      This will save the LOWDIN .wfn file
+   -k
+      This will keep the temporary files in the scratch directory after running the calculation
+   -s
+      This activate the singleton mode
+   -h
+      This will print this same message
+
+
+
