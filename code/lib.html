@@ -56,7 +56,12 @@
 <li class="toctree-l1"><a class="reference internal" href="code.html">     List of methods/options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input.html">     Input</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">     Lib</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#databases">DataBases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#databases">DataBases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#atomicelements-lib">atomicElements.lib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constantsofcoupling-lib">constantsOfCoupling.lib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elementalparticles-lib">elementalParticles.lib</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#basis">Basis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#potential-basis">Potential Basis</a></li>
 </ul>
@@ -117,10 +122,99 @@
              
   <section id="lib">
 <h1>Lib<a class="headerlink" href="#lib" title="Permalink to this heading"></a></h1>
-<p>openLOWDIN employs external files to obtain information regarding particles properties, basis sets, and potential basis.</p>
+<p>openLOWDIN employs external files to obtain information regarding particles properties, basis sets, and potential basis. Those files are located in the folder <code class="docutils literal notranslate"><span class="pre">openLOWDIN/lib</span></code> under the following tree structure:
+.. code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>├── basis
+├── dataBases
+├── libjadamilu.a
+├── libmolden2aim.a
+├── libtransform.a
+├── lowdincore.a
+└── potentials
+</pre></div>
+</div>
+<p>Notice that all *.a files corresponds to static external libraries compiled during openLOWDIN installation.</p>
 <section id="databases">
 <h2>DataBases<a class="headerlink" href="#databases" title="Permalink to this heading"></a></h2>
-<p>Particle properties</p>
+<p>Information regarding particle properties are stored in three differents files, while <code class="docutils literal notranslate"><span class="pre">uffParameters.lib</span></code> contains the Universal Force Field (UFF) parameters</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>├── atomicElements.lib
+├── constantsOfCoupling.lib
+├── elementalParticles.lib
+└── uffParameters.lib
+</pre></div>
+</div>
+<section id="atomicelements-lib">
+<h3>atomicElements.lib<a class="headerlink" href="#atomicelements-lib" title="Permalink to this heading"></a></h3>
+<p>This file stores some physicochemical for all elements in the periodic table in a Fortran namelist format.
+This information is mostly used to get the charge of classical particles and number of electrons from the given atomic element, as well as the mass of quantum nuclei</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="n">ELEMENT</span>
+      <span class="n">NAME</span> <span class="o">=</span> <span class="s2">&quot;HYDROGEN&quot;</span>
+      <span class="n">SYMBOL</span> <span class="o">=</span> <span class="s2">&quot;H&quot;</span>
+      <span class="n">ATOMICNUMBER</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">MASS</span> <span class="o">=</span> <span class="mf">1.00794</span>
+      <span class="n">MELTINGPOINT</span> <span class="o">=</span> <span class="mf">13.81</span>
+      <span class="n">BOILINGPOINT</span> <span class="o">=</span> <span class="mf">20.28</span>
+      <span class="n">DENSITY</span> <span class="o">=</span> <span class="mf">0.084</span>
+      <span class="n">ELECTRONAFFINITY</span> <span class="o">=</span> <span class="o">-</span><span class="mi">73</span>
+      <span class="n">IONIZATIONENERGY1</span> <span class="o">=</span> <span class="mi">1312</span>
+      <span class="n">ELECTRONEGATIVITY</span> <span class="o">=</span> <span class="mf">2.1</span>
+      <span class="n">COVALENT</span> <span class="o">=</span> <span class="mf">0.30</span>
+      <span class="n">ATOMIC</span> <span class="o">=</span> <span class="mf">0.25</span>
+  <span class="n">KLAMT</span> <span class="o">=</span> <span class="mf">0.00</span>
+      <span class="n">VANDERWAALS</span> <span class="o">=</span> <span class="mf">1.2</span>
+      <span class="n">ISOTOPES</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.0078250321</span><span class="p">,</span> <span class="mf">99.9885</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span>
+              <span class="mi">2</span><span class="p">,</span> <span class="mf">2.0141017780</span><span class="p">,</span> <span class="mf">0.0115</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="mi">3</span><span class="p">,</span> <span class="mf">3.0160492675</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span>
+              <span class="mi">4</span><span class="p">,</span> <span class="mf">4.02783</span><span class="p">,</span> <span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span>
+              <span class="mi">5</span><span class="p">,</span> <span class="mf">5.03954</span><span class="p">,</span> <span class="p">,</span> <span class="p">,</span>
+              <span class="mi">6</span><span class="p">,</span> <span class="mf">6.04494</span><span class="p">,</span> <span class="p">,</span> <span class="p">,</span>
+              <span class="mi">7</span><span class="p">,</span> <span class="mf">3.1289311806</span><span class="p">,</span> <span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+<span class="o">/</span>
+</pre></div>
+</div>
+</section>
+<section id="constantsofcoupling-lib">
+<h3>constantsOfCoupling.lib<a class="headerlink" href="#constantsofcoupling-lib" title="Permalink to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">lambda</span></code>, <code class="docutils literal notranslate"><span class="pre">eta</span></code>, and <code class="docutils literal notranslate"><span class="pre">particlesFraction</span></code> are related to the occupation of quantum species (number of particles) per orbital, this variable is used in post-HF methods and nuclear gradients. <code class="docutils literal notranslate"><span class="pre">kappa</span></code> is used to change the sign of the exchange integrals. See <a class="reference internal" href="HF.html#hf"><span class="std std-ref">Hartree-Fock, HF</span></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="n">SPECIE</span>
+      <span class="n">NAME</span> <span class="o">=</span> <span class="s2">&quot;ELECTRON&quot;</span>
+      <span class="n">SYMBOL</span> <span class="o">=</span> <span class="s2">&quot;E-&quot;</span>
+      <span class="n">KAPPA</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+      <span class="n">ETA</span> <span class="o">=</span> <span class="mf">2.0</span>
+      <span class="n">LAMBDA</span> <span class="o">=</span> <span class="mf">2.0</span>
+      <span class="n">PARTICLESFRACTION</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="o">/</span>
+</pre></div>
+</div>
+</section>
+<section id="elementalparticles-lib">
+<h3>elementalParticles.lib<a class="headerlink" href="#elementalparticles-lib" title="Permalink to this heading"></a></h3>
+<p>this namelist defines the elemental properties of quantum particles: charge, mass, and spin</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="n">PARTICLE</span>
+      <span class="n">NAME</span> <span class="o">=</span> <span class="s2">&quot;ELECTRON&quot;</span>
+      <span class="n">SYMBOL</span> <span class="o">=</span> <span class="s2">&quot;E-&quot;</span>
+      <span class="n">CATEGORY</span> <span class="o">=</span> <span class="s2">&quot;LEPTON&quot;</span>
+      <span class="n">CHARGE</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+      <span class="n">MASS</span> <span class="o">=</span> <span class="mf">1.0</span>
+      <span class="n">SPIN</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="o">/</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To create a new unique (distinguishable) quantum species is necessary to add a new entry into both namelist on constantsOfCoupling.lib and elementalParticles.lib which an unique SYMBOL not used by another other quantum species</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>openLOWDIN has three exceptions for quantum species.
+Electrons, defined by <code class="docutils literal notranslate"><span class="pre">&quot;E-&quot;</span></code>, in which the number of particles and basis set are defined by adding the atomic symbol in parenthesis, e.g. <code class="docutils literal notranslate"><span class="pre">E-(N)</span></code> will declare to add 7 electrons to the quantum species <code class="docutils literal notranslate"><span class="pre">&quot;E-&quot;</span></code> and to add a set of Gaussian type functions identifed by the name <code class="docutils literal notranslate"><span class="pre">&quot;NITROGEN&quot;</span></code> from the basis set requested.
+The quantum species <code class="docutils literal notranslate"><span class="pre">E-ALPHA</span></code> and <cite>È-BETA`</cite> are automatically created when requesting and <code class="docutils literal notranslate"><span class="pre">UHF</span></code> calculation.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The mass of quantum nuclei can be selected by adding to the species symbol the isotope number followed by “_” e.g. <code class="docutils literal notranslate"><span class="pre">H_3</span></code> will define a Tritium nucleus.</p>
+</div>
+</section>
 </section>
 <section id="basis">
 <h2>Basis<a class="headerlink" href="#basis" title="Permalink to this heading"></a></h2>
