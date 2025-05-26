@@ -17,6 +17,7 @@
       <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
       <script src="../_static/doctools.js?v=888ff710"></script>
       <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -63,7 +64,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#basis">Basis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#potential-basis">Potential Basis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#potential-basis">Potential Basis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#external-potential">External potential</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-potential">Internal potential</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="control.html">     CONTROL</a></li>
@@ -208,7 +213,7 @@ This information is mostly used to get the charge of classical particles and num
 <p class="admonition-title">Note</p>
 <p>openLOWDIN has three exceptions for quantum species.
 Electrons, defined by <code class="docutils literal notranslate"><span class="pre">&quot;E-&quot;</span></code>, in which the number of particles and basis set are defined by adding the atomic symbol in parenthesis, e.g. <code class="docutils literal notranslate"><span class="pre">E-(N)</span></code> will declare to add 7 electrons to the quantum species <code class="docutils literal notranslate"><span class="pre">&quot;E-&quot;</span></code> and to add a set of Gaussian type functions identifed by the name <code class="docutils literal notranslate"><span class="pre">&quot;NITROGEN&quot;</span></code> from the basis set requested.
-The quantum species <code class="docutils literal notranslate"><span class="pre">E-ALPHA</span></code> and <cite>È-BETA`</cite> are automatically created when requesting and <code class="docutils literal notranslate"><span class="pre">UHF</span></code> calculation.</p>
+The quantum species <code class="docutils literal notranslate"><span class="pre">E-ALPHA</span></code> and <code class="docutils literal notranslate"><span class="pre">E-BETA</span></code> are automatically created when requesting and <code class="docutils literal notranslate"><span class="pre">UHF</span></code> calculation.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -218,11 +223,198 @@ The quantum species <code class="docutils literal notranslate"><span class="pre"
 </section>
 <section id="basis">
 <h2>Basis<a class="headerlink" href="#basis" title="Permalink to this heading"></a></h2>
-<p>openLOWDIN built-in basis</p>
+<p>openLOWDIN constructs the spatial part of spin-molecular orbitals, <span class="math notranslate nohighlight">\(\varphi\)</span> as a linear combination of Gaussian type functions (GTFs), <span class="math notranslate nohighlight">\(\chi_{\mu}^{\alpha}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+\varphi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \chi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(C_{\mu}^{\alpha}\)</span> is a combination coefficient for species <span class="math notranslate nohighlight">\(\alpha\)</span>, and the atomic orbital <span class="math notranslate nohighlight">\(\chi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})\)</span> is built as a sum of primitive functions forming a contracted orbital</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+\chi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu}) = \sum_{s} b_{s\mu}^{\alpha} N_{s\mu}^{\alpha}
+                      (x_i-X_{\mu})^{l_{\mu}^{\alpha}}(y_i-Y_{\mu})^{m_{\mu}^{\alpha}}(z_i-Z_{\mu})^{n_{\mu}^{\alpha}}
+                      \times \text{exp}[ -a_s^{\alpha} (\mathbf{r}_i - \mathbf{R}_{\mu})^2 ]
+\end{equation}</div><p>here, <span class="math notranslate nohighlight">\(b_{s\mu}^{\alpha}\)</span> are the primitive coefficients, <span class="math notranslate nohighlight">\(N_{s\mu}^{\alpha}\)</span> is a normalization constant, <span class="math notranslate nohighlight">\(\{x_i,y_i,z_i\}\)</span> are the spatial coordinates of the position vector <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> for the <span class="math notranslate nohighlight">\(i\)</span> particle of the quantum species <span class="math notranslate nohighlight">\(\alpha\)</span>, the set <span class="math notranslate nohighlight">\(\{l,m.n\}\)</span> are the angular momemtum components, <span class="math notranslate nohighlight">\(a_s\)</span> is the exponent, and <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> is the GTF center, which is independent of nuclei positions.</p>
+<p>openLOWDIN has a collection of built-in basis stored in <code class="docutils literal notranslate"><span class="pre">lib/basis/</span></code>.
+Please note that all filenames should be written in capital letters.
+The code employs the same basis set format of deMon2k, That is to say</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="o">-</span><span class="n">ELEMENT_NAME</span> <span class="n">ELEMENT_SYMBOL_OR_SPECIES_SYMBOL</span> <span class="p">(</span><span class="n">BASIS_NAME</span><span class="p">)</span> <span class="n">BASIS</span> <span class="n">TYPE</span><span class="p">:</span> <span class="mi">1</span>
+<span class="c1">#</span>
+<span class="n">NUMBER_OF_CONTRACTED_ORBITALS</span>
+<span class="n">ID</span>  <span class="n">ANGULAR_MOMEMTUM</span>  <span class="n">NUMBER_OF_PRIMITIVES</span>
+<span class="n">EXPONENT</span>  <span class="n">COEFFICIENT</span>
+</pre></div>
+</div>
+<p>For example, for a Hydrogen atom center with aug-cc-pVDZ basis</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="o">-</span><span class="n">HYDROGEN</span> <span class="n">H</span> <span class="p">(</span><span class="n">AUG</span><span class="o">-</span><span class="n">CC</span><span class="o">-</span><span class="n">PVDZ</span><span class="p">)</span> <span class="n">BASIS</span> <span class="n">TYPE</span><span class="p">:</span> <span class="mi">1</span>
+<span class="c1">#</span>
+<span class="mi">5</span>
+<span class="mi">1</span> <span class="mi">0</span> <span class="mi">3</span>
+<span class="mf">13.01000000</span> <span class="mf">0.01968500</span>
+<span class="mf">1.96200000</span> <span class="mf">0.13797700</span>
+<span class="mf">0.44460000</span> <span class="mf">0.47814800</span>
+<span class="mi">2</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="mf">0.12200000</span> <span class="mf">1.00000000</span>
+<span class="mi">3</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="mf">0.02974000</span> <span class="mf">1.00000000</span>
+<span class="mi">4</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="mf">0.72700000</span> <span class="mf">1.00000000</span>
+<span class="mi">5</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="mf">0.14100000</span> <span class="mf">1.00000000</span>
+</pre></div>
+</div>
+<p>Alternatively, it’s possible to define the basis set of a quantum species within the <code class="docutils literal notranslate"><span class="pre">.lowdin</span></code> input file by creating a <code class="docutils literal notranslate"><span class="pre">BASIS</span> <span class="pre">BASIS_NAME</span></code> - <code class="docutils literal notranslate"><span class="pre">END</span> <span class="pre">BASIS</span></code> block section, where <code class="docutils literal notranslate"><span class="pre">BASIS_NAME</span></code> should be a basis name defined within the <code class="docutils literal notranslate"><span class="pre">GEOMETRY</span></code> block. For example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GEOMETRY</span>
+        <span class="n">e</span><span class="o">-</span><span class="p">[</span><span class="n">H</span><span class="p">]</span>  <span class="n">cc</span><span class="o">-</span><span class="n">pvtz</span>     <span class="mf">0.0000</span>  <span class="mf">0.0000</span>  <span class="mf">0.00000</span>
+        <span class="n">e</span><span class="o">-</span><span class="p">[</span><span class="n">H</span><span class="p">]</span>  <span class="n">CUSTOM_1</span>    <span class="mf">0.0000</span>  <span class="mf">0.0000</span>  <span class="mf">0.74144</span>
+        <span class="n">H_1</span>    <span class="n">CUSTOM_2</span>    <span class="mf">0.0000</span>  <span class="mf">0.0000</span>  <span class="mf">0.00000</span> <span class="n">m</span><span class="o">=</span><span class="mf">1836.1527</span>
+        <span class="n">U</span><span class="o">-</span>     <span class="n">CUSTOM_3</span>    <span class="mf">0.0000</span>  <span class="mf">0.0000</span>  <span class="mf">0.74144</span> <span class="n">m</span><span class="o">=</span><span class="mf">206.7683</span>
+        <span class="n">He_4</span>   <span class="n">CUSTOM_3</span>    <span class="mf">0.0000</span>  <span class="mf">0.0000</span>  <span class="mf">0.74144</span> <span class="n">m</span><span class="o">=</span><span class="mf">7349.6727</span>
+<span class="n">END</span> <span class="n">GEOMETRY</span>
+
+<span class="n">BASIS</span> <span class="n">CUSTOM_1</span>
+<span class="n">O</span><span class="o">-</span><span class="n">HYDROGEN</span> <span class="n">H</span> <span class="p">(</span><span class="n">CC</span><span class="o">-</span><span class="n">PVTZ</span><span class="o">+</span><span class="n">LOCAL</span><span class="p">)</span> <span class="n">BASIS</span> <span class="n">TYPE</span><span class="p">:</span> <span class="mi">1</span>
+<span class="c1">#</span>
+<span class="mi">9</span>
+<span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="mf">103.8700000</span> <span class="mf">1.00000000</span>
+<span class="mi">2</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="mf">33.8700000</span> <span class="mf">1.00000000</span>
+<span class="mi">3</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="mf">5.09500000</span> <span class="mf">1.00000000</span>
+<span class="mi">4</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="mf">1.15900000</span> <span class="mf">1.00000000</span>
+<span class="mi">5</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="mf">0.32580000</span> <span class="mf">1.00000000</span>
+<span class="mi">6</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="mf">0.10270000</span> <span class="mf">1.00000000</span>
+<span class="mi">7</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="mf">1.40700000</span> <span class="mf">1.00000000</span>
+<span class="mi">8</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="mf">0.38800000</span> <span class="mf">1.00000000</span>
+<span class="mi">9</span> <span class="mi">2</span> <span class="mi">1</span>
+<span class="mf">1.05700000</span> <span class="mf">1.00000000</span>
+<span class="n">END</span> <span class="n">BASIS</span>
+</pre></div>
+</div>
+<p>If the basis set is not provided within the input file, then the code will look in the <code class="docutils literal notranslate"><span class="pre">lib/basis</span></code> folder for a basis set file under the name defined in the <code class="docutils literal notranslate"><span class="pre">GEOMETRY</span></code> block, e.g. a file <code class="docutils literal notranslate"><span class="pre">lib/basis/CUSTOM_1</span></code> in the above example.</p>
+<p>A more extensive collection of updated basis set can be found <a class="reference external" href="https://www.basissetexchange.org/">https://www.basissetexchange.org/</a> or <a class="reference external" href="https://github.com/MolSSI-BSE/basis_set_exchange">https://github.com/MolSSI-BSE/basis_set_exchange</a></p>
 </section>
 <section id="potential-basis">
 <h2>Potential Basis<a class="headerlink" href="#potential-basis" title="Permalink to this heading"></a></h2>
-<p>Potentials based on Gaussian-Type functions (GTFs)</p>
+<p>openLOWDIN has the capabilities of computing additional one-body external potential, as well as replacing the standard two-particles Coulomb potential by a general two-body intraspecies and interspecies potentials based on sum Gaussian-Type functions (GTFs).</p>
+<section id="external-potential">
+<h3>External potential<a class="headerlink" href="#external-potential" title="Permalink to this heading"></a></h3>
+<p>This potential is built as a sum of uncontracted and unnormalized GTFs</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+V_1^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} (x_i-X_{\mu})^{l_{\mu}^{\alpha}}(y_i-Y_{\mu})^{m_{\mu}^{\alpha}}(z_i-Z_{\mu})^{n_{\mu}^{\alpha}}
+                      \times \text{exp}[ -a_{\mu}^{\alpha} (\mathbf{r}_i - \mathbf{R}_{\mu})^2 ]
+\end{equation}</div><p>where all parameters are defined in a similar fashion that the one defined for basis sets. The format of this potential basis corresponds to</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="o">-</span><span class="n">SPECIES_SYMBOL</span>
+<span class="c1">#</span>
+<span class="n">NUMBER_OF_FUNCTIONS</span>
+<span class="n">ID</span>  <span class="n">ANGULAR_MOMEMTUM</span>
+<span class="n">EXPONENT</span>  <span class="n">COEFFICIENT</span>
+<span class="n">ORIGIN_X</span> <span class="n">ORIGIN_Y</span> <span class="n">ORIGIN_Z</span>
+</pre></div>
+</div>
+<p>For example, for a 4*s* potential felt by the species <code class="docutils literal notranslate"><span class="pre">HEA3</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="o">-</span><span class="n">HEA3</span>
+<span class="c1">#</span>
+<span class="mi">25</span>
+<span class="mi">1</span> <span class="mi">0</span>
+<span class="mf">0.00100000</span> <span class="o">-</span><span class="mf">4.85267703e-04</span>
+<span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="mi">2</span> <span class="mi">0</span>
+<span class="mf">0.00200000</span> <span class="mf">2.44420303e-03</span>
+<span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="mi">3</span> <span class="mi">0</span>
+<span class="mf">0.00400000</span> <span class="o">-</span><span class="mf">7.54493346e-03</span>
+<span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="mi">4</span> <span class="mi">0</span>
+<span class="mf">0.00800000</span> <span class="mf">1.57739046e-02</span>
+<span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+</pre></div>
+</div>
+<p>In the input file, this potential is invoked by adding a new line in <code class="docutils literal notranslate"><span class="pre">EXTERPOTENTIAL</span></code> - <code class="docutils literal notranslate"><span class="pre">END</span> <span class="pre">EXTERPOTENTIAL</span></code> block section as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EXTERPOTENTIAL</span>
+       <span class="n">SPECIES_SYMBOL</span>  <span class="n">POT_NAME</span>
+<span class="n">END</span> <span class="n">EXTERPOTENTIAL</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">POT_NAME</span></code> is the name of the potential file described above for the given species <code class="docutils literal notranslate"><span class="pre">SPECIES_SYMBOL</span></code>. For example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EXTERPOTENTIAL</span>
+       <span class="n">HEA3</span>   <span class="n">HE2C60</span><span class="o">-</span><span class="n">IH</span><span class="o">-</span><span class="mi">1</span><span class="n">P</span>
+       <span class="n">HEB3</span>   <span class="n">HE2C60</span><span class="o">-</span><span class="n">IH</span><span class="o">-</span><span class="mi">1</span><span class="n">P</span>
+<span class="n">END</span> <span class="n">EXTERPOTENTIAL</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice that it’s possible to define a potential for different quantum species within the same file.</p>
+</div>
+</section>
+<section id="internal-potential">
+<h3>Internal potential<a class="headerlink" href="#internal-potential" title="Permalink to this heading"></a></h3>
+<p>This potential is also built as a sum of uncontracted and unnormalized geminal GTFs, but it is limited to <em>s</em>-type orbitals</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+V_2^{\alpha,\beta}(\mathbf{r}^{\alpha}_i,\mathbf{r}^{\beta}_j) = \sum_{\mu}^{N_{bas}^{\alpha\beta}} C_{\mu}^{\alpha\beta} \text{exp}[ -a_{\mu}^{\alpha\beta} (\mathbf{r}^{\alpha}_i - \mathbf{r}^{\beta}_{j})^2 ]
+\end{equation}</div><p>And the potential format is given by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="o">-</span><span class="n">SPECIES_SYMBOL_ALPHASPECIES_SYMBOL_BETA</span>
+<span class="c1">#</span>
+<span class="n">NUMBER_OF_FUNCTIONS</span>
+<span class="n">ID</span>  <span class="n">ANGULAR_MOMEMTUM</span>
+<span class="n">EXPONENT</span>  <span class="n">COEFFICIENT</span>
+<span class="n">ORIGIN_X</span> <span class="n">ORIGIN_Y</span> <span class="n">ORIGIN_Z</span>
+</pre></div>
+</div>
+<p>For a 4*s* potential between two quantum species <code class="docutils literal notranslate"><span class="pre">HEA3</span></code> and <code class="docutils literal notranslate"><span class="pre">HEB3</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="o">-</span><span class="n">HEA3HEB3</span>
+<span class="mi">4</span>
+<span class="mi">0</span> <span class="mi">0</span>
+     <span class="mf">10.000000000000</span>      <span class="mf">16.533492358000</span>
+<span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="mi">1</span> <span class="mi">0</span>
+      <span class="mf">7.498942093300</span>      <span class="o">-</span><span class="mf">6.924850494800</span>
+<span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="mi">2</span> <span class="mi">0</span>
+      <span class="mf">5.623413251900</span>       <span class="mf">5.780268985500</span>
+<span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="mi">3</span> <span class="mi">0</span>
+      <span class="mf">4.216965034300</span>       <span class="mf">1.957403910100</span>
+<span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="mi">4</span> <span class="mi">0</span>
+      <span class="mf">3.162277660200</span>      <span class="o">-</span><span class="mf">5.166130478700</span>
+</pre></div>
+</div>
+<p>In the input file, this potential is invoked by adding a new line in <code class="docutils literal notranslate"><span class="pre">INTERPOTENTIAL</span></code> - <code class="docutils literal notranslate"><span class="pre">END</span> <span class="pre">INTERPOTENTIAL</span></code> block section as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INTERPOTENTIAL</span>
+       <span class="n">SPECIES_SYMBOL_ALPHASPECIES_SYMBOL_BETA</span>  <span class="n">POT_NAME</span>
+<span class="n">END</span> <span class="n">INTERPOTENTIAL</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">POT_NAME</span></code> is the name of the potential file described above between the species <code class="docutils literal notranslate"><span class="pre">SPECIES_SYMBOL_ALPHA</span></code> and <code class="docutils literal notranslate"><span class="pre">SPECIES_SYMBOL_BETA</span></code>. For example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INTERPOTENTIAL</span>
+        <span class="n">HEA3</span> <span class="n">HEA3</span>       <span class="n">HE2C60</span><span class="o">-</span><span class="n">IH</span><span class="o">-</span><span class="mi">2</span><span class="n">P</span>
+        <span class="n">HEA3</span> <span class="n">HEB3</span>       <span class="n">HE2C60</span><span class="o">-</span><span class="n">IH</span><span class="o">-</span><span class="mi">2</span><span class="n">P</span>
+        <span class="n">HEB3</span> <span class="n">HEB3</span>       <span class="n">HE2C60</span><span class="o">-</span><span class="n">IH</span><span class="o">-</span><span class="mi">2</span><span class="n">P</span>
+<span class="n">END</span> <span class="n">INTERPOTENTIAL</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice that it’s possible to define a potential for different quantum species within the same file.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice that interspecies potentials can be simply declared by setting <span class="math notranslate nohighlight">\(\alpha=\beta\)</span>, in other words, by setting the same quantum species symbol twice.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For simplicity, openLOWDIN requires to read an angular momentum and origin for the two-body potentials, despite these are not used in the potential definition.</p>
+</div>
+</section>
 </section>
 </section>
 
