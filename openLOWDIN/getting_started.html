@@ -159,11 +159,37 @@ In the example, an electronic multiplicity of 2 was chosen.</p>
 </section>
 <section id="how-to-run">
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading"></a></h2>
-<p>To run openLOWDIN simply run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openlowdin<span class="w"> </span>-i<span class="w"> </span>inputname.lowdin
+<p>To run openLOWDIN with 4 OMP threads simply run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openlowdin<span class="w"> </span>-i<span class="w"> </span>inputname.lowdin<span class="w"> </span>-n<span class="w"> </span><span class="m">4</span>
 </pre></div>
 </div>
-<p>This will generate a plain text output file called <code class="docutils literal notranslate"><span class="pre">inputname.out</span></code></p>
+<p>This will generate a plain text output file called <code class="docutils literal notranslate"><span class="pre">inputname.out</span></code>. These are the full command line options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ openlowdin -i file.lowdin [-t [all] [list] [file]] [-n number] [-v number] [-p] [-s] [-h]
+
+-i file.lowdin
+   This is the input file name
+-n number
+   This will set the number of OMP threads
+-t all
+   This will run all the test files located on the test database.
+-t list
+   This will list all the test files located on the test database.
+-t file
+   This will run a specific test file which is located on test database.
+-v number
+   This is the lowdin version that will be used
+-p
+   This will print the output file to the standard output on the fly
+-w
+   This will save the LOWDIN .wfn file
+-k
+   This will keep the temporary files in the scratch directory after running the calculation
+-s
+   This activate the singleton mode
+-h
+   This will print this same message
+</pre></div>
+</div>
 </section>
 </section>
 
