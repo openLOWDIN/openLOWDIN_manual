@@ -56,7 +56,19 @@
 <li class="toctree-l1"><a class="reference internal" href="code.html">     List of methods/options</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input.html">     Input</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lib.html">     Lib</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">     CONTROL</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     CONTROL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dummy-variables">Dummy variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geometry-optimization">Geometry optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#atomic-connectivity">Atomic connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cosmo">COSMO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#info-and-units">Info and units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#molecular-mechanics">Molecular Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#miscelaneous-options">Miscelaneous options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integrals-transformation">Integrals transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#libraries">Libraries</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="outputs.html">     Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integrals.html">     Integrals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="HF.html">     HF</a></li>
@@ -111,6 +123,213 @@
              
   <section id="control">
 <h1>CONTROL<a class="headerlink" href="#control" title="Permalink to this heading"></a></h1>
+<section id="dummy-variables">
+<h2>Dummy variables<a class="headerlink" href="#dummy-variables" title="Permalink to this heading"></a></h2>
+<p>For debugging purposes</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dummyReal(:)=</span></code> <em>[float]</em>
+Dummy real array(10).  <em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0_8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dummyInteger(:)=</span></code> <em>[integer]</em>
+Dummy integer array(10). <em>Default</em> <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dummyLogical(:)=</span></code> <em>[logical]</em>
+Dummy logical array(10). <em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dummyCharacter(:)=</span></code> <em>[character]</em>
+Dummy character array(10). <em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p></li>
+</ul>
+</section>
+<section id="geometry-optimization">
+<h2>Geometry optimization<a class="headerlink" href="#geometry-optimization" title="Permalink to this heading"></a></h2>
+<p>Currenly unsupported</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numericalDerivativeDelta=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minimizationInitialStepSize=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.5_8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minimizationLineTolerance=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.001_8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minimizationToleranceGradient=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.00001_8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minimizationMaxIteration=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">200</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minimizationMethod=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minimizationLibrary=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;GENERIC&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coordinates=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;CARTESIAN&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">energyCalculator=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;INTERNAL&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">analyticGradient=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.true.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minimizationWithSinglePoint=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.true.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">useSymmetryInMatrices=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">restartOptimization=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">firstStep=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.true.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lastStep=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.true.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">optimizeWithCpCorrection=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cpCorrection=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TDHF=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">optimize=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">optimizeGeometryWithMP=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">projectHessiane=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.true.</span></code></p></li>
+</ul>
+</section>
+<section id="atomic-connectivity">
+<h2>Atomic connectivity<a class="headerlink" href="#atomic-connectivity" title="Permalink to this heading"></a></h2>
+<p>Currenly unsupported</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bondDistanceFactor=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.3_8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bondAngleThreshold=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">170.0_8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dihedralAngleThreshold=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">170.0_8</span></code></p></li>
+</ul>
+</section>
+<section id="cosmo">
+<h2>COSMO<a class="headerlink" href="#cosmo" title="Permalink to this heading"></a></h2>
+<p>Currenly unsupported</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cosmo=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cosmo_solvent_dielectric=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">78.3553d+00</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cosmo_scaling=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0d+00</span></code></p></li>
+</ul>
+</section>
+<section id="info-and-units">
+<h2>Info and units<a class="headerlink" href="#info-and-units" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">formatNumberOfColumns=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unitForOutputFile=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unitForMolecularOrbitalsFile=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unitForMP2IntegralsFile=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">7</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">printLevel=</span></code> <em>[integer]</em></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11.8%" />
+<col style="width: 88.2%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p>No output</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>Normal. <em>Default</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td><p>Method</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">6</span></code></p></td>
+<td><p>Method and wave function</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">7</span></code></p></td>
+<td><p>Method, wave function, global</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+<td><p>Method, wave function, global, SCF</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">units=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;ANGS&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">doubleZeroThreshold=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-12</span></code></p></li>
+</ul>
+</section>
+<section id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">method=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transformToCenterOfMass=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">areThereDummyAtoms=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">areThereQDOPotentials=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setQDOEnergyZero=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isThereExternalPotential=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isThereInterparticlePotential=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isThereOutput=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isThereFrozenParticle=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dimensionality=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">3</span></code></p></li>
+</ul>
+</section>
+<section id="molecular-mechanics">
+<h2>Molecular Mechanics<a class="headerlink" href="#molecular-mechanics" title="Permalink to this heading"></a></h2>
+<p>Currenly unsupported</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">forceField=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;UFF&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">electrostaticMM=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chargesMM=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">printMM=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+</ul>
+</section>
+<section id="miscelaneous-options">
+<h2>Miscelaneous options<a class="headerlink" href="#miscelaneous-options" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MOFractionOccupation=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0_8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ionizeMO=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ionizeSpecies=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exciteSpecies=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></li>
+</ul>
+</section>
+<section id="integrals-transformation">
+<h2>Integrals transformation<a class="headerlink" href="#integrals-transformation" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">integralsTransformationMethod=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;C&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITBuffersize=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1024</span></code></p></li>
+</ul>
+</section>
+<section id="libraries">
+<h2>Libraries<a class="headerlink" href="#libraries" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">uffParametersDataBase=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;/dataBases/uffParameters.lib&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atomicElementsDataBase=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;/dataBases/atomicElements.lib&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">basisSetDataBase=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;/basis/&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">potentialsDataBase=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;/potentials/&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elementalParticlesDataBase=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;/dataBases/elementalParticles.lib&quot;</span></code></p></li>
+</ul>
+</section>
 </section>
 
 
