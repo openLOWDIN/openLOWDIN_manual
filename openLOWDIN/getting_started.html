@@ -53,6 +53,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">     Getting started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#input-file">Input file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-run">How to run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scratch">Scratch</a></li>
 </ul>
 </li>
 </ul>
@@ -62,7 +63,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../code/input.html">     Input</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/lib.html">     Lib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/control.html">     CONTROL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code/scratch.html">     Scratch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/outputs.html">     Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/integrals.html">     Integrals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../code/HF.html">     HF</a></li>
@@ -189,6 +189,15 @@ In the example, an electronic multiplicity of 2 was chosen.</p>
 -h
    This will print this same message
 </pre></div>
+</div>
+</section>
+<section id="scratch">
+<h2>Scratch<a class="headerlink" href="#scratch" title="Permalink to this heading"></a></h2>
+<p>openLOWDIN creates a folder to save temporary files located at <code class="docutils literal notranslate"><span class="pre">$LOWDIN_SCRATCH/$nameFile</span></code> where <code class="docutils literal notranslate"><span class="pre">$nameFile</span></code> is the input name given after the command line <code class="docutils literal notranslate"><span class="pre">-i</span> <span class="pre">file.lowdin</span></code>  without the <code class="docutils literal notranslate"><span class="pre">.lowdin</span></code> extension.
+The <code class="docutils literal notranslate"><span class="pre">$LOWDIN_SCRATCH</span></code> environmental variable is set in the bash script <code class="docutils literal notranslate"><span class="pre">.openlowdin/lowdinvars.sh</span></code> which is located in the installation folder during configuration.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please notice that the scratch folder is completely removed after the calculation terminates.</p>
 </div>
 </section>
 </section>

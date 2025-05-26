@@ -28,7 +28,6 @@ This manual is still in early construction stage! Thanks for your patience.
         Input <code/input.rst>
         Lib <code/lib.rst>
         CONTROL <code/control.rst>
-        Scratch <code/scratch.rst>
         Outputs <code/outputs.rst>
         Integrals <code/integrals.rst>
         HF <code/HF.rst>

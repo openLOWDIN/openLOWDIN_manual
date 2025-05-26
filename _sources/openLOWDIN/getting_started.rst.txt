@@ -67,5 +67,12 @@ This will generate a plain text output file called ``inputname.out``. These are 
    -h
       This will print this same message
 
+Scratch
+=======
+ 
+openLOWDIN creates a folder to save temporary files located at ``$LOWDIN_SCRATCH/$nameFile`` where ``$nameFile`` is the input name given after the command line ``-i file.lowdin``  without the ``.lowdin`` extension. 
+The ``$LOWDIN_SCRATCH`` environmental variable is set in the bash script ``.openlowdin/lowdinvars.sh`` which is located in the installation folder during configuration.  
 
+.. warning::
 
+   Please notice that the scratch folder is completely removed after the calculation terminates.
