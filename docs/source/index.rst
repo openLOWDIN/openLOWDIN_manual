@@ -60,11 +60,17 @@ This manual is still in early construction stage! Thanks for your patience.
         External potentials <tutorials/extPotentials.rst>
         Molden files <tutorials/moldenFilesExample.rst>
 
+.. toctree::
+   :maxdepth: 2
+   :caption: References:
+
+        Bibliography <bibliography/biblio.rst>
+
+.. Indices and tables
+.. ==================
+.. 
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
 
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

@@ -33,7 +33,8 @@ release = '0.1'
 # ones.
 extensions = [
 'sphinx.ext.autosectionlabel',
-'sphinx.ext.imgconverter'
+'sphinx.ext.imgconverter',
+'sphinxcontrib.bibtex'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -66,4 +67,6 @@ html_favicon = 'logo/openLowdin_logo_v2_white_black.svg'
 epub_author = 'Jorge Charry, Félix Moncada'
 
 latex_engine = 'pdflatex'
+bibtex_bibfiles = ['bibliography/biblio.bib']
+
 

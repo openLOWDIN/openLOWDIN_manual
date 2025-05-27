@@ -19,6 +19,7 @@ Installation notes.
 
 * Sphinx 
 * pdflatex
+* sphinxcontrib-bibtex
 
 ### Compile html ###
 
