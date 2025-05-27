@@ -111,6 +111,66 @@
              
   <section id="scf">
 <h1>SCF<a class="headerlink" href="#scf" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nonElectronicEnergyTolerance=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">electronicEnergyTolerance=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nonelectronicDensityMatrixTolerance=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">electronicDensityMatrixTolerance=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">totalEnergyTolerance=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">totalDensityMatrixTolerance=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">densityFactorThreshold=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">diisSwitchThreshold=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">diisSwitchThreshold_bkp=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">electronicLevelShifting=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nonelectronicLevelShifting=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exchangeOrbitalThreshold=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">waveFunctionScale=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1000.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scfNonelectronicMaxIterations=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">50</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scfElectronicMaxIterations=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">50</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scfGlobalMaxIterations=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">200</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">listSize=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">-20</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">convergenceMethod=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1!!(0)NONE,(1)DAMPING,(2)DIIS,(3)LEVELSHIFTING(4)DAMPING/DIIS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">diisDimensionality=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iterationScheme=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">3!!(0)NONELECRONICFULLY/e-(1)ELECTRONICFULLY(2)CONVERGEDINDIVIDIALLY(3)SCHEMESIMULTANEOUS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scfElectronicTypeGuess=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;HCORE&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scfNonelectronicTypeGuess=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;HCORE&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scfConvergenceCriterium=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;ENERGY&quot;!ENERGY,DENSITY,BOTH</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">diisErrorInDamping=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">activateLevelShifting=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exchangeOrbitalsInSCF=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">forceClosedShell=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">debugScfs=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scfGhostSpecies=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></li>
+</ul>
 </section>
 
 

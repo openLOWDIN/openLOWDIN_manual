@@ -111,6 +111,56 @@
              
   <section id="hartree-fock-hf">
 <span id="hf"></span><h1>Hartree-Fock, HF<a class="headerlink" href="#hartree-fock-hf" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">frozen=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">freezeNonElectronicOrbitals=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">freezeElectronicOrbitals=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hartreeProductGuess=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">readCoefficients=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.true.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">readFchk=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">writeCoefficientsInBinary=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.true.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">readEigenvalues=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">readEigenvaluesInBinary=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.true.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">writeEigenvaluesInBinary=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.true.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">noSCF=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">finiteMassCorrection=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">removeTranslationalContamination=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buildTwoParticlesMatrixForOneParticle=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buildMixedDensityMatrix=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">onlyElectronicEffect=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">electronicWaveFunctionAnalysis=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isOpenShell=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getGradients=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HFprintEigenvalues=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.true.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HFprintEigenvectors=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;OCCUPIED&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overlapEigenThreshold=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-8_8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">electricField(:)=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0_8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">multipoleOrder=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+</ul>
 </section>
 
 

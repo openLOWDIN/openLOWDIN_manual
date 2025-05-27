@@ -45,3 +45,51 @@ To perform calculations with this method, select the UHF reference, add to the c
 For third order calculations, you can select in the "CONTROL" block the type of correction to be used by adding "ptP3Method=" with "P3","EP3","OVGF-A","OVGF-B","OVGF-C" and "REN-P3" as options. By default, the six correction types are computed. 
 
 See :ref:`PT2 example`, :ref:`TOEP2 example` and :ref:`PT3 example` for examples of propagator calculations in openLowdin
+
+
+* ``ptOnlyOneSpecieCorrection=`` *[logical]*
+  *Default* ``.false.`` 
+
+* ``selfEnergyScan=`` *[logical]*
+  *Default* ``.false.`` 
+
+* ``ptTransitionOperator=`` *[logical]*
+  *Default* ``.false.`` 
+
+* ``ptJustOneOrbital=`` *[logical]*
+  *Default* ``.false.`` 
+
+* ``selfEnergySpacing=`` *[float]*
+  *Default* ``0.5_8`` 
+
+* ``selfEnergyRange=`` *[float]*
+  *Default* ``5.0_8`` 
+
+* ``ptOrder=`` *[integer]*
+  *Default* ``1`` 
+
+* ``ptMaxIterations=`` *[integer]*
+  *Default* ``50`` 
+
+* ``ptIterationMethod2Limit=`` *[integer]*
+  *Default* ``1`` 
+
+* ``ptIterationScheme=`` *[integer]*
+  *Default* ``1`` 
+
+* ``ptMaxNumberOfPolesSearched=`` *[integer]*
+  *Default* ``10`` 
+
+
+* ``ptFactorSS=`` *[integer]*
+  *Default* ``0`` 
+
+* ``ptFactorOS=`` *[integer]*
+  *Default* ``0`` 
+
+* ``ptP3Method=`` *[character]*
+  *Default* ``"NONE"`` 
+
+* ``ptP3Method(1)=`` *[character]*
+  *Default* ``"ALL"`` 
+

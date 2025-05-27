@@ -142,6 +142,38 @@ Using the “IonizeMO” and “ionizeSpecies” in the “CONTROL” block, all
 To perform calculations with this method, select the UHF reference, add to the control block the “ptTransitionOperator=.T.” and select a fractional occupation using “MOfractionOccupation”. The recommended value is 0.5.</p>
 <p>For third order calculations, you can select in the “CONTROL” block the type of correction to be used by adding “ptP3Method=” with “P3”,”EP3”,”OVGF-A”,”OVGF-B”,”OVGF-C” and “REN-P3” as options. By default, the six correction types are computed.</p>
 <p>See <a class="reference internal" href="../tutorials/pt2example.html#pt2-example"><span class="std std-ref">PT2 with quantum nucleus</span></a>, <a class="reference internal" href="../tutorials/toep2example.html#toep2-example"><span class="std std-ref">TOEP2 with quantum nucleus</span></a> and <a class="reference internal" href="../tutorials/pt3example.html#pt3-example"><span class="std std-ref">PT3 for a Ps-atom complex</span></a> for examples of propagator calculations in openLowdin</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ptOnlyOneSpecieCorrection=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">selfEnergyScan=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptTransitionOperator=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptJustOneOrbital=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">selfEnergySpacing=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.5_8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">selfEnergyRange=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">5.0_8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptOrder=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptMaxIterations=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">50</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptIterationMethod2Limit=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptIterationScheme=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptMaxNumberOfPolesSearched=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptFactorSS=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptFactorOS=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptP3Method=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptP3Method(1)=</span></code> <em>[character]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;ALL&quot;</span></code></p></li>
+</ul>
 </section>
 
 

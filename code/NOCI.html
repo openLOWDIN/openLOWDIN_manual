@@ -111,6 +111,58 @@
              
   <section id="non-orthogonal-configuration-interaction-noci">
 <span id="noci"></span><h1>Non-Orthogonal Configuration Interaction, NOCI<a class="headerlink" href="#non-orthogonal-configuration-interaction-noci" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nonOrthogonalConfigurationInteraction=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">translationScanGrid(:)=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rotationalScanGrid=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rotationAroundZMaxAngle=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">360</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rotationAroundZStep=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nestedRotationalGrids=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">translationStep=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nestedGridsDisplacement=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configurationEnergyThreshold=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configurationOverlapThreshold=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configurationMaxDisplacement(:)=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configurationMinDisplacement(:)=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configurationMaxNPDistance=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configurationMinPPDistance=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configurationMaxPPDistance=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configurationEquivalenceDistance=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">empiricalOverlapParameterA=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0604</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">empiricalOverlapParameterB=</span></code> <em>[float]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.492</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">empiricalOverlapParameterE0=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">empiricalOverlapParameterSc=</span></code> <em>[integer]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configurationUseSymmetry=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">readNOCIgeometries=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">empiricalOverlapCorrection=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">onlyFirstNOCIelements=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">computeROCIformula=</span></code> <em>[logical]</em>
+<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+</ul>
 </section>
 
 
