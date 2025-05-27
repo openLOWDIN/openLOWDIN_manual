@@ -222,10 +222,10 @@ The quantum species <code class="docutils literal notranslate"><span class="pre"
 </section>
 <section id="basis">
 <h2>Basis<a class="headerlink" href="#basis" title="Permalink to this heading"></a></h2>
-<p>openLOWDIN constructs the spatial part of spin-molecular orbitals, <span class="math notranslate nohighlight">\(\chi\)</span> as a linear combination of Gaussian type functions (GTFs), <span class="math notranslate nohighlight">\(\varphi_{\mu}^{\alpha}\)</span>:</p>
+<p>openLOWDIN constructs the spatial part of spin-molecular orbitals, <span class="math notranslate nohighlight">\(\chi\)</span> as a linear combination of Gaussian type functions (GTFs), <span class="math notranslate nohighlight">\(\phi_{\mu}^{\alpha}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-\chi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})
+\phi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})
 \end{equation}</div><p>where <span class="math notranslate nohighlight">\(C_{\mu}^{\alpha}\)</span> is a combination coefficient for species <span class="math notranslate nohighlight">\(\alpha\)</span>, and the atomic orbital <span class="math notranslate nohighlight">\(\varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})\)</span> is built as a sum of primitive functions forming a contracted orbital</p>
 <div class="math notranslate nohighlight">
 \begin{equation}

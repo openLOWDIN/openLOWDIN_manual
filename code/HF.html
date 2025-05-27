@@ -17,6 +17,7 @@
       <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
       <script src="../_static/doctools.js?v=888ff710"></script>
       <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -111,6 +112,110 @@
              
   <section id="hartree-fock-hf">
 <span id="hf"></span><h1>Hartree-Fock, HF<a class="headerlink" href="#hartree-fock-hf" title="Permalink to this heading"></a></h1>
+<p>The APMO/HF level wave function for a multispecies molecular
+system in the ground state, <span class="math notranslate nohighlight">\(\Psi_0\)</span>, is constructed as a product
+of a single-configurational wave function, <span class="math notranslate nohighlight">\(\Phi_{\alpha}\)</span>, :</p>
+<div class="math notranslate nohighlight">
+\[{\Psi}_0= \prod_{\alpha}^{N_{sp}} \Phi_{\alpha}\]</div>
+<p>In the most common case, <span class="math notranslate nohighlight">\(\Phi_{\alpha}\)</span> is
+built as a single slater determinant of single-particle spin molecular orbitals <span class="math notranslate nohighlight">\(\chi_i\)</span>
+as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Psi_{\mathrm{SD}}(\overline{\mathbf{x}})=\frac{1}{\sqrt{N_{\alpha} !}}\left|\begin{array}{cccc}
+\chi_1\left(\mathbf{x}_1\right) &amp; \chi_1\left(\mathbf{x}_2\right) &amp; \ldots &amp; \chi_1\left(\mathbf{x}_{N_{\alpha}}\right) \\
+\chi_2\left(\mathbf{x}_1\right) &amp; \chi_2\left(\mathbf{x}_2\right) &amp; \ldots &amp; \chi_2\left(\mathbf{x}_{N_{\alpha}}\right) \\
+\ldots &amp; \ldots &amp; \ldots &amp; \ldots \\
+\chi_{N_{\alpha}}\left(\mathbf{x}_1\right) &amp; \chi_{N_f}\left(\mathbf{x}_2\right) &amp; \ldots &amp; \chi_{N_{\alpha}}\left(\mathbf{x}_{N_{\alpha}}\right)
+\end{array}\right|,
+\label{chap2:eq:SD}\end{aligned}\end{split}\]</div>
+<p>here <span class="math notranslate nohighlight">\(\alpha\)</span> symbol is used to represent quantum species,
+<span class="math notranslate nohighlight">\(\mathbf{x}\)</span> corresponds to their spin-coordinates
+vector, and <span class="math notranslate nohighlight">\(\overline{\mathbf{x}}\)</span> is the full set of
+4<span class="math notranslate nohighlight">\(N\)</span> coordinates. The spatial part of these spin orbitals,
+<span class="math notranslate nohighlight">\(\phi\)</span>, is written as a linear combination of atomic orbitals
+<span class="math notranslate nohighlight">\(\varphi\)</span> with a basis set of size <span class="math notranslate nohighlight">\(B\)</span> (notice that the
+number of atomic centers can be greater than the number of classical
+nuclei <span class="math notranslate nohighlight">\(N_c\)</span>) as</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\phi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})
+\end{aligned}\]</div>
+<p>Commonly these atomic orbitals are constructed with GTFs that depend on
+the spatial coordinate of one single particle <span class="math notranslate nohighlight">\(r_i\)</span> and are
+centered on a fixed position <span class="math notranslate nohighlight">\(R\)</span> for each atomic center. See <a class="reference internal" href="lib.html#basis"><span class="std std-ref">Basis</span></a></p>
+<p>The molecular orbitals are obtained by solving the coupled Fock equations, see <a class="reference internal" href="scf.html#scf"><span class="std std-ref">SCF</span></a>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\label{chap2:eq:FockEquation}
+f^\alpha(i)\phi^\alpha_i=\varepsilon^\alpha_i\phi^\alpha_i,
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\varepsilon_i\)</span> are the single particle orbital energies.
+The effective one-particle Fock operators, <span class="math notranslate nohighlight">\(f^\alpha(i)\)</span>, for the
+quantum species <span class="math notranslate nohighlight">\(e^-\)</span> and <span class="math notranslate nohighlight">\(e^+\)</span> are expanded as</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\label{chap2:eq:FockOperator}
+f^{\alpha}(i)=h^{\alpha}(i) + \sum^{N_{\alpha}}_{j} (q^{\alpha})^2 [J^{\alpha}_j - K^{\alpha}_j]
++ \sum_{\beta\ne\alpha}^{N_{sp}} \sum^{N_{\beta}}_{j} q^{\alpha}q^{\beta} J^{\beta}_j.
+\end{aligned}\]</div>
+<p>In the above equation <span class="math notranslate nohighlight">\(h^\alpha(i)\)</span> is the single-particle core
+Hamiltonian</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\label{chap2:eq:CoreHamiltonian}
+h^\alpha(i)=-\frac{1}{2m_{\alpha}}\nabla_{i}^{2} + \sum_{J}^{N_c}\frac{q^{\alpha} Z^{\alpha}}{R_{iJ}},
+\end{aligned}\]</div>
+<p>and <span class="math notranslate nohighlight">\(J^\alpha\)</span> and <span class="math notranslate nohighlight">\(K^\alpha\)</span> are the Coulomb and exchange
+operators defined as</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\label{chap2:eq:CoulombOperator}
+J^\alpha_j(1)\phi^\alpha_i(1)= q^\alpha q^\alpha\left[\int d{\bf r}_2\phi^{\alpha*}_j(2) \frac{1}{r_{12}} \phi^{\alpha}_j(2)\right]\phi^\alpha_i(1) ,\end{aligned}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\label{chap2:eq:ExchangeOperator}
+K^{\alpha} _j(1)\phi^{\alpha}_i(1)=\left[\int d{\bf r}_2\phi^{{\alpha}*}_j(2)\frac{1}{r_{12}} \phi^{\alpha}_i(2)\right]\phi^{\alpha}_j(1) .\end{aligned}\]</div>
+<p>In addition, <span class="math notranslate nohighlight">\(J^\beta\)</span> is the operator which accounts for the
+Coulomb potential between particles of different quantum species, thus
+is the term which couples the electronic and positronic Fock equations,
+and is defined as</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\label{chap2:eq:CoulombCouplingOperator}
+J^\beta_j(1)\phi^\alpha_i(1)= q^\beta q^\alpha\left[\int d{\bf r}_2\phi^{\beta*}_j(2) \frac{1}{r_{12}} \phi^{\beta}_j(2)\right]\phi^\alpha_i(1) .
+\end{aligned}\]</div>
+<p>In openLOWDIN, these expressions are implemented in a matrix form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\begin{aligned}
+S_{\mu \nu}^\alpha &amp; =\int d r_1 \varphi_\mu^\alpha(1) \varphi_\nu^\alpha(1) \\
+F_{\mu \nu}^\alpha &amp; =H_{\mu \nu}^\alpha+G_{\mu \nu}^\alpha + \sum_{\beta\ne\alpha}^{N_{sp}} G_{\mu \nu}^\beta \\
+H_{\mu \nu}^\alpha &amp; =\int d r_1 \varphi_\mu^\alpha(1) h^\alpha(1) \varphi_\nu^\alpha(1) \\
+G_{\mu \nu}^\alpha &amp; =\sum_{\lambda \sigma} P_{\lambda \sigma}^\alpha\left[\left(\mu^\alpha \nu^\alpha \mid \sigma^\alpha \lambda^\alpha\right)- (1/2) \left(\mu^\alpha \lambda^\alpha \mid \sigma^\alpha \nu^\alpha\right)\right] \\
+G_{\mu \nu}^\beta &amp; =\sum_{\lambda \sigma} P_{\lambda \sigma}^\beta\left(\mu^\alpha \nu^\alpha \mid \sigma^\beta \lambda^\beta\right),
+\end{aligned}\end{aligned}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(S_{\mu \nu}\)</span>, <span class="math notranslate nohighlight">\(F_{\mu \nu}\)</span>, <span class="math notranslate nohighlight">\(H_{\mu \nu}\)</span>, and
+<span class="math notranslate nohighlight">\(G_{\mu \nu}\)</span> correspond to the overlap, one-core Hamiltonian, and
+two-particles matrices, which all run over the total number of atomic orbitals
+<span class="math notranslate nohighlight">\(\mu,\nu\)</span>. Here, the chemistry notation of two-particles integrals
+<span class="math notranslate nohighlight">\(( \varphi_{\mu} \varphi_{\nu} | \varphi_{\sigma} \varphi_{\lambda} )\)</span> has
+been simplified to <span class="math notranslate nohighlight">\(( \mu \nu | \sigma \lambda)\)</span>. See <a class="reference internal" href="integrals.html#integrals"><span class="std std-ref">Integrals</span></a>.</p>
+<p>In addition, the density matrix elements are defined from the coefficient matrix
+<span class="math notranslate nohighlight">\(\mathbf{C}\)</span> of the molecular orbitals expansion and the fermionic orbital
+occupation <span class="math notranslate nohighlight">\(\eta\)</span></p>
+<div class="math notranslate nohighlight">
+\[P_{\mu \nu}^{\alpha} = \eta^{\alpha}\sum_{\lambda}^{occ^\alpha} C^{\alpha}_{\mu \lambda} C^{* \alpha}_{\lambda \nu}.\]</div>
+<p>These coefficient matrices are found by diagonalizing the Roothan-Hall
+equations</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F C} = \epsilon \mathbf{S C}.
+\label{chap2:eq:roothan}\]</div>
+<p>Finally, the total Hartree-Fock energy is computed from</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+E_0=\frac{1}{2} \sum_{\alpha}^{N_{sp}} \sum_{\mu\nu}^{occ^{\alpha}} P_{\mu \nu}^\alpha\left(H_{\mu \nu}^\alpha+F_{\mu \nu}^\alpha\right).
+\label{chap2:eq:HF}\end{aligned}\]</div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">frozen=</span></code> <em>[character]</em>
 <em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></li>
