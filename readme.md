@@ -1,6 +1,8 @@
 # openLOWDIN manual #
 
-This onlinw manual has been developed with Sphinx.
+![openLOWDIN logo](docs/source/logo/openLowdin_logo_v2_white_black.svg) 
+
+This online manual has been developed with Sphinx.
 
 website: https://openlowdin.github.io/openLOWDIN_manual/
 
@@ -32,11 +34,12 @@ Installation notes.
 
 
 ### Tips ###
-Check whitespace and empty lines.
 
-Links to sections in the same Document require the full title header declared in the file.
+* Check whitespace and empty lines.
 
-use pandoc to convert latex to rst. 
+* Links to sections in the same Document require the full title header declared in the file.
 
-* pandoc -s -f latex file.tex -t rst > file.rst
+* Use pandoc to convert latex to rst. 
+
+`pandoc -s -f latex file.tex -t rst > file.rst`
 
