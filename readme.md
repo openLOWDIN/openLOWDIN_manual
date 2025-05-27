@@ -36,4 +36,7 @@ Check whitespace and empty lines.
 
 Links to sections in the same Document require the full title header declared in the file.
 
+use pandoc to convert latex to rst. 
+
+* pandoc -s -f latex file.tex -t rst > file.rst
 

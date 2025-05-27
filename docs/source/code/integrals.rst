@@ -34,7 +34,7 @@ Kinetic
   :nowrap:
 
   \begin{equation}
-  T_{\mu \nu}^\alpha =\int d r_i \varphi_\mu^\alpha(i) \nabla_i  \varphi_\nu^\alpha(i) 
+  T_{\mu \nu}^\alpha =\int d r_i \varphi_\mu^\alpha(i) \nabla_i^2  \varphi_\nu^\alpha(i) 
   \end{equation}
 
 Point charge potential
