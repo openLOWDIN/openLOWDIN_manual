@@ -107,13 +107,13 @@ this namelist defines the elemental properties of quantum particles: charge, mas
 Basis
 =====
 
-openLOWDIN constructs the spatial part of spin-molecular orbitals, :math:`\chi` as a linear combination of Gaussian type functions (GTFs), :math:`\varphi_{\mu}^{\alpha}`:
+openLOWDIN constructs the spatial part of spin-molecular orbitals, :math:`\chi` as a linear combination of Gaussian type functions (GTFs), :math:`\phi_{\mu}^{\alpha}`:
 
 .. math::
   :nowrap:
 
   \begin{equation}
-  \chi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})
+  \phi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})
   \end{equation}
 
 where :math:`C_{\mu}^{\alpha}` is a combination coefficient for species :math:`\alpha`, and the atomic orbital :math:`\varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})` is built as a sum of primitive functions forming a contracted orbital

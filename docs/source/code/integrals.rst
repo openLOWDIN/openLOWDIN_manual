@@ -8,7 +8,7 @@ openLOWDIN computes analitically one-body and two-body integrals based on atomic
   :nowrap:
 
    \begin{equation}                                                                                                                     
-   \chi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu}) 
+   \phi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu}) 
    \end{equation}                                                                                                                       
 
 
