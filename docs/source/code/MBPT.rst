@@ -31,3 +31,18 @@ For more information on APMO-MP2 calculations see S. A. Gonz\'alez, A. Reyes, "N
 In addition, OpenLowdin can compute second order Epsein-Nesbet (EN2) corrections, which correspond to renormalized MP2 equations.
 
 See :ref:`MP2 example` for an example of a MP2 calculation in openLowdin
+
+* ``mpCorrection=`` *[integer]*
+  *Default* ``1`` 
+
+* ``mpFrozenCoreBoundary=`` *[integer]*
+  *Default* ``0`` 
+
+* ``mpOnlyElectronicCorrection=`` *[logical]*
+  *Default* ``.false.`` 
+
+* ``epsteinNesbetCorrection=`` *[integer]*
+  *Default* ``1`` 
+
+
+
