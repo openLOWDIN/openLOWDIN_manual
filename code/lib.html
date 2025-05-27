@@ -222,14 +222,14 @@ The quantum species <code class="docutils literal notranslate"><span class="pre"
 </section>
 <section id="basis">
 <h2>Basis<a class="headerlink" href="#basis" title="Permalink to this heading"></a></h2>
-<p>openLOWDIN constructs the spatial part of spin-molecular orbitals, <span class="math notranslate nohighlight">\(\varphi\)</span> as a linear combination of Gaussian type functions (GTFs), <span class="math notranslate nohighlight">\(\chi_{\mu}^{\alpha}\)</span>:</p>
+<p>openLOWDIN constructs the spatial part of spin-molecular orbitals, <span class="math notranslate nohighlight">\(\chi\)</span> as a linear combination of Gaussian type functions (GTFs), <span class="math notranslate nohighlight">\(\varphi_{\mu}^{\alpha}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-\varphi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \chi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})
-\end{equation}</div><p>where <span class="math notranslate nohighlight">\(C_{\mu}^{\alpha}\)</span> is a combination coefficient for species <span class="math notranslate nohighlight">\(\alpha\)</span>, and the atomic orbital <span class="math notranslate nohighlight">\(\chi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})\)</span> is built as a sum of primitive functions forming a contracted orbital</p>
+\chi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(C_{\mu}^{\alpha}\)</span> is a combination coefficient for species <span class="math notranslate nohighlight">\(\alpha\)</span>, and the atomic orbital <span class="math notranslate nohighlight">\(\varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})\)</span> is built as a sum of primitive functions forming a contracted orbital</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-\chi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu}) = \sum_{s} b_{s\mu}^{\alpha} N_{s\mu}^{\alpha}
+\varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu}) = \sum_{s} b_{s\mu}^{\alpha} N_{s\mu}^{\alpha}
                       (x_i-X_{\mu})^{l_{\mu}^{\alpha}}(y_i-Y_{\mu})^{m_{\mu}^{\alpha}}(z_i-Z_{\mu})^{n_{\mu}^{\alpha}}
                       \times \text{exp}[ -a_s^{\alpha} (\mathbf{r}_i - \mathbf{R}_{\mu})^2 ]
 \end{equation}</div><p>here, <span class="math notranslate nohighlight">\(b_{s\mu}^{\alpha}\)</span> are the primitive coefficients, <span class="math notranslate nohighlight">\(N_{s\mu}^{\alpha}\)</span> is a normalization constant, <span class="math notranslate nohighlight">\(\{x_i,y_i,z_i\}\)</span> are the spatial coordinates of the position vector <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> for the <span class="math notranslate nohighlight">\(i\)</span> particle of the quantum species <span class="math notranslate nohighlight">\(\alpha\)</span>, the set <span class="math notranslate nohighlight">\(\{l,m.n\}\)</span> are the angular momemtum components, <span class="math notranslate nohighlight">\(a_s\)</span> is the exponent, and <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> is the GTF center, which is independent of nuclei positions.</p>
@@ -306,8 +306,8 @@ The code employs the same basis set format of deMon2k, That is to say</p>
 <p>This potential is built as a sum of uncontracted and unnormalized GTFs</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-V_1^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} (x_i-X_{\mu})^{l_{\mu}^{\alpha}}(y_i-Y_{\mu})^{m_{\mu}^{\alpha}}(z_i-Z_{\mu})^{n_{\mu}^{\alpha}}
-                      \times \text{exp}[ -a_{\mu}^{\alpha} (\mathbf{r}_i - \mathbf{R}_{\mu})^2 ]
+V_1^{\alpha}(\mathbf{r}_i) = \sum_{\tau}^{N_{bas}^{\alpha}} C_{\tau}^{\alpha} (x_i-X_{\tau})^{l_{\tau}^{\alpha}}(y_i-Y_{\tau})^{m_{\tau}^{\alpha}}(z_i-Z_{\tau})^{n_{\tau}^{\alpha}}
+                      \times \text{exp}[ -a_{\tau}^{\alpha} (\mathbf{r}_i - \mathbf{R}_{\tau})^2 ]
 \end{equation}</div><p>where all parameters are defined in a similar fashion that the one defined for basis sets. The format of this potential basis corresponds to</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="o">-</span><span class="n">SPECIES_SYMBOL</span>
 <span class="c1">#</span>
@@ -358,7 +358,7 @@ V_1^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} (x_i
 <p>This potential is also built as a sum of uncontracted and unnormalized geminal GTFs, but it is limited to <em>s</em>-type orbitals</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-V_2^{\alpha,\beta}(\mathbf{r}^{\alpha}_i,\mathbf{r}^{\beta}_j) = \sum_{\mu}^{N_{bas}^{\alpha\beta}} C_{\mu}^{\alpha\beta} \text{exp}[ -a_{\mu}^{\alpha\beta} (\mathbf{r}^{\alpha}_i - \mathbf{r}^{\beta}_{j})^2 ]
+V_2^{\alpha,\beta}(\mathbf{r}^{\alpha}_i,\mathbf{r}^{\beta}_j) = \sum_{\tau}^{N_{bas}^{\alpha\beta}} C_{\tau}^{\alpha\beta} \text{exp}[ -a_{\tau}^{\alpha\beta} (\mathbf{r}^{\alpha}_i - \mathbf{r}^{\beta}_{j})^2 ]
 \end{equation}</div><p>And the potential format is given by</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span><span class="o">-</span><span class="n">SPECIES_SYMBOL_ALPHASPECIES_SYMBOL_BETA</span>
 <span class="c1">#</span>

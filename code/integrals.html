@@ -17,6 +17,7 @@
       <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
       <script src="../_static/doctools.js?v=888ff710"></script>
       <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -58,7 +59,14 @@
 <li class="toctree-l1"><a class="reference internal" href="lib.html">     Lib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="control.html">     CONTROL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="outputs.html">     Outputs</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">     Integrals</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     Integrals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#one-body-integrals">One-body integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#two-body-integrals">Two-body integrals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#input-options">Input options</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="HF.html">     HF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scf.html">     SCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="potentials.html">     Potentials</a></li>
@@ -111,22 +119,95 @@
              
   <section id="integrals">
 <h1>Integrals<a class="headerlink" href="#integrals" title="Permalink to this heading"></a></h1>
-<ul class="simple">
+<p>openLOWDIN computes analitically one-body and two-body integrals based on atomic orbitals expressed as a sum of contracted GTFs under a cartesian coordinate representation (see <a class="reference internal" href="lib.html#basis"><span class="std std-ref">Basis</span></a>)</p>
+<div class="math notranslate nohighlight">
+ \begin{equation}
+ \chi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})
+ \end{equation}</div><p>In matrix form, the following integrals are implemented in openLOWDIN</p>
+<section id="one-body-integrals">
+<h2>One-body integrals<a class="headerlink" href="#one-body-integrals" title="Permalink to this heading"></a></h2>
+<p>All computed under an Obara-Saika scheme for any angular momentum in the basis set</p>
+<p>Overlap</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+S_{\mu \nu}^\alpha =\int d r_i \varphi_\mu^\alpha(i) \varphi_\nu^\alpha(i)
+\end{equation}</div><p>Kinetic</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+T_{\mu \nu}^\alpha =\int d r_i \varphi_\mu^\alpha(i) \nabla_i  \varphi_\nu^\alpha(i)
+\end{equation}</div><p>Point charge potential</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+\mathbb{PC}_{\mu \nu}^\alpha = \sum_{I} \int d r_i \varphi_\mu^\alpha(i) \frac{1}{r_i - R_I}  \varphi_\nu^\alpha(i)
+\end{equation}</div><p>Moment integrals</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+\mathbb{UA}_{\mu \nu}^\alpha = \int d r_i \varphi_\mu^\alpha(i) r_{i,\mathbb{A}}  \varphi_\nu^\alpha(i) \quad \mathbb{A} = { x,y,z } \\
+\mathbb{UAB}_{\mu \nu}^\alpha = \int d r_i \varphi_\mu^\alpha(i) r_{i,\mathbb{A}} r_{i,\mathbb{B}} \varphi_\nu^\alpha(i) \quad \mathbb{A,B} = { x,y,z }
+\end{align}</div><p>Harmonic integrals</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+\mathbb{HA}_{\mu \nu}^\alpha = \int d r_i \varphi_\mu^\alpha(i) r^2_{i}  \varphi_\nu^\alpha(i)
+\end{align}</div><p>Three-center integrals</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+\mathbb{3C}_{\mu \nu}^\alpha = \sum_{\sigma} \int d r_i \varphi_\mu^\alpha(i)  \varphi_{\sigma}(i)  \varphi_\nu^\alpha(i)
+\end{align}</div></section>
+<section id="two-body-integrals">
+<h2>Two-body integrals<a class="headerlink" href="#two-body-integrals" title="Permalink to this heading"></a></h2>
+<p>These integrals are computed with LIBINT library <a class="reference external" href="https://github.com/evaleev/libint">https://github.com/evaleev/libint</a></p>
+<p>Four-center intraspecies coulomb potential</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+\langle \mu^\alpha \nu^\alpha | \sigma^\alpha\lambda^\alpha \rangle = \int \int d r_i d r_j \varphi_\mu^\alpha(i)  \varphi_\nu^\alpha(j)
+ \frac{1}{r_i - r_j} \varphi_\sigma^\alpha(i)  \varphi_\lambda^\alpha(j)
+\end{align}</div><p>Four-center interspecies coulomb potential</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+\langle \mu^\alpha \nu^\beta | \sigma^\alpha\lambda^\beta \rangle = \int \int d r_i d r_j \varphi_\mu^\alpha(i)  \varphi_\nu^\beta(j)
+ \frac{1}{r_i - r_j} \varphi_\sigma^\alpha(i)  \varphi_\lambda^\beta(j)
+\end{align}</div><p>Five-center, intra- and interspecies</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+\langle \mu^\alpha \nu^\beta | V_2^{\alpha,\beta}(\mathbf{r}^{\alpha}_i,\mathbf{r}^{\beta}_j) | \sigma^\alpha\lambda^\beta \rangle
+= \sum_\tau C_\tau^{\alpha\beta} \int \int d r_i d r_j \varphi_\mu^\alpha(i)  \varphi_\nu^\beta(j)
+\ \text{exp}[ -a_\tau^{\alpha\beta} ({r}_i - {r}_{j})^2 ]  \varphi_\sigma^\alpha(i)  \varphi_\lambda^\beta(j)
+\end{align}</div><section id="input-options">
+<h3>Input options<a class="headerlink" href="#input-options" title="Permalink to this heading"></a></h3>
+<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">tv=</span></code> <em>[float]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-6</span></code></p></li>
+deprecated <em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-6</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">integralThreshold=</span></code> <em>[float]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-10</span></code></p></li>
+threshold to store integrals in disk above the given value. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">1.0E-10</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">integralStackSize=</span></code> <em>[integer]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">30000</span></code></p></li>
+write and load integrals temporary files by stacks of this values. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">30000</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">integralStorage=</span></code> <em>[character]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;DISK&quot;!!&quot;MEMORY&quot;or&quot;DISK&quot;or&quot;DIRECT&quot;</span></code></p></li>
+select storage scheme for two-particles integrals</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;DISK&quot;</span></code></p></td>
+<td><p>Storage all non-zero integrals in disk at $SCRATCH folder, after four-index permutational symmetries. <em>Default</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;MEMORY&quot;</span></code></p></td>
+<td><p>Allocate a four dimensional array in RAM memory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;DIRECT&quot;</span></code></p></td>
+<td><p>Compute integrals on-the-fly (only for the SCF step)</p></td>
+</tr>
+</tbody>
+</table>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">integralScheme=</span></code> <em>[character]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;LIBINT&quot;!!LIBINTorRYS</span></code></p></li>
+select two-particles library. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;LIBINT&quot;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">schwarzInequality=</span></code> <em>[logical]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">harmonicConstant=</span></code> <em>[float]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0.0_8</span></code></p></li>
+perfoms Schwarz inequality to skip blocks of small integrals. Deprecated, now it’s used by default within libint interface. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
 </ul>
+</section>
+</section>
 </section>
 
 

@@ -107,22 +107,22 @@ this namelist defines the elemental properties of quantum particles: charge, mas
 Basis
 =====
 
-openLOWDIN constructs the spatial part of spin-molecular orbitals, :math:`\varphi` as a linear combination of Gaussian type functions (GTFs), :math:`\chi_{\mu}^{\alpha}`:
+openLOWDIN constructs the spatial part of spin-molecular orbitals, :math:`\chi` as a linear combination of Gaussian type functions (GTFs), :math:`\varphi_{\mu}^{\alpha}`:
 
 .. math::
   :nowrap:
 
   \begin{equation}
-  \varphi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \chi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})
+  \chi_i^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} \varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})
   \end{equation}
 
-where :math:`C_{\mu}^{\alpha}` is a combination coefficient for species :math:`\alpha`, and the atomic orbital :math:`\chi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})` is built as a sum of primitive functions forming a contracted orbital
+where :math:`C_{\mu}^{\alpha}` is a combination coefficient for species :math:`\alpha`, and the atomic orbital :math:`\varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu})` is built as a sum of primitive functions forming a contracted orbital
 
 .. math::
   :nowrap:
 
   \begin{equation}
-  \chi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu}) = \sum_{s} b_{s\mu}^{\alpha} N_{s\mu}^{\alpha}
+  \varphi_{\mu}^{\alpha}(\mathbf{r}_i;\mathbf{R}_{\mu}) = \sum_{s} b_{s\mu}^{\alpha} N_{s\mu}^{\alpha}
   			(x_i-X_{\mu})^{l_{\mu}^{\alpha}}(y_i-Y_{\mu})^{m_{\mu}^{\alpha}}(z_i-Z_{\mu})^{n_{\mu}^{\alpha}}
   			\times \text{exp}[ -a_s^{\alpha} (\mathbf{r}_i - \mathbf{R}_{\mu})^2 ]
   \end{equation}
@@ -215,8 +215,8 @@ This potential is built as a sum of uncontracted and unnormalized GTFs
   :nowrap:
 
   \begin{equation}
-  V_1^{\alpha}(\mathbf{r}_i) = \sum_{\mu}^{N_{bas}^{\alpha}} C_{\mu}^{\alpha} (x_i-X_{\mu})^{l_{\mu}^{\alpha}}(y_i-Y_{\mu})^{m_{\mu}^{\alpha}}(z_i-Z_{\mu})^{n_{\mu}^{\alpha}}
-  			\times \text{exp}[ -a_{\mu}^{\alpha} (\mathbf{r}_i - \mathbf{R}_{\mu})^2 ]
+  V_1^{\alpha}(\mathbf{r}_i) = \sum_{\tau}^{N_{bas}^{\alpha}} C_{\tau}^{\alpha} (x_i-X_{\tau})^{l_{\tau}^{\alpha}}(y_i-Y_{\tau})^{m_{\tau}^{\alpha}}(z_i-Z_{\tau})^{n_{\tau}^{\alpha}}
+  			\times \text{exp}[ -a_{\tau}^{\alpha} (\mathbf{r}_i - \mathbf{R}_{\tau})^2 ]
   \end{equation}
 
 where all parameters are defined in a similar fashion that the one defined for basis sets. The format of this potential basis corresponds to
@@ -281,7 +281,7 @@ This potential is also built as a sum of uncontracted and unnormalized geminal G
   :nowrap:
 
   \begin{equation}
-  V_2^{\alpha,\beta}(\mathbf{r}^{\alpha}_i,\mathbf{r}^{\beta}_j) = \sum_{\mu}^{N_{bas}^{\alpha\beta}} C_{\mu}^{\alpha\beta} \text{exp}[ -a_{\mu}^{\alpha\beta} (\mathbf{r}^{\alpha}_i - \mathbf{r}^{\beta}_{j})^2 ]
+  V_2^{\alpha,\beta}(\mathbf{r}^{\alpha}_i,\mathbf{r}^{\beta}_j) = \sum_{\tau}^{N_{bas}^{\alpha\beta}} C_{\tau}^{\alpha\beta} \text{exp}[ -a_{\tau}^{\alpha\beta} (\mathbf{r}^{\alpha}_i - \mathbf{r}^{\beta}_{j})^2 ]
   \end{equation}
 
 And the potential format is given by 
