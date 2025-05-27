@@ -104,7 +104,7 @@ and is defined as
    J^\beta_j(1)\phi^\alpha_i(1)= q^\beta q^\alpha\left[\int d{\bf r}_2\phi^{\beta*}_j(2) \frac{1}{r_{12}} \phi^{\beta}_j(2)\right]\phi^\alpha_i(1) .
    \end{aligned}
 
-In openLOWDIN, these expressions are implemented in a matrix form 
+In openLOWDIN, these expressions are implemented in a matrix form :cite:p:`szabo.1996.modern`
 
 .. math::
 
