@@ -1,3 +1,4 @@
 furo==2021.11.16
 sphinx>=6.0
 sphinx_rtd_theme
+sphinxcontrib.bibtex 
