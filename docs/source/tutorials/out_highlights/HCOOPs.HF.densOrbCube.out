@@ -1,0 +1,38 @@
+ --------------------------------------------------------
+         DENSITYCUBE    1
+       for species: E-
+  cube size (a.u.):    9.44863
+cube center (a.u.):    0.00000   0.00000   0.00000
+         No. steps:        100       100       100
+          FileName: HCOOPs.HF.densOrbCube.E-.dens.cub                                                                   
+ --------------------------------------------------------
+ 
+ --------------------------------------------------------
+         DENSITYCUBE    2
+       for species: E+
+  cube size (a.u.):   37.79452
+cube center (a.u.):    0.00000   0.00000  -4.72432
+         No. steps:         50        50        50
+          FileName: HCOOPs.HF.densOrbCube.E+.dens.cub                                                                   
+ --------------------------------------------------------
+ 
+ --------------------------------------------------------
+         ORBITALCUBE    3
+   for all species  
+        for the highest occupied orbital
+  cube size (a.u.):   28.34589
+cube center (a.u.):    0.00000   0.00000  -4.72432
+         No. steps:         60        60        60
+          FileName: HCOOPs.HF.densOrbCube.E-.orb12.cub                                                                  
+          FileName: HCOOPs.HF.densOrbCube.E+.orb1.cub                                                                   
+ --------------------------------------------------------
+ 
+ --------------------------------------------------------
+         ORBITALCUBE    4
+       for species: E-
+       for orbital:         11
+  cube size (a.u.):   18.89726
+cube center (a.u.):    0.00000   0.00000   0.00000
+         No. steps:         80        80        80
+          FileName: HCOOPs.HF.densOrbCube.E-.orb11.cub                                                                  
+ --------------------------------------------------------

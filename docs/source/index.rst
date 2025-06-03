@@ -59,6 +59,7 @@ This manual is still in early construction stage! Thanks for your patience.
         Quantum Drude Oscillators <tutorials/qdo.rst>
         External potentials <tutorials/extPotentials.rst>
         Molden files <tutorials/moldenFilesExample.rst>
+        Cubes files <tutorials/cubesFilesExample.rst>
 
 .. toctree::
    :maxdepth: 2
