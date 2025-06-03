@@ -12,6 +12,7 @@ In this section you can find multiples examples for openLOWDIN calculations
 * :ref:`QDO`
 * :ref:`External potentials`
 * :ref:`molden example`
+* :ref:`cubes example`
 
 
 

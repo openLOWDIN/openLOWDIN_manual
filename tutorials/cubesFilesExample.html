@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cubes examples &mdash; openLOWDIN 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="shortcut icon" href="../_static/openLowdin_logo_v2_white_black.svg"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliography" href="../bibliography/biblio.html" />
+    <link rel="prev" title="Molden examples" href="moldenFilesExample.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            openLOWDIN
+              <img src="../_static/openLowdin_logo_v2_white_black.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/about.html">     About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/developers_and_contributors.html">     Developers and contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/installation.html">     Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openLOWDIN/getting_started.html">     Getting started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code/code.html">     List of methods/options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/input.html">     Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/lib.html">     Lib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/control.html">     CONTROL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/outputs.html">     Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/integrals.html">     Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/HF.html">     HF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/scf.html">     SCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/potentials.html">     Potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/properties.html">     Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/DFT.html">     DFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/MBPT.html">     MBPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/PT.html">     PT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/CI.html">     CI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code/NOCI.html">     NOCI</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">     List of tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="positrons.html">     Positronic systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="positronCovalentBond.html">     Positron covalent bond</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nuclei.html">     Quantum nuclei</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp2example.html">     MP2 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pt2example.html">     PT2 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="toep2example.html">     TOEP2 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pt3example.html">     PT3 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="muons.html">     Negative muons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qdo.html">     Quantum Drude Oscillators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extPotentials.html">     External potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moldenFilesExample.html">     Molden files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     Cubes files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#excited-states">Excited states</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography/biblio.html">     Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">openLOWDIN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Cubes examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/cubesFilesExample.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cubes-examples">
+<span id="cubes-example"></span><h1>Cubes examples<a class="headerlink" href="#cubes-examples" title="Permalink to this heading"></a></h1>
+<p>With openLowdin, we can generate orbital and density Gaussian cube files (<a class="reference external" href="https://h5cube-spec.readthedocs.io/en/latest/cubeformat.html">https://h5cube-spec.readthedocs.io/en/latest/cubeformat.html</a> ). Here we present an example for positronic formate</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SYSTEM_DESCRIPTION</span><span class="o">=</span><span class="s1">&#39;Positronic formate&#39;</span> 
+
+<span class="n">GEOMETRY</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">cc</span><span class="o">-</span><span class="n">pVDZ</span>		<span class="mf">0.0000000</span>	<span class="mf">0.0000000</span>	<span class="mf">0.3157740</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="n">cc</span><span class="o">-</span><span class="n">pVDZ</span>		<span class="mf">0.0000000</span>	<span class="mf">0.0000000</span>	<span class="mf">1.4510170</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="n">aug</span><span class="o">-</span><span class="n">cc</span><span class="o">-</span><span class="n">pVDZ</span>	<span class="mf">0.0000000</span>	<span class="mf">1.1357680</span>	<span class="o">-</span><span class="mf">0.2091040</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="n">aug</span><span class="o">-</span><span class="n">cc</span><span class="o">-</span><span class="n">pVDZ</span>	<span class="mf">0.0000000</span>	<span class="o">-</span><span class="mf">1.1357680</span>	<span class="o">-</span><span class="mf">0.2091040</span> <span class="n">addParticles</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">e</span><span class="o">+</span>    <span class="n">PSX</span><span class="o">-</span><span class="n">DZ</span>		<span class="mf">0.0000000</span>	<span class="mf">1.1357680</span>	<span class="o">-</span><span class="mf">0.2091040</span>
+<span class="n">e</span><span class="o">+</span>    <span class="n">PSX</span><span class="o">-</span><span class="n">DZ</span>		<span class="mf">0.0000000</span>	<span class="o">-</span><span class="mf">1.1357680</span>	<span class="o">-</span><span class="mf">0.2091040</span> <span class="n">addParticles</span><span class="o">=-</span><span class="mi">1</span>
+<span class="n">C</span>     <span class="n">dirac</span>		<span class="mf">0.0000000</span>	<span class="mf">0.0000000</span>	<span class="mf">0.3157740</span>
+<span class="n">H</span>     <span class="n">dirac</span>		<span class="mf">0.0000000</span>	<span class="mf">0.0000000</span>	<span class="mf">1.4510170</span>
+<span class="n">O</span>     <span class="n">dirac</span>		<span class="mf">0.0000000</span>	<span class="mf">1.1357680</span>	<span class="o">-</span><span class="mf">0.2091040</span>
+<span class="n">O</span>     <span class="n">dirac</span>		<span class="mf">0.0000000</span>	<span class="o">-</span><span class="mf">1.1357680</span>	<span class="o">-</span><span class="mf">0.2091040</span>
+<span class="n">END</span> <span class="n">GEOMETRY</span>
+
+<span class="n">TASKS</span>
+	<span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;RHF&quot;</span>
+<span class="n">END</span> <span class="n">TASKS</span>
+
+<span class="n">OUTPUTS</span>
+	<span class="n">densityCube</span>  <span class="n">cubeSize</span><span class="o">=</span><span class="mi">5</span>  <span class="n">point1</span><span class="o">=</span><span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="n">species</span><span class="o">=</span><span class="s2">&quot;E-&quot;</span> <span class="n">pointsPerDim</span><span class="o">=</span><span class="mi">100</span>
+	<span class="n">densityCube</span>  <span class="n">cubeSize</span><span class="o">=</span><span class="mi">20</span>  <span class="n">point1</span><span class="o">=</span><span class="mf">0.0</span> <span class="mf">0.0</span> <span class="o">-</span><span class="mf">2.5</span> <span class="n">species</span><span class="o">=</span><span class="s2">&quot;E+&quot;</span> <span class="n">pointsPerDim</span><span class="o">=</span><span class="mi">50</span>
+	<span class="n">orbitalCube</span>  <span class="n">cubeSize</span><span class="o">=</span><span class="mi">15</span>  <span class="n">center</span><span class="o">=</span><span class="mf">0.0</span> <span class="mf">0.0</span> <span class="o">-</span><span class="mf">2.5</span> <span class="n">species</span><span class="o">=</span><span class="s2">&quot;ALL&quot;</span> <span class="n">scanStep</span><span class="o">=</span><span class="mf">0.5</span>
+	<span class="n">orbitalCube</span>  <span class="n">cubeSize</span><span class="o">=</span><span class="mi">10</span>  <span class="n">center</span><span class="o">=</span><span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="n">species</span><span class="o">=</span><span class="s2">&quot;E-&quot;</span> <span class="n">orbital</span><span class="o">=</span><span class="mi">11</span> <span class="n">scanStep</span><span class="o">=</span><span class="mf">0.25</span>
+<span class="n">END</span> <span class="n">OUTPUTS</span>
+</pre></div>
+</div>
+<p>With the first two lines in the OUTPUTS block, we request density cubes for electrons and positrons. Here, we use a different size for each cube, because the positronic density is more delocalized.</p>
+<p>With the last two lines of the OUTPUTS block, we request orbitals cubes. When we select “species”=”ALL”, openLowdin will generate a cube with the HOMO of each species.
+We can also select a specific orbital, by selecting a species and an orbital number. In this example we requested the HOMO-1 of the formate anion.</p>
+<p>We pass the option “center” or “point1” to define the origin of the cube, and we use the “pointsPerDim” or the “scanStep” options to adjust its resolution.
+“scanStep” sets the separation between grid points, whereas “pointsPerDim=N” sets the total number of points per side, such that the number of points in the cube is N<sup>3</sup>.</p>
+<p>Therefore, running this calculation produces five cube files, with the filenames provided in the output.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">--------------------------------------------------------</span>
+         <span class="n">DENSITYCUBE</span>    <span class="mi">1</span>
+       <span class="k">for</span> <span class="n">species</span><span class="p">:</span> <span class="n">E</span><span class="o">-</span>
+  <span class="n">cube</span> <span class="n">size</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="p">):</span>    <span class="mf">9.44863</span>
+<span class="n">cube</span> <span class="n">center</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="p">):</span>    <span class="mf">0.00000</span>   <span class="mf">0.00000</span>   <span class="mf">0.00000</span>
+         <span class="n">No</span><span class="o">.</span> <span class="n">steps</span><span class="p">:</span>        <span class="mi">100</span>       <span class="mi">100</span>       <span class="mi">100</span>
+          <span class="n">FileName</span><span class="p">:</span> <span class="n">HCOOPs</span><span class="o">.</span><span class="n">HF</span><span class="o">.</span><span class="n">densOrbCube</span><span class="o">.</span><span class="n">E</span><span class="o">-.</span><span class="n">dens</span><span class="o">.</span><span class="n">cub</span>                                                                   
+ <span class="o">--------------------------------------------------------</span>
+ 
+ <span class="o">--------------------------------------------------------</span>
+         <span class="n">DENSITYCUBE</span>    <span class="mi">2</span>
+       <span class="k">for</span> <span class="n">species</span><span class="p">:</span> <span class="n">E</span><span class="o">+</span>
+  <span class="n">cube</span> <span class="n">size</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="p">):</span>   <span class="mf">37.79452</span>
+<span class="n">cube</span> <span class="n">center</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="p">):</span>    <span class="mf">0.00000</span>   <span class="mf">0.00000</span>  <span class="o">-</span><span class="mf">4.72432</span>
+         <span class="n">No</span><span class="o">.</span> <span class="n">steps</span><span class="p">:</span>         <span class="mi">50</span>        <span class="mi">50</span>        <span class="mi">50</span>
+          <span class="n">FileName</span><span class="p">:</span> <span class="n">HCOOPs</span><span class="o">.</span><span class="n">HF</span><span class="o">.</span><span class="n">densOrbCube</span><span class="o">.</span><span class="n">E</span><span class="o">+.</span><span class="n">dens</span><span class="o">.</span><span class="n">cub</span>                                                                   
+ <span class="o">--------------------------------------------------------</span>
+ 
+ <span class="o">--------------------------------------------------------</span>
+         <span class="n">ORBITALCUBE</span>    <span class="mi">3</span>
+   <span class="k">for</span> <span class="nb">all</span> <span class="n">species</span>  
+        <span class="k">for</span> <span class="n">the</span> <span class="n">highest</span> <span class="n">occupied</span> <span class="n">orbital</span>
+  <span class="n">cube</span> <span class="n">size</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="p">):</span>   <span class="mf">28.34589</span>
+<span class="n">cube</span> <span class="n">center</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="p">):</span>    <span class="mf">0.00000</span>   <span class="mf">0.00000</span>  <span class="o">-</span><span class="mf">4.72432</span>
+         <span class="n">No</span><span class="o">.</span> <span class="n">steps</span><span class="p">:</span>         <span class="mi">60</span>        <span class="mi">60</span>        <span class="mi">60</span>
+          <span class="n">FileName</span><span class="p">:</span> <span class="n">HCOOPs</span><span class="o">.</span><span class="n">HF</span><span class="o">.</span><span class="n">densOrbCube</span><span class="o">.</span><span class="n">E</span><span class="o">-.</span><span class="n">orb12</span><span class="o">.</span><span class="n">cub</span>                                                                  
+          <span class="n">FileName</span><span class="p">:</span> <span class="n">HCOOPs</span><span class="o">.</span><span class="n">HF</span><span class="o">.</span><span class="n">densOrbCube</span><span class="o">.</span><span class="n">E</span><span class="o">+.</span><span class="n">orb1</span><span class="o">.</span><span class="n">cub</span>                                                                   
+ <span class="o">--------------------------------------------------------</span>
+ 
+ <span class="o">--------------------------------------------------------</span>
+         <span class="n">ORBITALCUBE</span>    <span class="mi">4</span>
+       <span class="k">for</span> <span class="n">species</span><span class="p">:</span> <span class="n">E</span><span class="o">-</span>
+       <span class="k">for</span> <span class="n">orbital</span><span class="p">:</span>         <span class="mi">11</span>
+  <span class="n">cube</span> <span class="n">size</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="p">):</span>   <span class="mf">18.89726</span>
+<span class="n">cube</span> <span class="n">center</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="p">):</span>    <span class="mf">0.00000</span>   <span class="mf">0.00000</span>   <span class="mf">0.00000</span>
+         <span class="n">No</span><span class="o">.</span> <span class="n">steps</span><span class="p">:</span>         <span class="mi">80</span>        <span class="mi">80</span>        <span class="mi">80</span>
+          <span class="n">FileName</span><span class="p">:</span> <span class="n">HCOOPs</span><span class="o">.</span><span class="n">HF</span><span class="o">.</span><span class="n">densOrbCube</span><span class="o">.</span><span class="n">E</span><span class="o">-.</span><span class="n">orb11</span><span class="o">.</span><span class="n">cub</span>                                                                  
+ <span class="o">--------------------------------------------------------</span>
+</pre></div>
+</div>
+<p>The VMD software (<a class="reference external" href="https://www.ks.uiuc.edu/Research/vmd/">https://www.ks.uiuc.edu/Research/vmd/</a> ) is an excellent tool to visualize the cube files. Here are some VMD plots obtained from the positronic formate cubes</p>
+<a class="reference internal image-reference" href="../_images/positronicFormateDensOrbCubes.jpg"><img alt="Cube files from HCOOPs.HF.densOrbCube.out" src="../_images/positronicFormateDensOrbCubes.jpg" style="width: 600px;" /></a>
+<p>We can also request cubes for localized orbitals. The keywords required are identical to those employed in the <a class="reference internal" href="moldenFilesExample.html#molden-example"><span class="std std-ref">Molden examples</span></a>.</p>
+<section id="excited-states">
+<h2>Excited states<a class="headerlink" href="#excited-states" title="Permalink to this heading"></a></h2>
+<p>For configuration interaction calculations, we can generate cubes for excited state natural orbitals and excited state densities. For example, with the following CI singles calculation,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SYSTEM_DESCRIPTION</span><span class="o">=</span><span class="s1">&#39;Positronic formate&#39;</span>
+
+<span class="n">GEOMETRY</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">cc</span><span class="o">-</span><span class="n">pVDZ</span>           <span class="mf">0.0000000</span>       <span class="mf">0.0000000</span>       <span class="mf">0.3157740</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="n">cc</span><span class="o">-</span><span class="n">pVDZ</span>           <span class="mf">0.0000000</span>       <span class="mf">0.0000000</span>       <span class="mf">1.4510170</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="n">aug</span><span class="o">-</span><span class="n">cc</span><span class="o">-</span><span class="n">pVDZ</span>       <span class="mf">0.0000000</span>       <span class="mf">1.1357680</span>       <span class="o">-</span><span class="mf">0.2091040</span>
+<span class="n">e</span><span class="o">-</span><span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="n">aug</span><span class="o">-</span><span class="n">cc</span><span class="o">-</span><span class="n">pVDZ</span>       <span class="mf">0.0000000</span>       <span class="o">-</span><span class="mf">1.1357680</span>      <span class="o">-</span><span class="mf">0.2091040</span> <span class="n">addParticles</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">e</span><span class="o">+</span>    <span class="n">PSX</span><span class="o">-</span><span class="n">DZ</span>            <span class="mf">0.0000000</span>       <span class="mf">1.1357680</span>       <span class="o">-</span><span class="mf">0.2091040</span>
+<span class="n">e</span><span class="o">+</span>    <span class="n">PSX</span><span class="o">-</span><span class="n">DZ</span>            <span class="mf">0.0000000</span>       <span class="o">-</span><span class="mf">1.1357680</span>      <span class="o">-</span><span class="mf">0.2091040</span> <span class="n">addParticles</span><span class="o">=-</span><span class="mi">1</span>
+<span class="n">C</span>     <span class="n">dirac</span>             <span class="mf">0.0000000</span>       <span class="mf">0.0000000</span>       <span class="mf">0.3157740</span>
+<span class="n">H</span>     <span class="n">dirac</span>             <span class="mf">0.0000000</span>       <span class="mf">0.0000000</span>       <span class="mf">1.4510170</span>
+<span class="n">O</span>     <span class="n">dirac</span>             <span class="mf">0.0000000</span>       <span class="mf">1.1357680</span>       <span class="o">-</span><span class="mf">0.2091040</span>
+<span class="n">O</span>     <span class="n">dirac</span>             <span class="mf">0.0000000</span>       <span class="o">-</span><span class="mf">1.1357680</span>      <span class="o">-</span><span class="mf">0.2091040</span>
+<span class="n">END</span> <span class="n">GEOMETRY</span>
+
+<span class="n">TASKS</span>
+     	<span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;UHF&quot;</span>
+	<span class="n">configurationInteractionLevel</span><span class="o">=</span><span class="s2">&quot;CIS&quot;</span>
+<span class="n">END</span> <span class="n">TASKS</span>
+
+<span class="n">CONTROL</span>
+	<span class="n">numberOfCIstates</span><span class="o">=</span><span class="mi">2</span>
+	<span class="n">CIstatesToPrint</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">END</span> <span class="n">CONTROL</span>
+
+<span class="n">OUTPUTS</span>
+	<span class="n">densityCube</span>  <span class="n">cubeSize</span><span class="o">=</span><span class="mi">20</span>  <span class="n">point1</span><span class="o">=</span><span class="mf">0.0</span> <span class="mf">0.0</span> <span class="o">-</span><span class="mf">2.5</span> <span class="n">species</span><span class="o">=</span><span class="s2">&quot;E+&quot;</span> <span class="n">pointsPerDim</span><span class="o">=</span><span class="mi">50</span> <span class="n">state</span><span class="o">=</span><span class="mi">1</span>
+	<span class="n">densityCube</span>  <span class="n">cubeSize</span><span class="o">=</span><span class="mi">20</span>  <span class="n">point1</span><span class="o">=</span><span class="mf">0.0</span> <span class="mf">0.0</span> <span class="o">-</span><span class="mf">2.5</span> <span class="n">species</span><span class="o">=</span><span class="s2">&quot;E+&quot;</span> <span class="n">pointsPerDim</span><span class="o">=</span><span class="mi">50</span> <span class="n">state</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">END</span> <span class="n">OUTPUTS</span>
+</pre></div>
+</div>
+<p>we get the ground and first-excited state positronic densities.</p>
+<a class="reference internal image-reference" href="../_images/positronicFormateExcitedDensCubes.jpg"><img alt="Cube files from HCOOPs.CIS.densOrbCube.out" src="../_images/positronicFormateExcitedDensCubes.jpg" style="width: 600px;" /></a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="moldenFilesExample.html" class="btn btn-neutral float-left" title="Molden examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../bibliography/biblio.html" class="btn btn-neutral float-right" title="Bibliography" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, openLOWDIN.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

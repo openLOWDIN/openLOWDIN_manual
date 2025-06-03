@@ -10,6 +10,9 @@ Besides the standard output, openLowdin can generate other type of outputs to vi
 * Gnuplot 2D and 3D graphs for density and orbitals
 * Gaussian fchk files
 
+
+If CI or NOCI calculations with "CIStatesToPrint" greater that zero were selected, the molden, cubes and gnuplot files will use the CI or NOCI natural orbitals and/or density. Adding "state=N" to a line inside the "OUTPUTS" block allow us to select the desired excited state.
+  
 --------------------
 Molden and AIM files
 --------------------
@@ -37,8 +40,6 @@ For molden, there are three format types that can be selected with the CONTROL o
      - Same that STANDARD but including 1s GTO for each classical particles with zero contribution in the MO.
 
 All three formats work with the MOLDEN software. Other visualization codes may require the MIXED or QUANTUM formats.
-
-       If CI or NOCI calculations with "CIStatesToPrint" greater that zero were selected, the molden files will use the CI or NOCI natural orbitals. Also, adding "state=N" in the moldenFile line allow us to select the natural orbitals of the Nth excited state.
        
 See :ref:`molden example` for full input examples to generate molden files
      
@@ -59,6 +60,8 @@ For orbital plots, select an orbital with "orbital=N". The default is the HOMO o
 The position of the center of the cube is declared with "center=X Y Z" or with "point1=X Y Z".
 With "cubeSize=N" we declare the length of one side of the cube.
 The number of points is controled either by defining the number of points per side with "pointsPerDim=N", or the separation between points in one dimension, with "scanStep=N"
+
+See :ref:`cubes example` for full input examples to generate orbital and density cube files
 
 ------------------------
 Gnuplot 2D and 3D graphs
