@@ -74,4 +74,9 @@ This manual is still in early construction stage! Thanks for your patience.
 .. * :ref:`modindex`
 .. * :ref:`search`
 
+.. meta::
+   :google-site-verification: TJ7urfgOYSW-1eNz__lIDDOB_E2M4KFjiigia2COUQ4
+   :description: openLOWDIN is a computational program that implements the Any Particle Molecular Orbital (APMO) method to study systems containing any type and number of quantum species, such as electrons, positrons, quantum nuclei, muons, or drude oscillators.
+   :keywords: manual, lowdin, openlowdin, quantum chemistry, positrons, quantum nuclei, muons.
+
 
