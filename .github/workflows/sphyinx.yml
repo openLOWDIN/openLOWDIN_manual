@@ -14,9 +14,6 @@ jobs:
     - name: Build HTML
       uses: ammaraskar/sphinx-action@master
     - name: Inject Google Site Verification Meta Tag
-      run: |
-        META_TAG='<meta name="google-site-verification" content="TJ7urfgOYSW-1eNz__lIDDOB_E2M4KFjiigia2COUQ4" />'
-        find ./_site -name "*.html" -exec sudo sed -i "s|</head>|$META_TAG\n</head>|g" {} +
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
