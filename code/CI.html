@@ -67,7 +67,13 @@
 <li class="toctree-l1"><a class="reference internal" href="DFT.html">     DFT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MBPT.html">     MBPT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PT.html">     PT</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">     CI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     CI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ci-wavefunction">CI Wavefunction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#selected-ci-sci">Selected CI, SCI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#natural-orbitals">Natural orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ci-input-options">CI Input options</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="NOCI.html">     NOCI</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
@@ -117,15 +123,93 @@
              
   <section id="configuration-interaction-ci">
 <span id="ci"></span><h1>Configuration Interaction, CI<a class="headerlink" href="#configuration-interaction-ci" title="Permalink to this heading"></a></h1>
-<p>The APMO/CI wave function is written as a linear combination of CI configurations between all quantum species</p>
+<section id="ci-wavefunction">
+<h2>CI Wavefunction<a class="headerlink" href="#ci-wavefunction" title="Permalink to this heading"></a></h2>
+<p>The APMO/CI wave function is written as a linear combination of CI configurations</p>
+<div class="math notranslate nohighlight">
+ \begin{equation}
+   | \Psi_{\text{CI}} \rangle = \sum_{I}^{N_{\text{conf}}} c_I|\Psi_I\rangle
+\end{equation}</div><p>as products of Slater determinants between all quantum species</p>
+<div class="math notranslate nohighlight">
+   \begin{equation}
+    | \Psi_I \rangle =
+    \prod_{\alpha}^{N_{sp}} | D_I \rangle_{\alpha} = | D_I \rangle_{\alpha}  | D_I \rangle_{\beta}
+    | D_I \rangle_{\gamma} \dots
+ \end{equation}</div><p>where each is built as excitations within each type of quantum species, written in second quantization as:</p>
+<div class="math notranslate nohighlight">
+ \begin{equation}
+  | D_I \rangle_{\alpha} = a_i^{\dagger}a_j^{\dagger}\dots a_{N_{\alpha}}^{\dagger} | \rangle_{\alpha}
+  \end{equation}</div><p>For example,</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/conf.svg"><img alt="Schematic of a configuration" src="../_images/conf.svg" width="400px" /></a>
+<figcaption>
+<p><span class="caption-text">Schematic of multicomponent CI configuration</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Normally in CI, those configurations are group together according to the excitation level</p>
+<div class="math notranslate nohighlight">
+ \begin{equation}
+    | \Psi_{\text{CI}} \rangle = c_0|\Psi_0\rangle
+    + \sum_{\alpha}\sum_{ia \in \alpha} c_i^a|\Psi_i^a \rangle
+    +\sum_{\alpha,\beta}\sum_{\substack{ia\in\alpha\\jb\in\beta}} c_{ij}^{ab}|\Psi_{ij}^{ab} \rangle
+    +\sum_{\alpha,\beta}\sum_{\substack{ia\in\alpha\\jb\in\alpha\\kc\in\beta}} c_{ijk}^{abc}|\Psi_{ijk}^{abc} \rangle
+    + \cdots
+ \end{equation}</div><p>leading to all singles excitations for all species, doubles within the same species (intraspecies), doubles as products of two single excitations from two different species (interspecies) for all possible pairs, as well as triples, quadrupoles, … and so on.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/CI_confs.svg"><img alt="Schematic of a configuration" src="../_images/CI_confs.svg" width="800px" /></a>
+<figcaption>
+<p><span class="caption-text">Schematic of multicomponent CI wave function</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Given that wavefunction, the CI Hamiltonian matrix are computed following Slater’s rules taking into accound that the multispecies potential operator are still a two-body operator at most.</p>
+<p>Identical determinants:</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-   | \Phi_0 \rangle = c_0|\Psi_0\rangle
-   + \sum_{\alpha}\sum_{ia \in \alpha} c_i^a|\Psi_i^a \rangle
-   +\sum_{\alpha,\beta}\sum_{\substack{ia\in\alpha\\jb\in\beta}} c_{ij}^{ab}|\Psi_{ij}^{ab} \rangle
-   +\sum_{\alpha,\beta}\sum_{\substack{ia\in\alpha\\jb\in\alpha\\kc\in\beta}} c_{ijk}^{abc}|\Psi_{ijk}^{abc} \rangle
-   + \cdots
-\end{equation}</div><ul class="simple">
+\langle \Phi_I | \hat{H} | \Phi_I \rangle =
+\sum_{\alpha}^{N_s} \sum_i^{N^{\alpha}} [i|\hat{h}|i] +
+\sum_{\alpha}^{N_s} \sum_i^{N^{\alpha}}\sum_{j&gt;i}^{N^{\alpha}} ([ii|jj]-[ij|ji]) +
+\sum_{\alpha}^{N_s}\sum_{\beta &gt; \alpha}^{N_s} \sum_{\substack{i \in \alpha \\ j \in \beta}}^{N^{\alpha}N^{\beta}} [ii|jj]
+\end{equation}</div><p>One spin-orbital different</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+&amp; | \Phi_I \rangle = | \cdots i_{\alpha} \cdots \rangle \prod_{\beta \ne \alpha}^{N_s} | \beta(I)\rangle \quad \quad
+ | \Phi_J \rangle = | \cdots j_{\alpha} \cdots \rangle
+\prod_{\beta \ne \alpha}^{N_s} | \beta(I)\rangle \\
+&amp; \langle \Phi_I | \hat{H} | \Phi_J \rangle = [i|\hat{h}|i] +  \sum_k^{N^{\alpha}} ([ij|kk]-[ik|kj]) +
+\sum_{\beta \ne \alpha}^{N_s} \sum_{k \in\beta}^{N^{\beta}}[ij|kk], \ \ i,j \in \alpha
+\end{align}</div><p>Two spin-orbital different, same species</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+&amp; | \Phi_I \rangle = | \cdots i_{\alpha}j_{\alpha}  \cdots \rangle \prod_{\beta \ne \alpha}^{N_s} | \beta(I)\rangle \quad \quad | \Phi_J \rangle = | \cdots k_{\alpha}l_{\alpha}  \cdots \rangle
+\prod_{\beta \ne \alpha}^{N_s} | \beta(I)\rangle\\
+&amp; \langle \Phi_I | \hat{H} | \Phi_J \rangle =
+[ik|jl]-[il|jk], \ \ i,j,k,l \in \alpha
+\end{align}</div><p>One spin-orbital different for two different quantum species</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+&amp; | \Phi_I \rangle = | \cdots i_{\alpha} \cdots \rangle
+| \cdots k_{\beta} \cdots \rangle
+\prod_{\substack{\gamma \ne \alpha\\ \gamma\ne\beta}}^{N_s} | \gamma(I)\rangle \\ &amp;
+ | \Phi_J \rangle =  | \cdots j_{\alpha} \cdots \rangle
+| \cdots l_{\beta} \cdots \rangle
+\prod_{\substack{\gamma \ne \alpha\\ \gamma\ne\beta}}^{N_s} | \gamma(I)\rangle \\
+&amp; \langle \Phi_I |  \hat{H} |  \Phi_J \rangle =  [ij| kl], \ \ i,j \in \alpha ,k,l \in \beta
+\end{align}</div><p>More than two spin orbital different within same species or more than two different species, differing in one spin orbital.</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+&amp; \langle \Phi_I | \hat{H} | \Phi_J \rangle = 0
+\end{align}</div><p>The combinational CI coefficients <span class="math notranslate nohighlight">\(c\)</span> are obtained variationally by solving the CI eigenvalue problem <span class="math notranslate nohighlight">\(\textbf{Hc} = E\textbf{c}\)</span>.
+Due to the size of the Hamiltonian Matrix <span class="math notranslate nohighlight">\(\textbf{H}\)</span>, it is necessary to use iterative techniques for diagonalization of real symmetric matrices avoiding the memory storage of the full matrix. Davidson’s method is the most used technique to find the lowest eigenvalues and eigenvectors. Here, the storage requirements of <span class="math notranslate nohighlight">\(\textbf{H}\)</span> can be greatly reduced by direct calculation of a matrix-vector product of the form <span class="math notranslate nohighlight">\(\textbf{Hc} = \sigma\)</span>.</p>
+</section>
+<section id="selected-ci-sci">
+<h2>Selected CI, SCI<a class="headerlink" href="#selected-ci-sci" title="Permalink to this heading"></a></h2>
+</section>
+<section id="natural-orbitals">
+<h2>Natural orbitals<a class="headerlink" href="#natural-orbitals" title="Permalink to this heading"></a></h2>
+</section>
+<section id="ci-input-options">
+<h2>CI Input options<a class="headerlink" href="#ci-input-options" title="Permalink to this heading"></a></h2>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">configurationInteractionLevel=</span></code> <em>[character]</em>
 <em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">numberOfCIStates=</span></code> <em>[integer]</em>
@@ -165,6 +249,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">CIPrintThreshold=</span></code> <em>[float]</em>
 <em>Default</em> <code class="docutils literal notranslate"><span class="pre">1E-1</span></code></p></li>
 </ul>
+</section>
 </section>
 
 
