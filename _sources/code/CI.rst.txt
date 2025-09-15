@@ -136,6 +136,18 @@ Due to the size of the Hamiltonian Matrix :math:`\textbf{H}`, it is necessary to
 Selected CI, SCI
 ================
 
+In openLOWDIN, the CI techniques aimed to select the most relevant configurations within the whole CI space are encompassed as the SCI family. These are usually categorized as stochastic or deterministic :cite:p:`eriksen_JPCL_11_8922_2020`. Currently the code has implemented an extended multicomponent version of Adaptive Sampling CI, ASCI :cite:p:`tubman_JCP_145_044112_2016`.
+
+.. figure:: CI/SCI_scheme.svg
+   :alt: Schematic of SCI
+   :width: 500px
+   :align: center
+
+   Schematic of SCI algorithm
+
+
+
+
 Natural orbitals
 ================
 
