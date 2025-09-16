@@ -213,6 +213,11 @@ Due to the size of the Hamiltonian Matrix <span class="math notranslate nohighli
 </section>
 <section id="natural-orbitals">
 <h2>Natural orbitals<a class="headerlink" href="#natural-orbitals" title="Permalink to this heading"></a></h2>
+<p>In CI, natural orbitals are special orbitals defined as the eigenfunctions of the one-particle reduced CI density. Using them significantly improves CI convergence by reducing the number of configurations needed to describe electron correlation. This allows a CI calculation to achieve good accuracy with a much smaller set of configurations, as natural orbitals focus on those with large occupation numbers. Thus, the CI reduced density matrix for the CI <span class="math notranslate nohighlight">\(I\)</span>-th state is defined as</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+\gamma_{\mu,\nu}^{CI(I)} = \langle \Psi^{(I)} | a^{\dagger}_{\mu} a_{\nu} | \Psi^{(I)} \rangle
+\end{equation}</div><p>The natural orbitals are the eigenvectors of this density matrix, and the eigenvalues of the diagonalized density matrix are the natural occupation numbers, which indicate the importance of each natural orbital in the overall wave function.</p>
 </section>
 <section id="ci-input-options">
 <h2>CI Input options<a class="headerlink" href="#ci-input-options" title="Permalink to this heading"></a></h2>
