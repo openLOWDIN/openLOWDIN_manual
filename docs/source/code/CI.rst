@@ -145,11 +145,20 @@ In openLOWDIN, the CI techniques aimed to select the most relevant configuration
 
    Schematic of SCI algorithm
 
-
-
-
 Natural orbitals
 ================
+
+In CI, natural orbitals are special orbitals defined as the eigenfunctions of the one-particle reduced CI density. Using them significantly improves CI convergence by reducing the number of configurations needed to describe electron correlation. This allows a CI calculation to achieve good accuracy with a much smaller set of configurations, as natural orbitals focus on those with large occupation numbers. Thus, the CI reduced density matrix for the CI :math:`I`-th state is defined as 
+
+.. math::
+  :nowrap:
+  
+  \begin{equation}
+  \gamma_{\mu,\nu}^{CI(I)} = \langle \Psi^{(I)} | a^{\dagger}_{\mu} a_{\nu} | \Psi^{(I)} \rangle 
+  \end{equation} 
+
+The natural orbitals are the eigenvectors of this density matrix, and the eigenvalues of the diagonalized density matrix are the natural occupation numbers, which indicate the importance of each natural orbital in the overall wave function.
+
 
 CI Input options
 ================
