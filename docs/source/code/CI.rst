@@ -159,66 +159,111 @@ In CI, natural orbitals are special orbitals defined as the eigenfunctions of th
 
 The natural orbitals are the eigenvectors of this density matrix, and the eigenvalues of the diagonalized density matrix are the natural occupation numbers, which indicate the importance of each natural orbital in the overall wave function.
 
+Diagonal corrections
+===================
 
 CI Input options
 ================
 
 
 * ``configurationInteractionLevel=`` *[character]*
-  *Default* ``"NONE"`` 
+  Select Configuration Interaction level. 
+
+  .. list-table::
+    :widths: 25 50
+    :header-rows: 0
+ 
+    * - ``"CIS"``
+      - Singles
+    * - ``"CISD"``
+      - Singles and doubles
+    * - ``"CISD-"`` 
+      - Singles, doubles interspecies only 
+    * - ``"CISD+"`` 
+      - Singles, doubles, triples interpecies only 
+    * - ``"CISDT"`` 
+      - Singles, doubles, triples
+    * - ``"CISDTQ"`` 
+      - Singles, doubles, triples, quadruples 
+    * - ``"SCI"`` 
+      - Selected CI
+    * - ``"FCI"`` 
+      - Full CI
+    * - ``"NONE"`` 
+      - *Default*
 
 * ``numberOfCIStates=`` *[integer]*
-  *Default* ``1`` 
+  Set the number of lowest energy eigenvectors to find for the CI matrix in increasing energy. *Default* ``1`` (Ground state)
 
 * ``CIdiagonalizationMethod=`` *[character]*
-  *Default* ``"DSYEVR"`` 
+  Select the diagonalization subroutine 
+
+  .. list-table::
+    :widths: 25 50
+    :header-rows: 0
+ 
+    * - ``"DSYEVX"``
+      - LAPACK subroutine for selected eigenvalues and, optionally, eigenvectors of a real symmetric matrix. It requires to precompute and hold in memory the whole matrix (NXN) *Default*
+    * - ``"DSYEVR"``
+      - Newest LAPACK subroutine for selected eigenvalues and, optionally, eigenvectors of a real symmetric matrix. It requires to precompute and hold in memory the whole matrix (NXN) *Default*
+    * - ``"JADAMILU"``
+      - Jacobi-Davidson iterative algorithm. It requires to save only m-auxiliary matrix-vector products (NXm).
 
 * ``CIdiagonalDressedShift=`` *[character]*
-  *Default* ``"NONE"`` 
-
-* ``CIactiveSpace=`` *[character]*
-  *Default* ``0!!Full`` 
+  Add a diagonal shift to the CI matrix for size-extensive corrections. Values: ``CISD``. *Default* ``"NONE"`` 
 
 * ``CIstatesToPrint=`` *[integer]*
-  *Default* ``1`` 
-
-* ``CImaxNCV=`` *[integer]*
-  *Default* ``30`` 
+  Number of CI states to print additional information about configuration occupations.  *Default* ``1`` 
 
 * ``CIsizeOfGuessMatrix=`` *[integer]*
-  *Default* ``300`` 
+  Size N of the initial CI space to initialize the first eigenvector guess, it requires to hold in memory a matrix of NXN size for its diagonalization  *Default* ``300`` 
 
 * ``CIstackSize=`` *[integer]*
-  *Default* ``5000`` 
+  Stacksize of an temporary array to load and save CI eigenvectors in disk. *Default* ``5000`` 
 
 * ``CIConvergence=`` *[float]*
-  *Default* ``1E-4`` 
+  Tolerance threshold for the eigenvector residual in JADAMILU *Default* ``1E-4`` 
 
 * ``CImatvecTolerance=`` *[float]*
-  *Default* ``1E-10`` 
+  Tolerance threshold in the CI eigenvector guess for skipping the matrix-vector calculation during JADAMILU's iterations. Higher values reduce the cost of each iteration but increase the number of steps.  *Default* ``1E-10`` 
 
 * ``CISaveEigenVector=`` *[logical]*
-  *Default* ``.false.`` 
+  Save CI eigenvector for future computations *Default* ``.false.`` 
 
 * ``CILoadEigenVector=`` *[logical]*
-  *Default* ``.false.`` 
-
-* ``CIJacobi=`` *[logical]*
-  *Default* ``.false.`` 
-
-* ``CIBuildFullMatrix=`` *[logical]*
-  *Default* ``.false.`` 
+  Load previously saved CI eigenvector as an initial guess *Default* ``.false.`` 
 
 * ``CIMadSpace=`` *[integer]*
-  *Default* ``5`` 
+  Desired size of the search space in JADAMILU, MS. The memory cost of JADAMILU's diagonalization is given by N*(3*MS+NEIG+1)+4*MS*MS. Where N is the number of configurations, and NEIG the number of desired eigenvectors to find. *Default* ``5`` 
 
 * ``CINaturalOrbitals=`` *[logical]*
-  *Default* ``.false.`` 
+  Flag to compute natural orbitals after CI diagonalization. *Default* ``.false.`` 
 
 * ``CIPrintEigenVectorsFormat=`` *[character]*
-  *Default* ``"OCCUPIED"`` 
+  Select the format to print the CI eigenvectors for each configuration above abs(CIPrintThreshold) 
+
+  .. list-table::
+    :widths: 25 50
+    :header-rows: 0
+ 
+    * - ``"ORBITALS"``
+      - Print all orbitals occupation (0 or 1) 
+    * - ``"OCCUPIED"``
+      - Print the occupied orbitals index  *Default* 
+    * - ``"NONE"``
+      - No printing
 
 * ``CIPrintThreshold=`` *[float]*
-  *Default* ``1E-1`` 
+  Print all configurations above abs(CIPrintThreshold) for each eigenstate *Default* ``1E-1`` 
+
+
+.. * ``CIactiveSpace=`` *[character]*  *Default* ``0!!Full`` 
+.. * ``CImaxNCV=`` *[integer]*  *Default* ``30`` 
+.. * ``CIJacobi=`` *[logical]*  *Default* ``.false.`` 
+.. ** ``CIBuildFullMatrix=`` *[logical]* *Default* ``.false.`` 
+
+
+
+
 
 
