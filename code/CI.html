@@ -71,6 +71,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#ci-wavefunction">CI Wavefunction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#selected-ci-sci">Selected CI, SCI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#natural-orbitals">Natural orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#diagonal-corrections">Diagonal corrections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ci-input-options">CI Input options</a></li>
 </ul>
 </li>
@@ -219,47 +220,114 @@ Due to the size of the Hamiltonian Matrix <span class="math notranslate nohighli
 \gamma_{\mu,\nu}^{CI(I)} = \langle \Psi^{(I)} | a^{\dagger}_{\mu} a_{\nu} | \Psi^{(I)} \rangle
 \end{equation}</div><p>The natural orbitals are the eigenvectors of this density matrix, and the eigenvalues of the diagonalized density matrix are the natural occupation numbers, which indicate the importance of each natural orbital in the overall wave function.</p>
 </section>
+<section id="diagonal-corrections">
+<h2>Diagonal corrections<a class="headerlink" href="#diagonal-corrections" title="Permalink to this heading"></a></h2>
+</section>
 <section id="ci-input-options">
 <h2>CI Input options<a class="headerlink" href="#ci-input-options" title="Permalink to this heading"></a></h2>
-<ul class="simple">
+<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">configurationInteractionLevel=</span></code> <em>[character]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></li>
+Select Configuration Interaction level.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 66.7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;CIS&quot;</span></code></p></td>
+<td><p>Singles</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;CISD&quot;</span></code></p></td>
+<td><p>Singles and doubles</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;CISD-&quot;</span></code></p></td>
+<td><p>Singles, doubles interspecies only</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;CISD+&quot;</span></code></p></td>
+<td><p>Singles, doubles, triples interpecies only</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;CISDT&quot;</span></code></p></td>
+<td><p>Singles, doubles, triples</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;CISDTQ&quot;</span></code></p></td>
+<td><p>Singles, doubles, triples, quadruples</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;SCI&quot;</span></code></p></td>
+<td><p>Selected CI</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;FCI&quot;</span></code></p></td>
+<td><p>Full CI</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></td>
+<td><p><em>Default</em></p></td>
+</tr>
+</tbody>
+</table>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">numberOfCIStates=</span></code> <em>[integer]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+Set the number of lowest energy eigenvectors to find for the CI matrix in increasing energy. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">1</span></code> (Ground state)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CIdiagonalizationMethod=</span></code> <em>[character]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;DSYEVR&quot;</span></code></p></li>
+Select the diagonalization subroutine</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 66.7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;DSYEVX&quot;</span></code></p></td>
+<td><p>LAPACK subroutine for selected eigenvalues and, optionally, eigenvectors of a real symmetric matrix. It requires to precompute and hold in memory the whole matrix (NXN) <em>Default</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;DSYEVR&quot;</span></code></p></td>
+<td><p>Newest LAPACK subroutine for selected eigenvalues and, optionally, eigenvectors of a real symmetric matrix. It requires to precompute and hold in memory the whole matrix (NXN) <em>Default</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;JADAMILU&quot;</span></code></p></td>
+<td><p>Jacobi-Davidson iterative algorithm. It requires to save only m-auxiliary matrix-vector products (NXm).</p></td>
+</tr>
+</tbody>
+</table>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CIdiagonalDressedShift=</span></code> <em>[character]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CIactiveSpace=</span></code> <em>[character]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">0!!Full</span></code></p></li>
+Add a diagonal shift to the CI matrix for size-extensive corrections. Values: <code class="docutils literal notranslate"><span class="pre">CISD</span></code>. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CIstatesToPrint=</span></code> <em>[integer]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CImaxNCV=</span></code> <em>[integer]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">30</span></code></p></li>
+Number of CI states to print additional information about configuration occupations.  <em>Default</em> <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CIsizeOfGuessMatrix=</span></code> <em>[integer]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">300</span></code></p></li>
+Size N of the initial CI space to initialize the first eigenvector guess, it requires to hold in memory a matrix of NXN size for its diagonalization  <em>Default</em> <code class="docutils literal notranslate"><span class="pre">300</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CIstackSize=</span></code> <em>[integer]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">5000</span></code></p></li>
+Stacksize of an temporary array to load and save CI eigenvectors in disk. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">5000</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CIConvergence=</span></code> <em>[float]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1E-4</span></code></p></li>
+Tolerance threshold for the eigenvector residual in JADAMILU <em>Default</em> <code class="docutils literal notranslate"><span class="pre">1E-4</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CImatvecTolerance=</span></code> <em>[float]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1E-10</span></code></p></li>
+Tolerance threshold in the CI eigenvector guess for skipping the matrix-vector calculation during JADAMILU’s iterations. Higher values reduce the cost of each iteration but increase the number of steps.  <em>Default</em> <code class="docutils literal notranslate"><span class="pre">1E-10</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CISaveEigenVector=</span></code> <em>[logical]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+Save CI eigenvector for future computations <em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CILoadEigenVector=</span></code> <em>[logical]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CIJacobi=</span></code> <em>[logical]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CIBuildFullMatrix=</span></code> <em>[logical]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+Load previously saved CI eigenvector as an initial guess <em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CIMadSpace=</span></code> <em>[integer]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
+Desired size of the search space in JADAMILU, MS. The memory cost of JADAMILU’s diagonalization is given by N*(3*MS+NEIG+1)+4*MS*MS. Where N is the number of configurations, and NEIG the number of desired eigenvectors to find. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CINaturalOrbitals=</span></code> <em>[logical]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
+Flag to compute natural orbitals after CI diagonalization. <em>Default</em> <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CIPrintEigenVectorsFormat=</span></code> <em>[character]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">&quot;OCCUPIED&quot;</span></code></p></li>
+Select the format to print the CI eigenvectors for each configuration above abs(CIPrintThreshold)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 66.7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;ORBITALS&quot;</span></code></p></td>
+<td><p>Print all orbitals occupation (0 or 1)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;OCCUPIED&quot;</span></code></p></td>
+<td><p>Print the occupied orbitals index  <em>Default</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></td>
+<td><p>No printing</p></td>
+</tr>
+</tbody>
+</table>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CIPrintThreshold=</span></code> <em>[float]</em>
-<em>Default</em> <code class="docutils literal notranslate"><span class="pre">1E-1</span></code></p></li>
+Print all configurations above abs(CIPrintThreshold) for each eigenstate <em>Default</em> <code class="docutils literal notranslate"><span class="pre">1E-1</span></code></p></li>
 </ul>
 </section>
 </section>
