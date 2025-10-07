@@ -1,0 +1,35 @@
+\usetikzlibrary{shapes,arrows,backgrounds,fit}
+% blocks style
+\tikzstyle{block} = [rectangle, draw, fill=black!10!yellow!20, text centered, rounded corners, minimum height=2em]
+\tikzstyle{diam} = [diamond, draw, fill=green!20, text width=5em, text centered, rounded corners, minimum height=2em]
+\tikzstyle{elipse} = [draw, rectangle, fill=red!20, node distance=2cm, text width=5em, text centered, minimum height=2em, rounded corners=3mm]
+\tikzstyle{line} = [draw, -latex', very thin]
+
+
+\begin{tikzpicture}[node distance = 1cm, auto]
+    % place blocks
+    \node [block, text width=18em] (te1) { Build inital guess density matrix $\mathbf{P}^{\alpha}$ for all quantum species, $ \forall \ \ \alpha \cdots N_{sp}   $  };
+    \node [block, below of=te1, node distance=4em] (te2) {Simultaneous Global SCF};
+    \node [block, below of=te2, node distance=5em , text width=14em] (te3) {Solve Roothan-Hall equation for each quantum particle. \\ ${\bf F}^{\alpha} {\bf C}^{\alpha} = {\bf S}^{\alpha} {\bf C}^{\alpha} {\bf \varepsilon}^{\alpha}$ ( diagonalize ${\bf F^{\alpha}}$)  };
+    \node [block, below of=te3, node distance=5em , text width=12em] (te4) {Build new density matrix.  \\ ${\bf P}^{\alpha}$  };
+    \node [block, below of=te4, node distance=5em , text width=12em] (te5) {Update all Hartree-Fock matrices: ${\bf F}^{\alpha}$, ${\bf C}^{\alpha}$, ${\bf S}^{\alpha}$ };
+    \node [block, right of=te5, node distance=15em, text width=10em] (te6) {Compute total HF Energy calculation.\\ $E_{0}^{HF}$ };
+    \node [diam, below of=te6, node distance=8em, text width=6em ] (te7) {Converged?};
+    \node [elipse, left of=te7, node distance=15em, text width=10em] (te8) {End of SCF};
+    
+    \node [left of=te7, node distance=2cm]  (aux1) {\textbf{\scriptsize YES}};
+    \node [right of=te7, node distance=2cm]  (aux2) {\textbf{\scriptsize NO}};
+    
+    \path [line] (te1) -- (te2);
+    \path [line] (te2) -- (te3);
+    \path [line] (te3) -- (te4);
+    \path [line] (te4) -- (te5);
+    \path [line] (te5) -- (te6);
+    \path [line] (te6) -- (te7);
+    \path [line] (te7) -- (aux2);
+    \path [line] (te7) -- (aux1);
+    \path [line] (aux1) -- (te8);
+    \path [line] (aux2) |- (te3);
+    %\path [line] (aux1) -- +(-3,0) -- +(-3,8) -- (te1);
+    %\path [line] (aux2) -- +(1,0) -- +(1,-1.8) -- (te7);
+\end{tikzpicture}

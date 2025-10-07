@@ -2,6 +2,16 @@
 SCF
 ===
 
+openLOWDIN has different multicomponent SCF schemes to minimise the energy of a molecular system composed of multiple quantum species. The most notable is a simultaneous approach as:
+
+.. figure:: SCF/scf.svg
+   :alt: Schematic of multicomponent SCF algorithm
+   :width: 500px
+   :align: center
+
+   Schematic of simultaneous global SCF convergence algorithm, adapted from :cite:p:`flores-moreno_IJQC_114_50_2014`
+
+
 * ``nonElectronicEnergyTolerance=`` *[float]*
   *Default* ``1.0E-8`` 
 
