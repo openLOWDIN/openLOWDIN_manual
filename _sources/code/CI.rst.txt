@@ -160,7 +160,7 @@ In CI, natural orbitals are special orbitals defined as the eigenfunctions of th
 The natural orbitals are the eigenvectors of this density matrix, and the eigenvalues of the diagonalized density matrix are the natural occupation numbers, which indicate the importance of each natural orbital in the overall wave function.
 
 Diagonal corrections
-===================
+====================
 
 CI Input options
 ================
