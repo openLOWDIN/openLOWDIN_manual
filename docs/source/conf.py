@@ -69,4 +69,10 @@ epub_author = 'Jorge Charry, Félix Moncada'
 latex_engine = 'pdflatex'
 bibtex_bibfiles = ['bibliography/biblio.bib']
 
-
+latex_elements = {
+'preamble': r'''
+% make phantomsection empty inside figures
+\usepackage{etoolbox}
+\AtBeginEnvironment{figure}{\pretocmd{\hyperlink}{\protect}{}{}}  
+'''
+}
