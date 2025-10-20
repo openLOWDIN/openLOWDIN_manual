@@ -85,7 +85,8 @@ Four-center intraspecies coulomb potential
   :nowrap:
 
   \begin{align}
-  \langle \mu^\alpha \nu^\alpha | \sigma^\alpha\lambda^\alpha \rangle = \int \int d r_i d r_j \varphi_\mu^\alpha(i)  \varphi_\nu^\alpha(j) 
+  \mathbb{4C}_{\mu \nu \sigma \lambda }^{\alpha} &= \langle \mu^\alpha \nu^\alpha | \sigma^\alpha\lambda^\alpha \rangle \\
+                                               &= \int \int d r_i d r_j \varphi_\mu^\alpha(i)  \varphi_\nu^\alpha(j) 
    \frac{1}{r_i - r_j} \varphi_\sigma^\alpha(i)  \varphi_\lambda^\alpha(j) 
   \end{align}
 
@@ -95,7 +96,8 @@ Four-center interspecies coulomb potential
   :nowrap:
 
   \begin{align}
-  \langle \mu^\alpha \nu^\beta | \sigma^\alpha\lambda^\beta \rangle = \int \int d r_i d r_j \varphi_\mu^\alpha(i)  \varphi_\nu^\beta(j) 
+  \mathbb{4C}_{\mu \nu \sigma \lambda }^{\alpha\beta} &=  \langle \mu^\alpha \nu^\beta | \sigma^\alpha\lambda^\beta \rangle \\
+                                               & = \int \int d r_i d r_j \varphi_\mu^\alpha(i)  \varphi_\nu^\beta(j) 
    \frac{1}{r_i - r_j} \varphi_\sigma^\alpha(i)  \varphi_\lambda^\beta(j) 
   \end{align}
 
@@ -105,8 +107,8 @@ Five-center, intra- and interspecies
   :nowrap:
 
   \begin{align}
-  \langle \mu^\alpha \nu^\beta | V_2^{\alpha,\beta}(\mathbf{r}^{\alpha}_i,\mathbf{r}^{\beta}_j) | \sigma^\alpha\lambda^\beta \rangle 
-  = \sum_\tau C_\tau^{\alpha\beta} \int \int d r_i d r_j \varphi_\mu^\alpha(i)  \varphi_\nu^\beta(j) 
+  \mathbb{5C}_{\mu \nu \sigma \lambda }^{\alpha,\beta} &= \langle \mu^\alpha \nu^\beta | V_2^{\alpha\beta}(\mathbf{r}^{\alpha}_i,\mathbf{r}^{\beta}_j) | \sigma^\alpha\lambda^\beta \rangle \\
+  &= \sum_\tau C_\tau^{\alpha\beta} \int \int d r_i d r_j \varphi_\mu^\alpha(i)  \varphi_\nu^\beta(j) 
   \ \text{exp}[ -a_\tau^{\alpha\beta} ({r}_i - {r}_{j})^2 ]  \varphi_\sigma^\alpha(i)  \varphi_\lambda^\beta(j) 
   \end{align}
 

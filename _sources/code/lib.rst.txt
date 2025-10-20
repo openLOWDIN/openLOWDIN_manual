@@ -206,8 +206,8 @@ Potential Basis
 
 openLOWDIN has the capabilities of computing additional one-body external potential, as well as replacing the standard two-particles Coulomb potential by a general two-body intraspecies and interspecies potentials based on sum Gaussian-Type functions (GTFs).
 
-External potential
-------------------
+External potential basis
+------------------------
 
 This potential is built as a sum of uncontracted and unnormalized GTFs 
 
@@ -272,8 +272,8 @@ where ``POT_NAME`` is the name of the potential file described above for the giv
   Notice that it's possible to define a potential for different quantum species within the same file.
 
 
-Internal potential
--------------------------------
+Internal potential basis
+------------------------
 
 This potential is also built as a sum of uncontracted and unnormalized geminal GTFs, but it is limited to *s*-type orbitals 
 
@@ -281,7 +281,7 @@ This potential is also built as a sum of uncontracted and unnormalized geminal G
   :nowrap:
 
   \begin{equation}
-  V_2^{\alpha,\beta}(\mathbf{r}^{\alpha}_i,\mathbf{r}^{\beta}_j) = \sum_{\tau}^{N_{bas}^{\alpha\beta}} C_{\tau}^{\alpha\beta} \text{exp}[ -a_{\tau}^{\alpha\beta} (\mathbf{r}^{\alpha}_i - \mathbf{r}^{\beta}_{j})^2 ]
+  V_2^{\alpha\beta}(\mathbf{r}^{\alpha}_i,\mathbf{r}^{\beta}_j) = \sum_{\tau}^{N_{bas}^{\alpha\beta}} C_{\tau}^{\alpha\beta} \text{exp}[ -a_{\tau}^{\alpha\beta} (\mathbf{r}^{\alpha}_i - \mathbf{r}^{\beta}_{j})^2 ]
   \end{equation}
 
 And the potential format is given by 
