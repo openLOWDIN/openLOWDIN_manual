@@ -10,3 +10,4 @@ Bibliography
 ============
 
 .. bibliography::
+   :style: unsrt
