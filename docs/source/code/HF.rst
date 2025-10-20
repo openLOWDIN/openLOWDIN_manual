@@ -74,7 +74,7 @@ Hamiltonian
 
    \begin{aligned}
    \label{chap2:eq:CoreHamiltonian}
-   h^\alpha(i)=-\frac{1}{2m_{\alpha}}\nabla_{i}^{2} + \sum_{J}^{N_c}\frac{q^{\alpha} Z^{\alpha}}{R_{iJ}},
+   h^\alpha(i)=-\frac{1}{2m_{\alpha}}\nabla_{i}^{2} + \sum_{J}^{N_c}\frac{q^{\alpha} Z_J }{R_{iJ}},
    \end{aligned}
 
 and :math:`J^\alpha` and :math:`K^\alpha` are the Coulomb and exchange
@@ -111,7 +111,7 @@ In openLOWDIN, these expressions are implemented in a matrix form :cite:p:`szabo
    \begin{aligned}
    \begin{aligned}
    S_{\mu \nu}^\alpha & =\int d r_1 \varphi_\mu^\alpha(1) \varphi_\nu^\alpha(1) \\
-   F_{\mu \nu}^\alpha & =H_{\mu \nu}^\alpha+G_{\mu \nu}^\alpha + \sum_{\beta\ne\alpha}^{N_{sp}} G_{\mu \nu}^\beta \\
+   F_{\mu \nu}^\alpha & =H_{\mu \nu}^\alpha+q^{\alpha} q^{\alpha} G_{\mu \nu}^\alpha + \sum_{\beta\ne\alpha}^{N_{sp}}q^{\alpha} q^{\beta} G_{\mu \nu}^\beta \\
    H_{\mu \nu}^\alpha & =\int d r_1 \varphi_\mu^\alpha(1) h^\alpha(1) \varphi_\nu^\alpha(1) \\
    G_{\mu \nu}^\alpha & =\sum_{\lambda \sigma} P_{\lambda \sigma}^\alpha\left[\left(\mu^\alpha \nu^\alpha \mid \sigma^\alpha \lambda^\alpha\right)- (1/2) \left(\mu^\alpha \lambda^\alpha \mid \sigma^\alpha \nu^\alpha\right)\right] \\
    G_{\mu \nu}^\beta & =\sum_{\lambda \sigma} P_{\lambda \sigma}^\beta\left(\mu^\alpha \nu^\alpha \mid \sigma^\beta \lambda^\beta\right),
