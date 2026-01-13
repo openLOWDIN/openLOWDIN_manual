@@ -19,6 +19,7 @@ This manual is still in early construction stage! Thanks for your patience.
         Developers and contributors <openLOWDIN/developers_and_contributors.rst>
         Installation <openLOWDIN/installation.rst>
         Getting started <openLOWDIN/getting_started.rst>
+        Publications <openLOWDIN/publications.rst>
 
 .. toctree::
    :maxdepth: 2
