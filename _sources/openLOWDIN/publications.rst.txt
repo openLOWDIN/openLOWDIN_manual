@@ -63,17 +63,15 @@ Thesis
 
 List of Master and PhD thesis:
 
-22. Rafael Porras Roldan. `Development of MP2 orbital optimization and spin scaling methods for positron-molecule systems. <https://repositorio.unal.edu.co/items/b02c4f3d-d870-4279-893c-ae21da125525>`_ Master Thesis. Supervisor Andrés Reyes Velasco. 2025
+21. Rafael Porras Roldan. `Development of MP2 orbital optimization and spin scaling methods for positron-molecule systems. <https://repositorio.unal.edu.co/items/b02c4f3d-d870-4279-893c-ae21da125525>`_ Master Thesis. Supervisor Andrés Reyes Velasco. 2025
 
-21. Leonardo Bin Martins. `Átomos de positrônio em meios condensados. <https://www.teses.usp.br/teses/disponiveis/43/43134/tde-25062025-083342/en.php>`_ PhD thesis. Supervisor Marcio Teixeira do Nascimento Varella. 2025
+20. Leonardo Bin Martins. `Átomos de positrônio em meios condensados. <https://www.teses.usp.br/teses/disponiveis/43/43134/tde-25062025-083342/en.php>`_ PhD thesis. Supervisor Marcio Teixeira do Nascimento Varella. 2025
 
-20. Andre Luis Dias Santana `Moléculas positrônicas neutras. <https://www.teses.usp.br/teses/disponiveis/43/43134/tde-18072023-090451/en.php>`_ PhD thesis. Supervisor Marcio Teixeira do Nascimento Varella. 2023
+19. Andre Luis Dias Santana `Moléculas positrônicas neutras. <https://www.teses.usp.br/teses/disponiveis/43/43134/tde-18072023-090451/en.php>`_ PhD thesis. Supervisor Marcio Teixeira do Nascimento Varella. 2023
 
-19. Jorge Alfonso Charry Martinez. `Chemistry and physics of positrons interacting with atoms, molecules, and fields. <https://orbilu.uni.lu/handle/10993/57329>`_ PhD thesis. Supervisor Alexandre Tkatchenko. 2023
+18. Jorge Alfonso Charry Martinez. `Chemistry and physics of positrons interacting with atoms, molecules, and fields. <https://orbilu.uni.lu/handle/10993/57329>`_ PhD thesis. Supervisor Alexandre Tkatchenko. 2023
 
-18. Félix Santiago Moncada Arias. `Development of a multicomponent wavefunction-in-DFT embedding methodology <https://repositorio.unal.edu.co/items/7a65e4cf-4c3e-456f-84d2-684ddaaa1258>`_ PhD thesis. Supervisor Andrés Reyes Velasco. 2021
-
-17. Leonardo Bin Martins. `Annihilation rates in positronic molecules. <https://www.teses.usp.br/teses/disponiveis/43/43134/tde-23102020-125716/en.php>`_ Master thesis. Supervisor Marcio Teixeira do Nascimento Varella. 2020
+17. Félix Santiago Moncada Arias. `Development of a multicomponent wavefunction-in-DFT embedding methodology <https://repositorio.unal.edu.co/items/7a65e4cf-4c3e-456f-84d2-684ddaaa1258>`_ PhD thesis. Supervisor Andrés Reyes Velasco. 2021
 
 16. Leonardo Bin Martins. `Annihilation rates in positronic molecules. <https://www.teses.usp.br/teses/disponiveis/43/43134/tde-23102020-125716/en.php>`_ Master thesis. Supervisor Marcio Teixeira do Nascimento Varella. 2020
 
@@ -93,7 +91,7 @@ List of Master and PhD thesis:
 
 8. Alejandro Peña Torres. `Desarrollo de métodos de Coupled Cluster en el marco de la teoría de orbital molecular para cualquier partícula (APMO) y su implementación en LOWDIN. <https://repositorio.unal.edu.co/items/a73cc061-d6dc-4597-8b43-2fa05a8f0192>`_  Master thesis. Supervisor Andrés Reyes Velasco. 2015
 
-7. Jorge Alfonso Charry Martínez. `Desarrollo e implementación de un método de funciones gaussianas explícitamente correlacionadas bajo el esquema de orbitales moleculares para cualquier partícula, APMO`  Master thesis.  Supervisor Andrés Reyes Velasco. 2015
+7. Jorge Alfonso Charry Martínez. `Desarrollo e implementación de un método de funciones gaussianas explícitamente correlacionadas bajo el esquema de orbitales moleculares para cualquier partícula, APMO. <https://repositorio.unal.edu.co/items/d1f6a8d5-69d5-4711-b7da-7c72e5223768>`_  Master thesis.  Supervisor Andrés Reyes Velasco. 2015
 
 6. Ronald González Medina. `Implementación de un método de orbitales moleculares de fragmentos para cualquier partícula en el paquete computacional LOWDIN <https://repositorio.unal.edu.co/items/27154161-4c8a-4030-8068-d957ac867e77>`_ Master thesis.  Supervisor Andrés Reyes Velasco. 2014
 
