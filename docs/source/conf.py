@@ -33,9 +33,10 @@ release = '0.1'
 # ones.
 extensions = [
 'sphinx.ext.autosectionlabel',
-'sphinx.ext.imgconverter',
+'sphinxcontrib.inkscapeconverter',
 'sphinxcontrib.bibtex'
 ]
+#'sphinx.ext.imgconverter'  ,
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

@@ -19,7 +19,9 @@ Installation notes.
 
 * Sphinx 
 * pdflatex
-* sphinxcontrib-bibtex
+* sphinxcontrib.bibtex
+* sphinxcontrib.svg2pdfconverter
+* imagemagick
 
 ### Compile html ###
 

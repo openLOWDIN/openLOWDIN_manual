@@ -13,7 +13,7 @@ Papers
 
 #. F. Moncada, W. Quintero, E. Posada, L. G. M. Pettersson, and A. Reyes. ‘A nuclear configuration interaction approach to study nuclear spin effects: an application to ortho- and para-3He2@C60’. *ChemPhysChem* **25**, e202300498 (2024) `10.1002/cphc.202300498 <https://doi.org/10.1002/cphc.202300498>`_.
 
-#. D. Archila-peña et al. ‘Two-Positron-bonded Dihalides : Ps2XY (X, Y = F, Cl, Br)’. *Chem. Eur. J.* **30**, 202402618 (2024) `10.1002/chem.202402618 <https://doi.org/10.1002/chem.202402618>`_.
+#. D. Archila-peña et al. ‘Two-Positron-bonded Dihalides : Ps2XY (X, Y = F, Cl, Br)’. *Chem. Eur. J.* **30**, 202402618 (2024) `10.1002/chem.202402618 <https://doi.org/10.1002/chem.202402618>`_.
 
 #. M. Bergami, J. Charry, A. Reyes, K. Coutinho, and M. T. D. N. Varella. ‘Does Positron Attachment Take Place in Water Solution?’ *J. Phys. Chem. B* **128**, 10178 (2024) `10.1021/acs.jpcb.4c03627 <https://doi.org/10.1021/acs.jpcb.4c03627>`_.
 
@@ -21,35 +21,35 @@ Papers
 
 #. F. Moncada and A. Reyes. ‘Multicomponent wavefunction-in-DFT embedding for positronium molecules’. *J. Chem. Phys.* **158**, 134101 (2023) `10.1063/5.0139813 <https://doi.org/10.1063/5.0139813>`_.
 
-#. M. Bergami et al. ‘Multicomponent Quantum Mechanics/Molecular Mechanics Study of Hydrated Positronium’. *Journal of Physical Chemistry B* **126**, 2699 (2022) `10.1021/acs.jpcb.1c10124 <https://doi.org/10.1021/acs.jpcb.1c10124>`_.
+#. M. Bergami et al. ‘Multicomponent Quantum Mechanics/Molecular Mechanics Study of Hydrated Positronium’. *J. Phys. Chem. B* **126**, 2699 (2022) `10.1021/acs.jpcb.1c10124 <https://doi.org/10.1021/acs.jpcb.1c10124>`_.
 
 #. J. Charry et al. ‘The three-center two-positron bond’. *Chemical Science* **13**, 13795 (2022) `10.1039/d2sc04630j <https://doi.org/10.1039/d2sc04630j>`_.
 
-#. F. Moncada, L. Pedraza-González, J. Charry, M. T. do N. Varella, and A. Reyes. ‘Covalent bonds in positron dihalides’. *Chemical Science* **11**, 44 (2020) `10.1039/C9SC04433G <https://doi.org/10.1039/C9SC04433G>`_.
+#. F. Moncada, L. Pedraza-González, J. Charry, M. T. do N. Varella, and A. Reyes. ‘Covalent bonds in positron dihalides’. *Chem. Sci.* **11**, 44 (2020) `10.1039/C9SC04433G <https://doi.org/10.1039/C9SC04433G>`_.
 
-#. J. M. Rodas, J. F. Galindo, A. E. Roitberg, and A. Reyes. ‘The any particle molecular orbital/molecular mechanics approach’. *J Mol Model* **25**, 316 (2019) `10.1007/s00894-019-4153-x <https://doi.org/10.1007/s00894-019-4153-x>`_.
+#. J. Rodas, J. F. Galindo, A. E. Roitberg, and A. Reyes. ‘The any particle molecular orbital/molecular mechanics approach’. *J Mol Model* **25**, 316 (2019) `10.1007/s00894-019-4153-x <https://doi.org/10.1007/s00894-019-4153-x>`_.
 
-#. A. Reyes, F. Moncada, and J. Charry. ‘The any particle molecular orbital approach: A short review of the theory and applications’. *International Journal of Quantum Chemistry* **119**, 1 (2019) `10.1002/qua.25705 <https://doi.org/10.1002/qua.25705>`_.
+#. A. Reyes, F. Moncada, and J. Charry. ‘The any particle molecular orbital approach: A short review of the theory and applications’. *Int. J. Quantum Chem.* **119**, 1 (2019) `10.1002/qua.25705 <https://doi.org/10.1002/qua.25705>`_.
 
-#. J. Charry, M. T. do N. Varella, and A. Reyes. ‘Binding Matter with Antimatter: The Covalent Positron Bond’. *Angewandte Chemie - International Edition* **57**, 8859 (2018) `10.1002/anie.201800914 <https://doi.org/10.1002/anie.201800914>`_.
+#. J. Charry, M. T. do N. Varella, and A. Reyes. ‘Binding Matter with Antimatter: The Covalent Positron Bond’. *Angew. Chem.* **57**, 8859 (2018) `10.1002/anie.201800914 <https://doi.org/10.1002/anie.201800914>`_.
 
 #. F. Moncada, R. Flores-Moreno. A. Reyes. "Theoretical calculation of polarizability isotope effects" *J. Mol. Model.* **27**, 90 (2017). `10.1007/s00894-017-3236-9. <https://link.springer.com/article/10.1007/s00894-017-3236-9>`_
 
-#. L. M. Pedraza-González, J. A. Charry Martínez, W. D. Quintero, J. Ali-Torres, and A. Reyes. ‘Fast and Accurate Prediction of Proton Affinities: Revisiting the Extended Koopmans’ Theorem for Protons’. *Phys. Chem. Chem. Phys.* **19**, 25324 (2017) `10.1039/C7CP04936F <https://doi.org/10.1039/C7CP04936F>`_.
+#. L. Pedraza-González, J. A. Charry Martínez, W. D. Quintero, J. Ali-Torres, and A. Reyes. ‘Fast and Accurate Prediction of Proton Affinities: Revisiting the Extended Koopmans’ Theorem for Protons’. *Phys. Chem. Chem. Phys.* **19**, 25324 (2017) `10.1039/C7CP04936F <https://doi.org/10.1039/C7CP04936F>`_.
 
-#. J. Charry, L. Pedraza-González, and A. Reyes. ‘On the physical interpretation of the nuclear molecular orbital energy’. *The Journal of Chemical Physics* **146**, 214103 (2017) `10.1063/1.4984098 <https://doi.org/10.1063/1.4984098>`_.
+#. J. Charry, L. Pedraza-González, and A. Reyes. ‘On the physical interpretation of the nuclear molecular orbital energy’. *J. Chem. Phys.* **146**, 214103 (2017) `10.1063/1.4984098 <https://doi.org/10.1063/1.4984098>`_.
 
 #. L. Pedraza-González, J. Romero, J. Alí-Torres, and A. Reyes. ‘Prediction of proton affinities of organic molecules using the any-particle molecular-orbital second-order proton propagator approach’. *Phys. Chem. Chem. Phys.* **18**, 27185 (2016) `10.1039/C6CP05128F <https://doi.org/10.1039/C6CP05128F>`_.
 
 #. E. Posada, F. Moncada, and A. Reyes. ‘Negative Muon Chemistry: The Quantum Muon Effect and the Finite Nuclear Mass Effect’. *J. Phys. Chem. A* **118**, 9491 (2014) `10.1021/jp501289s <https://doi.org/10.1021/jp501289s>`_.
 
-#. J. Charry, J. Romero, M. T. do N. Varella, and A. Reyes. ‘Calculation of positron binding energies of amino acids with the any-particle molecular-orbital approach’. *Physical Review A - Atomic, Molecular, and Optical Physics* **89**, 052709 (2014) `10.1103/PhysRevA.89.052709 <https://doi.org/10.1103/PhysRevA.89.052709>`_.
+#. J. Charry, J. Romero, M. T. do N. Varella, and A. Reyes. ‘Calculation of positron binding energies of amino acids with the any-particle molecular-orbital approach’. *Phys. Rev. A* **89**, 052709 (2014) `10.1103/PhysRevA.89.052709 <https://doi.org/10.1103/PhysRevA.89.052709>`_.
 
-#. R. Flores-Moreno et al. ‘LOWDIN: The any particle molecular orbital code’. *International Journal of Quantum Chemistry* **114**, 50 (2014) `10.1002/qua.24500 <https://doi.org/10.1002/qua.24500>`_.
+#. R. Flores-Moreno et al. ‘LOWDIN: The any particle molecular orbital code’. *Int. J. Quantum Chem.* **114**, 50 (2014) `10.1002/qua.24500 <https://doi.org/10.1002/qua.24500>`_.
 
-#. J. Romero, J. A. Charry, R. Flores-Moreno, M. T. D. N. Varella, and A. Reyes. ‘Calculation of positron binding energies using the generalized any particle propagator theory.’ *The Journal of chemical physics* **141**, 114103 (2014) `10.1063/1.4895043 <https://doi.org/10.1063/1.4895043>`_.
+#. J. Romero, J. A. Charry, R. Flores-Moreno, M. T. D. N. Varella, and A. Reyes. ‘Calculation of positron binding energies using the generalized any particle propagator theory.’ *J. Chem. Phys.* **141**, 114103 (2014) `10.1063/1.4895043 <https://doi.org/10.1063/1.4895043>`_.
 
-#. M. Díaz-Tinoco et al. ‘A generalized any-particle propagator theory: Prediction of proton affinities and acidity properties with the proton propagator’. *The Journal of Chemical Physics* **138**, 194108 (2013) `10.1063/1.4805030 <https://doi.org/10.1063/1.4805030>`_.
+#. M. Díaz-Tinoco et al. ‘A generalized any-particle propagator theory: Prediction of proton affinities and acidity properties with the proton propagator’. *J. Chem. Phys* **138**, 194108 (2013) `10.1063/1.4805030 <https://doi.org/10.1063/1.4805030>`_.
 
 #. F. Moncada, D. Cruz, and A. Reyes. ‘Electronic properties of atoms and molecules containing one and two negative muons’. *Chem. Phys. Lett.* **570**, 16 (2013) `10.1016/j.cplett.2013.03.004 <https://doi.org/10.1016/j.cplett.2013.03.004>`_.
 
@@ -57,11 +57,11 @@ Papers
 
 #. F. Moncada, D. Cruz, and A. Reyes. ‘Muonic alchemy: Transmuting elements with the inclusion of negative muons’. *Chem. Phys. Lett.* **539–540**, 209 (2012) `10.1016/j.cplett.2012.04.062 <https://doi.org/10.1016/j.cplett.2012.04.062>`_.
 
-#. D. V. Moreno, S. a González, and A. Reyes. ‘Turning symmetric an asymmetric hydrogen bond with the inclusion of nuclear quantum effects: the case of the [CN···H···NC]- complex.’ *The Journal of chemical physics* **134**, 024115 (2011) `10.1063/1.3521272 <https://doi.org/10.1063/1.3521272>`_.
+#. D. Moreno, S. a González, and A. Reyes. ‘Turning symmetric an asymmetric hydrogen bond with the inclusion of nuclear quantum effects: the case of the [CN···H···NC]- complex.’ *J. Chem. Phys.* **134**, 024115 (2011) `10.1063/1.3521272 <https://doi.org/10.1063/1.3521272>`_.
 
-#. S. A. González, N. Aguirre, and A. Reyes. ‘Theoretical Investigation of Isotope Effects: The Any-Particle Molecular Orbital Code’. *International Journal of Quantum Chemistry* **108**, 1742 (2008) `10.1002/qua.21584 <https://doi.org/10.1002/qua.21584>`_.
+#. S. González, N. Aguirre, and A. Reyes. ‘Theoretical Investigation of Isotope Effects: The Any-Particle Molecular Orbital Code’. *Int. J. Quantum Chem.* **108**, 1742 (2008) `10.1002/qua.21584 <https://doi.org/10.1002/qua.21584>`_.
 
-#. S. A. González, N. F. Aguirre, and A. Reyes. ‘Apmo: Un Programa Computacional Para El Estudio De Efectos Cuánticos Nucleares Mediante La Teoría Del Orbital Molecular Electrónico Y No Electrónico’. *Revista Colombiana de Química* **37**, 93 (2008).
+#. S. González, N. F. Aguirre, and A. Reyes. ‘Apmo: Un Programa Computacional Para El Estudio De Efectos Cuánticos Nucleares Mediante La Teoría Del Orbital Molecular Electrónico Y No Electrónico’. *Rev. Colomb. Quím.* **37**, 93 (2008).
 
 Thesis
 ------
@@ -80,7 +80,7 @@ List of Master and PhD thesis:
 
 #. Leonardo Bin Martins. `Annihilation rates in positronic molecules. <https://www.teses.usp.br/teses/disponiveis/43/43134/tde-23102020-125716/en.php>`_ Master thesis. Supervisor Marcio Teixeira do Nascimento Varella. 2020
 
-#. William David Quintero Martinez. `Estudio teórico del confinamiento de gases nobles en fullerenos. <https://repositorio.unal.edu.co/items/717d4da5-b563-488c-a16d-6116acd4ba27>`_ Master thesis. Supervisor Andrés Reyes Velasco. 2018
+#. William David Quintero Martinez. `Estudio teórico del confinamiento de gases nobles en fullerenos. <https://repositorio.unal.edu.co/items/717d4da5-b563-488c-a16d-6116acd4ba27>`_ Master thesis. Supervisor Andrés Reyes Velasco. 2018
 
 #. Edwin Fernando Posada Correa. `Desarrollo e implementación de un método libre de base para el estudio de efectos cuánticos nucleares (Nu-APMO: Numerical Any Particle Molecular Orbital).  <https://repositorio.unal.edu.co/items/e69c6e63-fe53-43b8-8990-3b976b45261f>`_ PhD thesis Supervisor Andrés Reyes Velasco. 2017
 
